@@ -1,0 +1,50 @@
+/* BLING PAY BUTTON STYLES */
+
+.BPBtn {
+    min-width: 80px;
+    max-width: 100%;
+    width: auto;
+    height: 20px;
+    max-height: 60px;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    font-weight: bold;
+    padding: 20px 10px 20px 10px;
+    margin: auto;
+    gap: 1px;
+    border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
+
+}
+.BPBtn.dark{
+    background-color: #000;
+    border: 1px solid #181818;
+    color: #fff;
+}
+
+.BPBtn.light{
+    background-color: #fff;
+    border: 1px solid #dedede;
+    color: #000;
+}
+
+.BPBtn .bpaylogo {
+    width: 60px;
+    height: 60px;
+    /*border: 1px solid red;*/
+    object-fit: contain; /* Opcional: Ajusta la forma en que se ajusta la imagen dentro del contenedor */
+    size: 60px;
+  }
+
+.BPBtn .brands {
+    width: 40px;
+    height: 40px;
+    /*border: 1px solid red;*/
+    object-fit: contain; /* Opcional: Ajusta la forma en que se ajusta la imagen dentro del contenedor */
+    size: 50px;
+  }

@@ -1,0 +1,37 @@
+/* src/components/SvgIcon.module.css */
+@keyframes drawBorder {
+    0% {
+      stroke-dasharray: 0, 100;
+      stroke-width: 2;
+    }
+    50% {
+      stroke-dasharray: 100, 0;
+      stroke-width: 2;
+    }
+    100% {
+      stroke-dasharray: 100, 0;
+      stroke-width: 0;
+    }
+  }
+  
+  @keyframes fillBackground {
+    0% {
+      fill: transparent;
+    }
+    100% {
+      fill: var(--icon-color, currentColor);
+    }
+  }
+
+  
+  .animate path {
+    stroke: var(--icon-color, currentColor);
+    fill: none;
+    animation: drawBorder 1s ease-out forwards, fillBackground 0.5s 1s forwards;
+  }
+  /* Icon.module.css */
+/* Icon.module.css */
+.svg-icon {
+  fill: var(--icon-fill-color, #ed293e); /* Color de llenado del ícono, predeterminado a negro */
+}
+

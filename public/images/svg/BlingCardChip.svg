@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="b" data-name="Capa 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 723.2 446.38">
+  <defs>
+    <linearGradient id="d" data-name="Degradado sin nombre 51" x1="840.05" y1="-70.38" x2="-60.27" y2="482.04" gradientUnits="userSpaceOnUse">
+      <stop offset=".05" stop-color="#f7d775"/>
+      <stop offset=".21" stop-color="#fdc800"/>
+      <stop offset=".28" stop-color="#f6dc90"/>
+      <stop offset=".49" stop-color="#fdc000"/>
+      <stop offset=".5" stop-color="#fdc718"/>
+      <stop offset=".52" stop-color="#fddb58"/>
+      <stop offset=".56" stop-color="#fefabc"/>
+      <stop offset=".56" stop-color="#ffffca"/>
+      <stop offset=".62" stop-color="#fae17b"/>
+      <stop offset=".65" stop-color="#f9d55b"/>
+      <stop offset=".76" stop-color="#f1de72"/>
+      <stop offset=".84" stop-color="#fbc726"/>
+      <stop offset=".89" stop-color="#ffcf40"/>
+      <stop offset="1" stop-color="#d4ab00"/>
+    </linearGradient>
+  </defs>
+  <g id="c" data-name="Capa 1">
+    <rect x="0" width="723.19" height="446.38" rx="50" ry="50" style="fill: url(#d);"/>
+  </g>
+  <g id="e" data-name="Capa 2">
+    <g>
+      <path d="M361.6,115.29c-31.77,.22-63.31,17.03-78.46,47.85-14.75,23.94-8.26,76.12-9.57,103.14-4.35,3.16-15.87,11.52-20.38,14.79v51.64" style="fill: none; stroke: #493c2d; stroke-linejoin: round; stroke-width: 4px;"/>
+      <path d="M0,111.59H180.8l45.52,46.77h0c13.93-42.7,48.71-77.21,91.47-90.86V0" style="fill: none; stroke: #493c2d; stroke-linejoin: round; stroke-width: 4px;"/>
+      <line x1="0" y1="223.19" x2="273.25" y2="224" style="fill: none; stroke: #493c2d; stroke-linejoin: round; stroke-width: 4px;"/>
+      <path d="M328.22,341.6c-1.94,24.35,15.71,37.16,33.38,37.27h0" style="fill: none; stroke: #493c2d; stroke-linejoin: round; stroke-width: 4px;"/>
+      <polyline points="0 334.79 180.8 334.79 253.2 378.88" style="fill: none; stroke: #493c2d; stroke-linejoin: round; stroke-width: 4px;"/>
+    </g>
+    <g>
+      <path d="M361.6,115.29c31.77,.22,63.31,17.03,78.46,47.85,14.75,23.94,8.26,76.12,9.57,103.14,4.35,3.16,15.87,11.52,20.38,14.79v51.64" style="fill: none; stroke: #493c2d; stroke-linejoin: round; stroke-width: 4px;"/>
+      <path d="M723.19,111.59h-180.8s-45.52,46.77-45.52,46.77h0c-13.93-42.7-48.71-77.21-91.47-90.86V0" style="fill: none; stroke: #493c2d; stroke-linejoin: round; stroke-width: 4px;"/>
+      <line x1="723.19" y1="223.19" x2="449.95" y2="224" style="fill: none; stroke: #493c2d; stroke-linejoin: round; stroke-width: 4px;"/>
+      <path d="M394.99,341.6c1.93,24.35-15.71,37.16-33.39,37.27h0" style="fill: none; stroke: #493c2d; stroke-linejoin: round; stroke-width: 4px;"/>
+      <polyline points="470.01 378.88 542.4 334.79 723.2 334.79" style="fill: none; stroke: #493c2d; stroke-linejoin: round; stroke-width: 4px;"/>
+    </g>
+    <line x1="253.19" y1="378.87" x2="253.19" y2="446.38" style="fill: none; stroke: #493c2d; stroke-linejoin: round; stroke-width: 4px;"/>
+    <line x1="470.01" y1="378.87" x2="470.01" y2="446.38" style="fill: none; stroke: #493c2d; stroke-linejoin: round; stroke-width: 4px;"/>
+  </g>
+</svg>

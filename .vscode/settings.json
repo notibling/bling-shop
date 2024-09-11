@@ -1,0 +1,76 @@
+{
+  "workbench.colorCustomizations": {
+    "minimap.background": "#00000000",
+    "scrollbar.shadow": "#00000000"
+  },
+  "workbench.colorTheme": "Material Theme Ocean High Contrast",
+  "glassit-linux.opacity": 75,
+  "better-comments.tags": [
+    {
+      "tag": "@",
+      "color": "##283593",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "#ffcc00",
+      "bold": true,
+      "italic": false
+    },
+    {
+      "tag": "!",
+      "color": "#ffffff",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "#ed293e",
+      "bold": true,
+      "italic": false
+    },
+    {
+      "tag": "&",
+      "color": "#ffffff",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "#FF6F00",
+      "bold": true,
+      "italic": false
+    },
+    {
+      "tag": "?",
+      "color": "#ffffff",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "#1e61d9", /*0011cc*/
+      "bold": true,
+      "italic": false
+    },
+    {
+      "tag": "//",
+      "color": "#ffffff",
+      "strikethrough": true,
+      "underline": false,
+      "backgroundColor": "#474747",
+      "bold": true,
+      "italic": false
+    },
+    {
+      "tag": "todo",
+      "color": "#ffffff",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "#9600ff",
+      "bold": true,
+      "italic": false
+    },
+    {
+      "tag": "*",
+      "color": "#ffffff",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "#2bb60b",
+      "bold": true,
+      "italic": false
+    }
+  ],
+  "classnames.moduleName": "",
+  "classnames.classnames": "classNames",
+  "classnames.copy": false
+}

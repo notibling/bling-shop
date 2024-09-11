@@ -1,0 +1,21 @@
+.vertical-swiper {
+  position: relative;
+  overflow: hidden;
+  height: var(--swiper-height, 300px);
+  display: flex;
+  flex-direction: column;
+}
+
+.swiper-container {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.5s ease-in-out;
+}
+
+.swiper-item {
+  height: var(--swiper-height, 300px);
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}

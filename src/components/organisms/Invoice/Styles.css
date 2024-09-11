@@ -1,0 +1,37 @@
+.invoice-container {
+    width: 100%;
+    padding: 20px;
+  
+    position: relative;
+  }
+  
+  .invoice-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0px;
+  }
+  
+  .company-info,
+  .invoice-info {
+    width: 48%;
+  }
+  
+  .customer-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .customer-info div {
+    width: 48%;
+  }
+  
+  .invoice-table {
+    margin-bottom: 20px;
+  }
+  
+  .invoice-footer {
+    text-align: center;
+    font-size: 14px;
+  }
+  

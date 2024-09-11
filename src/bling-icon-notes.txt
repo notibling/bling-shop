@@ -1,0 +1,53 @@
+
+✦ BLACK FOUR POINTED STAR
+
+U+02726
+UNICODE
+&#x2726;
+HEX CODE
+&#10022;
+\2726
+
+
+❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚
+
+↗ NORTH EAST ARROW
+
+U+02197
+UNICODE
+&#x2197;
+HEX CODE
+&#8599;
+HTML CODE
+&nearr;
+HTML ENTITY
+\2197
+
+
+❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚
+
+« DOUBLE LEFT-POINTING ANGLE QUOTATION MARK
+
+U+000AB
+UNICODE
+&#xab;
+HEX CODE
+&#171;
+HTML CODE
+&laquo;
+HTML ENTITY
+\00AB
+
+❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚
+
+» DOUBLE RIGHT-POINTING ANGLE QUOTATION MARK
+
+U+000BB
+UNICODE
+&#xbb;
+HEX CODE
+&#187;
+HTML CODE
+&raquo;
+HTML ENTITY
+\00BB

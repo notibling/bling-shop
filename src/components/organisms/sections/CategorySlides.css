@@ -1,0 +1,26 @@
+@keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  .image-container {
+    display: flex;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+  }
+  
+  .image-wrapper {
+    display: inline-block;
+    animation: slide 20s linear infinite;
+    white-space: nowrap;
+  }
+  
+  .image-wrapper img {
+    margin-right: 10px; /* Espacio entre imágenes, ajusta si es necesario */
+  }
+  
