@@ -25,12 +25,12 @@ const Tooltip: React.FC<TooltipProps> = ({ children, content, position = 'top', 
     'left-top': 'right-full mr-2 top-0',
     'left-bottom': 'right-full mr-2 bottom-0',
     'right-top': 'left-full ml-2 top-0',
-    'right-bottom': 'left-full ml-2 bottom-0',
+    'right-bottom': 'left-full ml-2 bottom-0'
   };
 
   return (
-    <div className="relative inline-block w-auto">
-      <div className="flex items-center justify-center w-auto h-auto p-0 m-0 cursor-pointer" onMouseEnter={() => setVisible(true)} onMouseLeave={() => setVisible(false)}>
+    <div className='relative inline-block w-auto'>
+      <div className='flex items-center justify-center w-auto h-auto p-0 m-0 cursor-pointer' onMouseEnter={() => setVisible(true)} onMouseLeave={() => setVisible(false)}>
         {children}
       </div>
       {visible && (

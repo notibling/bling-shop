@@ -42,25 +42,25 @@ const BannersFlat: React.FC<BannersFlatProps> = ({
   bannerThree,
   titleThree,
   categoryThree,
-  descriptionThree,
+  descriptionThree
 }) => {
  
   return (
     <>
-    <Section  className='bg-slate-900 ' classNameContainer='dark:bg-slate-800'>
-          <div className={classNames('w-full', 'h-40', 'flex', '  gap-4')}>
-            <div className={classNames(bannerOne, 'w-6/12', 'rounded-md')}>
-              <Banner contentSize="!w-3/4" image={imageOne} category={categoryOne} title={titleOne} description={descriptionOne} />
-            </div>
-            <div className={classNames(bannerTwo, 'w-3/12', 'rounded-md')}>
-              <Banner contentSize="!w-3/4" image={imageTwo} category={categoryTwo} title={titleTwo} description={descriptionTwo} />
-            </div>
-            <div className={classNames(bannerThree, 'w-3/12', 'rounded-md')}>
-              <Banner contentSize="!w-3/4" image={imageThree} category={categoryThree} title={titleThree} description={descriptionThree} />
-            </div>
+      <Section className='bg-slate-900 ' classNameContainer='dark:bg-slate-800'>
+        <div className={classNames('w-full', 'h-40', 'flex', '  gap-4')}>
+          <div className={classNames(bannerOne, 'w-6/12', 'rounded-md')}>
+            <Banner contentSize='!w-3/4' image={imageOne} category={categoryOne} title={titleOne} description={descriptionOne} />
           </div>
+          <div className={classNames(bannerTwo, 'w-3/12', 'rounded-md')}>
+            <Banner contentSize='!w-3/4' image={imageTwo} category={categoryTwo} title={titleTwo} description={descriptionTwo} />
+          </div>
+          <div className={classNames(bannerThree, 'w-3/12', 'rounded-md')}>
+            <Banner contentSize='!w-3/4' image={imageThree} category={categoryThree} title={titleThree} description={descriptionThree} />
+          </div>
+        </div>
     
-        </Section>
+      </Section>
     </>
   );
 };

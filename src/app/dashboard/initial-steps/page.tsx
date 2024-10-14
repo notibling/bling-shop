@@ -1,5 +1,5 @@
-import { InitialStepsPage } from "./InitialStepsPage"
+import { InitialStepsPage } from './InitialStepsPage';
 
 export default function InitialSteps() {
-  return <InitialStepsPage />
+  return <InitialStepsPage />;
 }

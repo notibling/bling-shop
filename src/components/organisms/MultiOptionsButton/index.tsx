@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import { useAnimation } from '@/hooks/useAnimation';
 import classNames from 'classnames';
 import React, { HTMLProps, useEffect, useMemo, useRef, useState } from 'react';
@@ -30,7 +30,7 @@ interface IMultiOptionsButtonProps {
 const MultiOptionsButton: React.FC<IMultiOptionsButtonProps> = ({
   className, actions, openClassName,
   triggerClassName, children,
-  width, height, id, actionsZIndex = 100, triggerProps ={}
+  width, height, id, actionsZIndex = 100, triggerProps = {}
 }) => {
   const { activeId, setActiveId } = useMultiOptions();
   const [open, setOpen] = useState<boolean>(false);
@@ -41,7 +41,7 @@ const MultiOptionsButton: React.FC<IMultiOptionsButtonProps> = ({
   const openAndAnimated = useMemo(() => open && !animating, [open, animating]);
 
 
-  const activeMultiButton =  activeId === undefined ? true : activeId === uniqueId.current
+  const activeMultiButton = activeId === undefined ? true : activeId === uniqueId.current;
 
   function calculatePositions() {
     if (!actions.length) return;
@@ -62,7 +62,7 @@ const MultiOptionsButton: React.FC<IMultiOptionsButtonProps> = ({
   }
 
   function handleToggle(value?: boolean) {
-    console.log('handleToggle', { uniqueId: uniqueId.current, activeId})
+    console.log('handleToggle', { uniqueId: uniqueId.current, activeId});
     setActiveId(open ? undefined : uniqueId.current);
     setOpen((prev) => value !== undefined ? value : !prev);
     animate();
@@ -77,18 +77,18 @@ const MultiOptionsButton: React.FC<IMultiOptionsButtonProps> = ({
   function getPosition(index: number, type: 'x' | 'y') {
     const position = allowedPositions[index];
     if (position) {
-      return type === 'x' ? position[0] : position[1]
+      return type === 'x' ? position[0] : position[1];
     }
   }
 
   function handleClickAction(event: React.MouseEvent<HTMLDivElement, MouseEvent>, action: IAction) {
     event.stopPropagation();
-    action.onClick()
+    action.onClick();
   }
 
   useEffect(() => {
     calculatePositions();
-  }, [])
+  }, []);
 
   return (
     <div tabIndex={0} onBlur={handleClose} className={twMerge(classNames(className, 'transition-all', 'duration-300', 'action-button'), open ? openClassName : '')}>
@@ -99,9 +99,9 @@ const MultiOptionsButton: React.FC<IMultiOptionsButtonProps> = ({
           style={{ width, height, ...(triggerProps?.style ?? {}) }}
           className={twMerge(classNames(
             'cursor-pointer', 'rounded-full', 'z-[100]',
-             'text-white',
+            'text-white',
             'flex', 'justify-center', 'items-center',
-            'text-center', 'action-button',
+            'text-center', 'action-button'
 
           ), triggerClassName)}
 
@@ -114,24 +114,24 @@ const MultiOptionsButton: React.FC<IMultiOptionsButtonProps> = ({
             !animating && !open ? null :
               actions.map((action, index) => (
                 <div 
-                key={`multioptionbtn-${index}-${action.id}`}
-                className={classNames(
-                  'top-0', 'left-0', 'absolute',
-                  'transition-all', 'duration-300',
-                  {'opacity-30': activeId === undefined ? false : !(activeMultiButton || action?.id == activeId)}
+                  key={`multioptionbtn-${index}-${action.id}`}
+                  className={classNames(
+                    'top-0', 'left-0', 'absolute',
+                    'transition-all', 'duration-300',
+                    {'opacity-30': activeId === undefined ? false : !(activeMultiButton || action?.id == activeId)}
 
-                )} style={{
-                  width,
-                  height,
-                  zIndex: openAndAnimated ? actionsZIndex : -1,
-                  transform: openAndAnimated ? `translate(${getPosition(index, 'x')}px, ${getPosition(index, 'y')}px)` : 'translate(0px, 0px)',
-                }}>
+                  )} style={{
+                    width,
+                    height,
+                    zIndex: openAndAnimated ? actionsZIndex : -1,
+                    transform: openAndAnimated ? `translate(${getPosition(index, 'x')}px, ${getPosition(index, 'y')}px)` : 'translate(0px, 0px)'
+                  }}>
                   <div 
-                    role="button" 
+                    role='button' 
                     onClick={(event) => handleClickAction(event, action)}
                     style={{
                       width,
-                      height,
+                      height
                     }}
                     className={twMerge(
                       classNames(
@@ -155,10 +155,9 @@ const MultiOptionsButton: React.FC<IMultiOptionsButtonProps> = ({
         </>
 
 
-
       </div>
     </div>
   );
-}
+};
 
-export { MultiOptionsProvider, MultiOptionsButton }
+export { MultiOptionsProvider, MultiOptionsButton };

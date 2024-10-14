@@ -32,13 +32,13 @@ export function GlobalMessage({ messages = [], duration = 3000 }: GlobalMessageP
   }, [messages, duration]);
 
   return (
-    <div className="w-full h-auto overflow-hidden">
+    <div className='w-full h-auto overflow-hidden'>
       {currentMessage && (
-        <div className="p-1">
-          <h2 className="text-md font-semibold text-ellipsis text-wrap whitespace-nowrap">
+        <div className='p-1'>
+          <h2 className='text-md font-semibold text-ellipsis text-wrap whitespace-nowrap'>
             {currentMessage.title}
           </h2>
-          <p className="text-xs text-ellipsis">
+          <p className='text-xs text-ellipsis'>
             {currentMessage.description}
           </p>
         </div>

@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 // Definición de tipos de celdas
 export type CellType = 'input' | 'dropdown' | 'text' | 'statusBadge' | 'user';
@@ -27,7 +27,7 @@ export interface IChipProps {
 }
 
 // Unión de todos los tipos de celdas
-export type CellProps =  React.ReactNode;
+export type CellProps = React.ReactNode;
 // Interface para las filas de la tabla
 export interface IBaseTableRow {
   data: CellProps[];

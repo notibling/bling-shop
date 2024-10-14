@@ -12,4 +12,4 @@ class StringUtils {
   }
 }
 
-export { StringUtils }
+export { StringUtils };

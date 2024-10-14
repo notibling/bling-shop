@@ -1,89 +1,94 @@
-"use client";
-import React, { MutableRefObject, useRef } from "react";
-import classNames from "classnames";
+'use client';
+import React, {useRef } from 'react';
+import classNames from 'classnames';
 
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide } from 'swiper/react';
 
-import {FooterComponent, DarkModeBtn } from "@/components/molecules";
+import {FooterComponent, DarkModeBtn } from '@/components/molecules';
 
-import { InitialStepsProvider } from "@/contexts/InitialSteps";
-import { PersonalInformation } from "./PersonalInformation";
-import { BusinessInformation } from "./BusinessInformation";
-import { ShippingInformation } from "./ShippingInformation";
-import { ResponsabilityInformation } from "./ResponsabilityInformation";
-import { Logo, Section } from "@/components/atoms";
+import { InitialStepsProvider } from '@/contexts/InitialSteps';
+import { PersonalInformation } from './PersonalInformation';
+import { BusinessInformation } from './BusinessInformation';
+import { ShippingInformation } from './ShippingInformation';
+import { ResponsabilityInformation } from './ResponsabilityInformation';
+import { Logo, Section } from '@/components/atoms';
 import { useDarkMode } from '@/hooks';
-import { ShapeBRT } from "@/components/shapes";
-import Image from "next/image";
+import { ShapeBRT } from '@/components/shapes';
 
+
+// Componente para envolver cada slide del Swiper
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const SwiperSlideContainer: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+ 
   return (
     <div
       className={classNames(
-        "flex",
-        "flex-col",
-        "w-auto",
-        "h-full",
-        "bg-white",
-        "rounded-md",
-        "drop-shadow-md"
+        'flex',
+        'flex-col',
+        'w-auto',
+        'h-full',
+        'bg-white',
+        'rounded-md',
+        'drop-shadow-md'
       )}
     >
       {children}
     </div>
-  )
-}
+  );
+};
+       
 export default function InitialStepsPage() {
 
-  const { darkMode } = useDarkMode();
+  useDarkMode();
 
-  const swiperRef: MutableRefObject<Swiper | null> = useRef<Swiper | null>(null);
+  const swiperRef = useRef<Swiper | null>(null);
+
   return (
     <InitialStepsProvider>
-   <DarkModeBtn />
-<Section className="!p-0 dark:bling-dark-gradient-2 bling-light-gradient-1 " classNameContainer="py-4 !bg-transparent min-h-screen relative ">
+      <DarkModeBtn />
+      <Section className='!p-0 dark:bling-dark-gradient-2 bling-light-gradient-1 ' classNameContainer='py-4 !bg-transparent min-h-screen relative '>
 
-  <div className=" absolute left-0 right-0 bottom-0  m-auto flex flex-col items-center justify-center">
-<Logo width={800} className="opacity-20" />
+        <div className=' absolute left-0 right-0 bottom-0  m-auto flex flex-col items-center justify-center'>
+          <Logo width={800} className='opacity-20' />
 
-</div>
-          <Swiper
-            allowTouchMove={false}
-            onSwiper={(swiper) => swiperRef.current = swiper}
-            grabCursor={false}
-            autoHeight={true}
-            className={classNames('max-w-full h-fit')}
-            swiperSlideProps={{ className: classNames('rounded-md') }}
-            id="login_register_swiper"
-          >
+        </div>
+        <Swiper
+          allowTouchMove={false}
+          onSwiper={(swiper) => {
+            swiperRef.current = swiper;
+          }}
+          grabCursor={false}
+          autoHeight={true}
+          className={classNames('max-w-full h-fit rounded-md')}
+          id='login_register_swiper'>
 
-<SwiperSlide>
-              <BusinessInformation controller={swiperRef} />
-            </SwiperSlide>
-           <SwiperSlide>
-              <PersonalInformation controller={swiperRef} />
-            </SwiperSlide>
+          <SwiperSlide>
+            <BusinessInformation controller={swiperRef} />
+          </SwiperSlide>
 
-            <SwiperSlide>
-              <ShippingInformation controller={swiperRef} />
-            </SwiperSlide>
+          <SwiperSlide>
+            <PersonalInformation controller={swiperRef} />
+          </SwiperSlide>
 
+          <SwiperSlide>
+            <ShippingInformation controller={swiperRef} />
+          </SwiperSlide>
+          
+          <SwiperSlide>
+            <ResponsabilityInformation controller={swiperRef} />
+          </SwiperSlide>
 
-            <SwiperSlide>
-              <ResponsabilityInformation controller={swiperRef} />
-            </SwiperSlide>
+        </Swiper>
 
-          </Swiper>
-
-          <div className="w-full h-auto absolute left-0 bottom-0 right-0 margin-auto flex flex-col items-center justify-end ">
-          <ShapeBRT className="fill-bling-light-bg-1 dark:fill-bling-dark-bg-4" fillColor="" />
+        <div className='w-full h-auto absolute left-0 bottom-0 right-0 margin-auto flex flex-col items-center justify-end '>
+          <ShapeBRT className='fill-bling-light-bg-1 dark:fill-bling-dark-bg-4' fillColor='' />
           <div className='w-full h-[300px] lg:h-[0px] bling-light-bg-1 dark:bling-dark-bg-4'></div>
        
-          </div>
-          </Section>
+        </div>
+      </Section>
 
          
-        <FooterComponent brandFooter />
+      <FooterComponent brandFooter />
     
     </InitialStepsProvider>
   );

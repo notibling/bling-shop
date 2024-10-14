@@ -1,41 +1,29 @@
-'use client'
-import { useEffect, useState } from "react";
-
+'use client';
+import { useState } from 'react';
 
 interface UsePromiseReturn<T> {
   loading: boolean;
   result?: T;
 }
 
-export function usePromiseState<T>(promise: () => Promise<T>, deps: any[] = []): UsePromiseReturn<T> {
-  const [result, setResult] = useState<T>();
-  const [loading, setLoading] = useState<boolean>(true);
-
-  useEffect(() => {
-    setLoading(true);
-    promise().then(_result => setResult(_result)).finally(() => setLoading(false));
-  }, [...deps]);
-
-  return { result, loading };
-}
-export function usePromise<T, P extends any[]>(
+export function usePromise<T, P extends unknown[]>(
   promise: (...args: P) => Promise<T>
 ): UsePromiseReturn<T> & { perform: (...args: P) => Promise<T> } {
-  const [result, setResult] = useState<T>();
+  const [result, setResult] = useState<T | undefined>(undefined);
   const [loading, setLoading] = useState<boolean>(false);
 
   const perform = (...args: P): Promise<T> => {
-    return new Promise((_resolve, _reject) => {
+    return new Promise((resolve) => {
       setLoading(true);
       promise(...args)
-        .then((_result) => {
-          setResult(_result)
-          _resolve(_result as T);
+        .then((result) => {
+          setResult(result);
+          resolve(result);
         })
         .finally(() => {
-          setLoading(false)
+          setLoading(false);
         });
-    })
+    });
   };
 
   return { result, perform, loading };

@@ -1,12 +1,12 @@
 // src/components/TableRow.tsx
 'use client';
-import React, { useState } from "react";
-import classNames from "classnames";
-import { Input, Chip, Button, Item } from "@/components/atoms";
-import { ITableRowProps, CellProps } from "./types";
-import { Dropdown, DropdownItem } from "@/components/organisms";
-import { FaChevronDown } from "react-icons/fa";
-import Image from "next/image";
+import React, { useState } from 'react';
+import classNames from 'classnames';
+import { Input, Chip, Button, Item } from '@/components/atoms';
+import { ITableRowProps, CellProps } from './types';
+import { Dropdown, DropdownItem } from '@/components/organisms';
+import { FaChevronDown } from 'react-icons/fa';
+import Image from 'next/image';
 
 const TableRow: React.FC<ITableRowProps> = ({
   headers,
@@ -30,11 +30,11 @@ const TableRow: React.FC<ITableRowProps> = ({
             trigger={
               <Button
                 icon={<FaChevronDown />}
-                text={cell.props.value as string}  // Asegurando que `cell.props.value` sea de tipo string
-                className="flex-row-reverse justify-between w-full h-10 rounded-md btn-sm bling-btn-secondary dark:bling-btn-primary-dark"
+                text={cell.props.value as string} // Asegurando que `cell.props.value` sea de tipo string
+                className='flex-row-reverse justify-between w-full h-10 rounded-md btn-sm bling-btn-secondary dark:bling-btn-primary-dark'
               />
             }
-            position="bottom"
+            position='bottom'
           >
             {cell.props.options.map((option, i) => (
               <DropdownItem
@@ -42,7 +42,7 @@ const TableRow: React.FC<ITableRowProps> = ({
                 className={classNames('min-w-[200px] flex flex-col shadow-md rounded-md')}
                 onClick={() => cell.props.onChange({ target: { value: option } } as React.ChangeEvent<HTMLSelectElement>)}
               >
-                <Item content="text" text={option} />
+                <Item content='text' text={option} />
               </DropdownItem>
             ))}
           </Dropdown>
@@ -51,14 +51,14 @@ const TableRow: React.FC<ITableRowProps> = ({
         return <span key={index}>{cell.props.text}</span>;
       case 'user':
         return (
-          <div key={index} className="w-auto h-auto flex flex-row gap-2">
+          <div key={index} className='w-auto h-auto flex flex-row gap-2'>
             {cell.props.image && (
               <Image
                 src={cell.props.image}
                 width={50}
                 height={50}
                 unoptimized
-                className="rounded-full"
+                className='rounded-full'
                 alt={cell.props.name?.toString() || 'user'}
               />
             )}
@@ -101,6 +101,6 @@ const TableRow: React.FC<ITableRowProps> = ({
       )}
     </React.Fragment>
   );
-}
+};
 
 export { TableRow };

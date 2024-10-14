@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import classNames from 'classnames';
 import React, { HTMLProps, useEffect, useMemo, useRef, useState } from 'react';
 
@@ -23,7 +23,6 @@ const Marquee: React.FC<IMarqueeProps> = ({ children: child, autoPlay, className
   const direction = 1;
 
 
-
   const play = () => {
     lerp.current.target += speed;
     lerp.current.current = getLerp(lerp.current.current, lerp.current.target, interpolationFactor);
@@ -41,14 +40,14 @@ const Marquee: React.FC<IMarqueeProps> = ({ children: child, autoPlay, className
         child.style.transform = `translateX(${x}%)`;
       });
 
-      console.log('PLAYING')
-      window.requestAnimationFrame(play)
+      console.log('PLAYING');
+      window.requestAnimationFrame(play);
     }
-  }
+  };
 
   const stop = () => {
 
-  }
+  };
 
 
   useEffect(() => {
@@ -58,14 +57,14 @@ const Marquee: React.FC<IMarqueeProps> = ({ children: child, autoPlay, className
       const { width: containerWidth } = containerRef.current.getBoundingClientRect();
 
 
-      console.log({ width, containerWidth })
+      console.log({ width, containerWidth });
       const count = Math.ceil(containerWidth / width);
 
-      console.log('MARQUEE', { count })
+      console.log('MARQUEE', { count });
       setCount(count * 2);
-      setLoaded(true)
+      setLoaded(true);
     }
-  }, [calculatorElement, containerRef])
+  }, [calculatorElement, containerRef]);
 
   useEffect(() => {
     if (element.current && loaded) {
@@ -77,19 +76,19 @@ const Marquee: React.FC<IMarqueeProps> = ({ children: child, autoPlay, className
         play();
       }
     }
-  }, [element, loaded])
+  }, [element, loaded]);
 
   return (
     <div className={classNames(className ?? '', 'overflow-hidden')} ref={containerRef} {...props}>
-      <div className="invisible w-max calculator" ref={calculatorElement}>{child} </div>
-      <div ref={element} className="marquee inline relative whitespace-nowrap">
+      <div className='invisible w-max calculator' ref={calculatorElement}>{child} </div>
+      <div ref={element} className='marquee inline relative whitespace-nowrap'>
         {
           new Array(count).fill(0).map((_, index) => (
             <div
               key={index}
-              className={classNames("inline-flex", {
+              className={classNames('inline-flex', {
                 'left-[-100%]': index % 2 === 0,
-                'left-[100%]': index % 2 === 0,
+                'left-[100%]': index % 2 === 0
               })}
 
             >
@@ -99,7 +98,7 @@ const Marquee: React.FC<IMarqueeProps> = ({ children: child, autoPlay, className
         }
       </div>
     </div>
-  )
-}
+  );
+};
 
-export { Marquee }
+export { Marquee };

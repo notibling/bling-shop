@@ -6,7 +6,7 @@ interface IconPatternProps {
   iconSize: number;
   iconCount: number;
   rotationAngle?: number; // Optional rotation angle
-  brickStyle?: boolean;   // Optional brick style grid
+  brickStyle?: boolean; // Optional brick style grid
 }
 
 const IconPattern: React.FC<IconPatternProps> = ({
@@ -14,7 +14,7 @@ const IconPattern: React.FC<IconPatternProps> = ({
   iconSize,
   iconCount,
   rotationAngle = 0,
-  brickStyle = false,
+  brickStyle = false
 }) => {
   const icons = Array.from({ length: iconCount }, (_, i) => {
     const rotation = rotationAngle ? `rotate(${rotationAngle * (i % 4)}deg)` : 'rotate(0deg)';
@@ -24,7 +24,7 @@ const IconPattern: React.FC<IconPatternProps> = ({
       <div
         key={i}
         style={{ transform: rotation, marginLeft }}
-        className="m-1 flex items-center justify-center"
+        className='m-1 flex items-center justify-center'
       >
         <Icon name={iconName} size={iconSize} />
       </div>

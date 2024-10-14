@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useRef, forwardRef, useImperativeHandle, ReactElement } from 'react';
+import React, { useState, useRef, forwardRef, useImperativeHandle} from 'react';
 
 import classNames from 'classnames';
 import { ClickAwayListener } from '@mui/base/ClickAwayListener';
@@ -16,13 +16,14 @@ interface SelectProps {
   position?: 'top' | 'bottom' | 'left' | 'right';
   text?: string ;
   value?: string | number;
+  // eslint-disable-next-line no-unused-vars
   onChange?: (value: string | number) => void;
   defaultValue?: string | number;
   target?: HTMLElement | null;
   description?: string | number;
 }
 const Select = forwardRef(function Select(
-  { trigger, children, className, buttonClassName, text,  onChange, defaultValue, position = 'bottom' }: SelectProps,
+  { trigger, children, className, buttonClassName, text, onChange, defaultValue, position = 'bottom' }: SelectProps,
   ref
 ) {
   const [open, setOpen] = useState(false);
@@ -32,11 +33,12 @@ const Select = forwardRef(function Select(
 
   useImperativeHandle(ref, () => ({
     open: () => setOpen(true),
-    close: () => setOpen(false),
+    close: () => setOpen(false)
   }));
 
   const handleClick = () => setOpen(!open);
 
+  // eslint-disable-next-line no-unused-vars
   const handleOptionClick = (value: string | number, text: string) => {
     setSelectedText(text);
     setOpen(false);
@@ -49,7 +51,7 @@ const Select = forwardRef(function Select(
     'bottom-full mb-2': position === 'top',
     'top-full mt-2': position === 'bottom',
     'right-full mr-2': position === 'left',
-    'left-full ml-2': position === 'right',
+    'left-full ml-2': position === 'right'
   });
 
   return (
@@ -73,12 +75,12 @@ const Select = forwardRef(function Select(
         )}
         ref={SelectRef}
       >
-        <div className="w-full h-auto flex flex-row">
+        <div className='w-full h-auto flex flex-row'>
           {trigger ? (
-            <div className="grow">{trigger}</div>
+            <div className='grow'>{trigger}</div>
           ) : (
-            <div className="w-full h-auto flex flex-row">
-              <Option className="p-3 hover:!bg-transparent" text={selectedText} />
+            <div className='w-full h-auto flex flex-row'>
+              <Option className='p-3 hover:!bg-transparent' text={selectedText} />
             </div>
           )}
           <div
@@ -100,7 +102,7 @@ const Select = forwardRef(function Select(
           </div>
         </div>
         {open && (
-          <ul className={classNames('w-full','h-auto', 'absolute','z-10', positionClasses, 'bg-white', 'shadow-md', 'rounded-md', 'border', 'bling-light-border', 'dark:bling-dark-border', '!bg-opacity-90', 'bling-light', 'dark:bling-dark-bg-1')}>
+          <ul className={classNames('w-full', 'h-auto', 'absolute', 'z-10', positionClasses, 'bg-white', 'shadow-md', 'rounded-md', 'border', 'bling-light-border', 'dark:bling-dark-border', '!bg-opacity-90', 'bling-light', 'dark:bling-dark-bg-1')}>
             {children}
           </ul>
         )}

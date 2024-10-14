@@ -11,7 +11,7 @@ export const ResumeProductsDataRows: ITableRow[] = [
       { type: 'text', props: { text: '$ 150.00 UY' } },
       { type: 'text', props: { text: 'BP-00000001' } },
       { type: 'text', props: { text: 'BF-00000001' } },
-      { type: 'chip', props: { status: 'success', text: 'Pago Exitoso' } },
+      { type: 'chip', props: { status: 'success', text: 'Pago Exitoso' } }
     ],
     children: [
       {
@@ -22,10 +22,10 @@ export const ResumeProductsDataRows: ITableRow[] = [
           { type: 'text', props: { text: '$ 150.00 UY' } },
           { type: 'text', props: { text: 'BP-00000001' } },
           { type: 'text', props: { text: 'BF-00000001' } },
-          { type: 'chip', props: { status: 'success', text: 'Pago Exitoso' } },
-        ],
-      },
-    ],
+          { type: 'chip', props: { status: 'success', text: 'Pago Exitoso' } }
+        ]
+      }
+    ]
   },
   {
     data: [
@@ -35,8 +35,8 @@ export const ResumeProductsDataRows: ITableRow[] = [
       { type: 'text', props: { text: '$ 1,200.00 UY' } },
       { type: 'text', props: { text: 'BP-00000002' } },
       { type: 'text', props: { text: 'BF-00000002' } },
-      { type: 'chip', props: { status: 'info', text: 'Pago Pendiente' } },
-    ],
+      { type: 'chip', props: { status: 'info', text: 'Pago Pendiente' } }
+    ]
   },
   {
     data: [
@@ -46,8 +46,8 @@ export const ResumeProductsDataRows: ITableRow[] = [
       { type: 'text', props: { text: '$ 3,500.00 UY' } },
       { type: 'text', props: { text: 'BP-00000003' } },
       { type: 'text', props: { text: 'BF-00000003' } },
-      { type: 'chip', props: { status: 'error', text: 'Pago Fallido' } },
-    ],
+      { type: 'chip', props: { status: 'error', text: 'Pago Fallido' } }
+    ]
   },
   {
     data: [
@@ -57,8 +57,8 @@ export const ResumeProductsDataRows: ITableRow[] = [
       { type: 'text', props: { text: '$ 4,500.00 UY' } },
       { type: 'text', props: { text: 'BP-00000004' } },
       { type: 'text', props: { text: 'BF-00000004' } },
-      { type: 'chip', props: { status: 'warning', text: 'Pago Parcial 2/6' } },
-    ],
+      { type: 'chip', props: { status: 'warning', text: 'Pago Parcial 2/6' } }
+    ]
   },
   {
     data: [
@@ -68,7 +68,7 @@ export const ResumeProductsDataRows: ITableRow[] = [
       { type: 'text', props: { text: '$ 700.00 UY' } },
       { type: 'text', props: { text: 'BP-00000005' } },
       { type: 'text', props: { text: 'BF-00000005' } },
-      { type: 'chip', props: { status: 'success', text: 'Pago Exitoso' } },
-    ],
-  },
+      { type: 'chip', props: { status: 'success', text: 'Pago Exitoso' } }
+    ]
+  }
 ];

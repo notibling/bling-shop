@@ -7,7 +7,9 @@ interface UseLightBarReturn {
   lightBarPosition: 'top' | 'bottom' | 'horizontal';
   lightLevel: number;
   toggleLightBar: () => void;
+  // eslint-disable-next-line
   setPosition: (position: 'top' | 'bottom' | 'horizontal') => void;
+  // eslint-disable-next-line
   changeLightLevel: (level: number) => void;
 }
 
@@ -34,7 +36,7 @@ const useLightBar = (): UseLightBarReturn => {
     lightLevel,
     toggleLightBar,
     setPosition,
-    changeLightLevel,
+    changeLightLevel
   };
 };
 

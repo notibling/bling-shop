@@ -22,7 +22,7 @@ const CircularChart = ({
   title,
   description,
   size = 120,
-  sections = [],
+  sections = []
 }: IProps) => {
   const isDarkMode = useDarkMode();
 
@@ -48,9 +48,9 @@ const CircularChart = ({
           cx={size / 2}
           cy={size / 2}
           r={radius}
-          fill="transparent"
+          fill='transparent'
           stroke={defaultColors.trail}
-          strokeWidth="10"
+          strokeWidth='10'
           
         />
         {sections.length > 0 ? (
@@ -68,12 +68,12 @@ const CircularChart = ({
                 cx={size / 2}
                 cy={size / 2}
                 r={radius}
-                fill="transparent"
+                fill='transparent'
                 stroke={sectionColor}
-                strokeWidth="10"
+                strokeWidth='10'
                 strokeDasharray={`${sectionCircumference} ${circumference}`}
                 strokeDashoffset={-sectionOffset}
-                strokeLinecap="round"
+                strokeLinecap='round'
               />
             );
           })
@@ -82,12 +82,12 @@ const CircularChart = ({
             cx={size / 2}
             cy={size / 2}
             r={radius}
-            fill="transparent"
+            fill='transparent'
             stroke={defaultColors.path}
-            strokeWidth="10"
+            strokeWidth='10'
             strokeDasharray={circumference}
             strokeDashoffset={-accumulatedOffset}
-            strokeLinecap="round"
+            strokeLinecap='round'
            
           />
         )}
@@ -98,21 +98,21 @@ const CircularChart = ({
           top: '50%',
           left: '50%',
           transform: 'translate(-50%, -50%)',
-          textAlign: 'center',
+          textAlign: 'center'
         }}
       >
         <span
           style={{ fontSize: '24px', fontWeight: 'bold' }}
-          className="bling-light-text dark:text-white"
+          className='bling-light-text dark:text-white'
         >
           {value}
         </span>
         <br />
-        <div className="w-auto h-auto flex flex-col">
-          <span className="w-full text-center bling-light-text dark:text-white h-auto font-bold text-xs">
+        <div className='w-auto h-auto flex flex-col'>
+          <span className='w-full text-center bling-light-text dark:text-white h-auto font-bold text-xs'>
             {title}
           </span>
-          <span className="w-full text-center bling-light-text dark:text-gray-500 h-auto text-[10px]">
+          <span className='w-full text-center bling-light-text dark:text-gray-500 h-auto text-[10px]'>
             {description}
           </span>
         </div>

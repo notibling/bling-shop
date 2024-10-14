@@ -5,4 +5,4 @@ async function getPromiseState<T>(promise: () => Promise<T>): Promise<{ result: 
   return { result: data, loading: false };
 }
 
-export { getPromiseState }
+export { getPromiseState };

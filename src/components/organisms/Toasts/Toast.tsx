@@ -1,8 +1,7 @@
-'use client'
+'use client';
 import React, { useEffect, useState } from 'react';
 import classNames from 'classnames';
-import { IoIosClose } from "react-icons/io";
-
+import { IoIosClose } from 'react-icons/io';
 
 interface IToastProps {
   children: React.ReactNode;
@@ -12,9 +11,7 @@ interface IToastProps {
   onClose?: () => void;
 }
 
-
-
-const Toast: React.FC<IToastProps> = ({ children, className, onClose, duration, type }) => {
+const Toast: React.FC<IToastProps> = ({ children, className, onClose, duration }) => {
   const [animationClassName, setAnimationClassName] = useState('fade-in-up');
   const [hiding, setHiding] = useState(false);
 
@@ -24,19 +21,23 @@ const Toast: React.FC<IToastProps> = ({ children, className, onClose, duration, 
   }
 
   useEffect(() => {
+    let timer: NodeJS.Timeout;
     if (duration) {
-      setTimeout(() => close(), duration);
+      timer = setTimeout(() => close(), duration);
     }
-  }, []);
-
+    return () => {
+      if (timer) clearTimeout(timer);// Limpieza del temporizador
+    };
+  }, [duration]); // Agregar `duration` como dependencia
 
   useEffect(() => {
     if (hiding) {
-      setTimeout(() => {
+      const hideTimer = setTimeout(() => {
         onClose && onClose();
       }, 500);
+      return () => clearTimeout(hideTimer);  // Limpieza del temporizador
     }
-  }, [hiding]);
+  }, [hiding, onClose]);
 
   return (
     <div
@@ -68,4 +69,4 @@ const Toast: React.FC<IToastProps> = ({ children, className, onClose, duration, 
   );
 };
 
-export { Toast }
+export { Toast };

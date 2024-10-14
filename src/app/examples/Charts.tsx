@@ -1,12 +1,9 @@
-'use client'
-import classNames from "classnames"
+'use client';
+import classNames from 'classnames';
 
-import BarChart from "@/components/molecules/Charts/Bar"
-import LineChart from "@/components/molecules/Charts/Line"
-import DoughnutChart from "@/components/molecules/Charts/Doughnut"
+import { LineChart,DoughnutChart, BarChart } from '@/components/molecules/Charts';
 
-
-import { BlingColors } from "@/tokens/colors"
+import { BlingColors } from '@/tokens/colors';
 
 
 function Charts() {
@@ -26,7 +23,7 @@ function Charts() {
               borderColor: [BlingColors['bling-blue'], BlingColors['bling-dark-bg-1']]
             }
           ]
-        }} options={{ responsive: true, }} />
+        }} options={{ responsive: true }} />
 
       <BarChart
         container={{
@@ -42,7 +39,7 @@ function Charts() {
 
             }
           ]
-        }} options={{ responsive: true, }} />
+        }} options={{ responsive: true }} />
 
       <DoughnutChart
         container={{
@@ -62,8 +59,8 @@ function Charts() {
         }} />
 
     </>
-  )
+  );
 }
 
 
-export { Charts }
+export { Charts };

@@ -37,17 +37,17 @@ const TagsInput: React.FC<TagsInputProps> = ({ tags, setTags, className }) => {
       <div className='w-full h-auto flex flex-row flex-nowrap gap-2'>
         <input
           className='w-full h-auto input py-3 !outline-none bling-light-bg-3 dark:bling-dark-bg-3 text-sm border bling-light-border dark:border-bling-dark-bg-5  '
-          type="text"
+          type='text'
           value={input}
           onChange={(event: ChangeEvent<HTMLInputElement>) => setInput(event.target.value)}
           onKeyDown={handleKeyDown}
-          placeholder="Añade un Departamento..."
-        /><Button text="Todo el País" icon={<Icon name={MapPointRotate} size={20} />} className="w-fit px-3 py-1 h-auto text-nowrap text-xs bling-btn-primary border bling-light-border dark:border-bling-dark-bg-5 dark:bling-btn-primary-dark    text-slate-100 rounded-brand"/>
+          placeholder='Añade un Departamento...'
+        /><Button text='Todo el País' icon={<Icon name={MapPointRotate} size={20} />} className='w-fit px-3 py-1 h-auto text-nowrap text-xs bling-btn-primary border bling-light-border dark:border-bling-dark-bg-5 dark:bling-btn-primary-dark    text-slate-100 rounded-brand'/>
       </div>
       {tags.map((tag, index) => (
-        <div className="tag w-fit h-auto p-1 px-2 text-sm flex flex-row text-nowrap gap-2 justify-center dark:bling-dark-bg-5 bling-light-bg-4 bling-light-text  items-center rounded-md  dark:text-white" key={index}>
+        <div className='tag w-fit h-auto p-1 px-2 text-sm flex flex-row text-nowrap gap-2 justify-center dark:bling-dark-bg-5 bling-light-bg-4 bling-light-text  items-center rounded-md  dark:text-white' key={index}>
           {tag}
-          <FaTimes onClick={() => removeTag(index)} className="cursor-pointer" />
+          <FaTimes onClick={() => removeTag(index)} className='cursor-pointer' />
         </div>
       ))}
 

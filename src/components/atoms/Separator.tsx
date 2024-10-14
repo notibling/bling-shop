@@ -15,7 +15,7 @@ interface SeparatorProps {
 
 const Separator: React.FC<SeparatorProps> = ({ noText, textStart, textClassName, borderClassName, textMiddle, textEnd, size = 'my-4', className = 'text-gray-500 border-gray-300 text-md' }) => {
   return (
-    <div className={`w-full flex items-center `}>
+    <div className={'w-full flex items-center '}>
       {textStart && (
         <div className={` ${className} w-full h-auto flex flex-nowrap flex-row`}>
           <div className={`w-fit h-auto  bling-light-text dark:bling-dark-text  mr-2 ${textClassName} flex flex-row justify-start items-center`}>

@@ -25,4 +25,4 @@ class LocalStorage {
   }
 }
 
-export { LocalStorage }
+export { LocalStorage };

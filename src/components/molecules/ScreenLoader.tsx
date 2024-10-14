@@ -15,9 +15,9 @@ const ScreenLoader: React.FC<IScreenLoaderProps> = ({ className = '' }) => {
     ))}>
       <Loading loading={true} className={classNames('w-[150px]', 'h-[150px]')} />
     </div>
-  )
-}
+  );
+};
 
-export { ScreenLoader }
+export { ScreenLoader };
 
 

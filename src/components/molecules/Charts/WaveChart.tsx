@@ -5,7 +5,7 @@ interface IProps {
   title: string;
   value: string;
   subtitle?: string;
-  width?: string;  // Cambiado a string para admitir valores como "100%"
+  width?: string; // Cambiado a string para admitir valores como "100%"
   height?: string; // Cambiado a string para admitir valores como "100%"
   className?: string;
 }
@@ -16,7 +16,7 @@ const WaveChart: React.FC<IProps> = ({
   subtitle,
   width = '100%',
   height = '100%',
-  className = '',
+  className = ''
 }) => {
   const isDarkMode = useDarkMode();
 
@@ -36,20 +36,20 @@ const WaveChart: React.FC<IProps> = ({
     <div
       className={`${className} w-full h-full border bling-light-border dark:bling-dark-border`} 
       style={{
-        width: width,
-        height: height,
+        width,
+        height,
         position: 'relative',
 
         borderRadius: '12px',
         overflow: 'hidden',
-        boxSizing: 'border-box',
+        boxSizing: 'border-box'
       }}
     >
-      <svg width="100%" height="100%" viewBox="0 0 300 150"> {/* viewBox fijo para escalabilidad */}
+      <svg width='100%' height='100%' viewBox='0 0 300 150'> {/* viewBox fijo para escalabilidad */}
         <defs>
-          <linearGradient id={gradientId} x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" style={{ stopColor: '#2563eb', stopOpacity: 1 }} />
-            <stop offset="100%" style={{ stopColor: '#2563eb', stopOpacity: 0.02 }} />
+          <linearGradient id={gradientId} x1='0%' y1='0%' x2='0%' y2='100%'>
+            <stop offset='0%' style={{ stopColor: '#2563eb', stopOpacity: 1 }} />
+            <stop offset='100%' style={{ stopColor: '#2563eb', stopOpacity: 0.02 }} />
           </linearGradient>
         </defs>
         <path d={wavePath} fill={`url(#${gradientId})`} />
@@ -59,7 +59,7 @@ const WaveChart: React.FC<IProps> = ({
           position: 'absolute',
           top: '10px',
           left: '10px',
-          color: textColor,
+          color: textColor
         }}
       >
         <div style={{ fontSize: '14px', marginBottom: '8px' }} className='bling-light-text  dark:text-white  rounded-md  select-none    w-fit px-1'>{title}</div>

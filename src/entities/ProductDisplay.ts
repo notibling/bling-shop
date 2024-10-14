@@ -1,7 +1,7 @@
-import { IFile } from "./File";
-import { IProduct } from "./Product";
-import { IService } from "./Service";
-import { IVehicle } from "./Vehicle";
+import { IFile } from './File';
+import { IProduct } from './Product';
+import { IService } from './Service';
+import { IVehicle } from './Vehicle';
 import { ICategory, INestedCategories } from './Category';
 import { IProductAttribute } from './ProductAttribute';
 
@@ -26,7 +26,6 @@ interface IProductDisplay {
 }
 
 
-
 interface IProductDisplaySummary {
   id: number;
   entity: IProductDisplayEntity;
@@ -39,7 +38,6 @@ interface IProductDisplaySummary {
   stock?: number;
   images: IFile[];
 }
-
 
 
 export {

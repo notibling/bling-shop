@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 interface ThemeState {
   darkMode: boolean;
@@ -7,7 +7,7 @@ interface ThemeState {
 
 const themeDefaultValue = {
   darkMode: false,
-  toggleDarkMode: () => {},
+  toggleDarkMode: () => {}
 };
 
 function useTheme(): ThemeState {

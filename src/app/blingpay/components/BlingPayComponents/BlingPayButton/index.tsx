@@ -16,7 +16,7 @@ const brandIcons = {
   oca: './BlingPayAssets/brands/oca.svg',
   amex: './BlingPayAssets/brands/amex.svg',
   maestro: './BlingPayAssets/brands/maestro.svg',
-  discover: './BlingPayAssets/brands/discover.svg',
+  discover: './BlingPayAssets/brands/discover.svg'
 };
 
 interface BlingPayButtonProps {
@@ -32,8 +32,8 @@ const BlingPayButton: React.FC<BlingPayButtonProps> = ({
   cardBrands = '',
   theme = 'light',
   width = 'auto',
-  height = 50,
-  locale = 'en-US',
+  height = 50
+  // locale = 'en-US' // Comentado o eliminado si no se usa
 }) => {
   // Selección del logo basado en el tema
   const blingpayLogo =
@@ -55,9 +55,9 @@ const BlingPayButton: React.FC<BlingPayButtonProps> = ({
         className='bpaylogo'
         width={height * 1.2}
         height={height * 1.2}
-        alt="BlingPay logo"
+        alt='BlingPay logo'
       />
-      {brandsArray.length > 0 && <span className="separator">|</span>}
+      {brandsArray.length > 0 && <span className='separator'>|</span>}
       {brandsArray.map((brand, index) => (
         <img
           key={index}

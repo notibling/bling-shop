@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import { useGlobalState } from '@/contexts/GlobalState';
 
 const useDarkMode = () => {

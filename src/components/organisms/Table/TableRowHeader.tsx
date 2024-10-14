@@ -1,6 +1,6 @@
-import React from "react";
-import classNames from "classnames";
-import { TableProps } from "./types";
+import React from 'react';
+import classNames from 'classnames';
+import { TableProps } from './types';
 
 interface ITableRowHeaderProps {
   headers: (string | React.ReactNode)[];

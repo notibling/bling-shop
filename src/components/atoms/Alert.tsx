@@ -1,6 +1,7 @@
-import { HTMLProps } from "react";
-import { twMerge } from "tailwind-merge";
-import classNames from "classnames";
+import React from 'react';
+import { HTMLProps } from 'react';
+import { twMerge } from 'tailwind-merge';
+import classNames from 'classnames';
 
 interface IAlertProps extends Omit<HTMLProps<HTMLDivElement>, 'content'> {
   className?: string;
@@ -13,7 +14,7 @@ const Alert: React.FC<IAlertProps> = ({ className, children, icon, iconPosition,
   return (
     <div className={twMerge(classNames(
       'flex', 'px-4', 'py-2', 'alert',
-      { 'flex-row-reverse': iconPosition === 'right' },
+      { 'flex-row-reverse': iconPosition === 'right' }
     ), className)} {...rest}>
       {icon && (
         <div className={classNames('')}>
@@ -24,7 +25,7 @@ const Alert: React.FC<IAlertProps> = ({ className, children, icon, iconPosition,
         {children}
       </div>
     </div>
-  )
-}
+  );
+};
 
 export { Alert };

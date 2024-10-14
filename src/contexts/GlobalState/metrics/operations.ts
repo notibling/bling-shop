@@ -1,5 +1,5 @@
-import { axios } from "@/common/AxiosClient";
-import { Response } from "@/entities/Response";
+import { axios } from '@/common/AxiosClient';
+import { Response } from '@/entities/Response';
 
 
 interface IGeneralMetrics {
@@ -13,15 +13,15 @@ type IGetGeneralMetricsResponse = Response<{
   sales: IGeneralMetrics;
 }>;
 
-const getGeneralMetrics = async (): Promise<IGetGeneralMetricsResponse> => {
+const getGeneralMetrics = async(): Promise<IGetGeneralMetricsResponse> => {
   const response = await axios.get('/metrics/general');
 
   return response.data;
-}
+};
 
 export {
   getGeneralMetrics,
 
   type IGeneralMetrics,
-  type IGetGeneralMetricsResponse,
-}
+  type IGetGeneralMetricsResponse
+};

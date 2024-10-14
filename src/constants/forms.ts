@@ -1,8 +1,8 @@
 const DEFAULT_SEX_OPTIONS = [
   { name: 'Hombre', value: 'male' },
   { name: 'Mujer', value: 'female' },
-  { name: "Sin especificar", value: 'other' }
-]
+  { name: 'Sin especificar', value: 'other' }
+];
 
 
-export { DEFAULT_SEX_OPTIONS }
+export { DEFAULT_SEX_OPTIONS };

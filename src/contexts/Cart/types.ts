@@ -1,5 +1,6 @@
-import { IProductDisplay } from "@/entities/ProductDisplay";
-import { IProductVariant } from "@/entities/ProductVariant";
+import React from 'react';
+import { IProductDisplay } from '@/entities/ProductDisplay';
+import { IProductVariant } from '@/entities/ProductVariant';
 
 interface ICartItem {
   title: string;
@@ -12,7 +13,6 @@ interface ICartItem {
     variants?: Omit<ICartItem, 'details'>[];
   }
 }
-
 
 
 interface ICartContext {

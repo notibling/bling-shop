@@ -9,9 +9,9 @@ export const useGeneralResumeData = () => {
       {
         label: 'Ventas',
         data: [57, 150, 30, 123, 50, 60, 20, 224, 90, 138, 280, 100],
-        backgroundColor: darkMode ? '#ffffff' : '#e2e8f0',
-      },
-    ],
+        backgroundColor: darkMode ? '#ffffff' : '#e2e8f0'
+      }
+    ]
   };
 
   const optionsGeneralResume = {
@@ -22,35 +22,35 @@ export const useGeneralResumeData = () => {
         labels: {
           color: darkMode ? '#64748b' : '#334155',
           font: {
-            size: 10,
-          },
-        },
-      },
+            size: 10
+          }
+        }
+      }
     },
     scales: {
       x: {
         ticks: {
           color: darkMode ? '#64748b' : '#334155',
           font: {
-            size: 10,
-          },
+            size: 10
+          }
         },
         grid: {
-          display: false,
-        },
+          display: false
+        }
       },
       y: {
         ticks: {
           color: darkMode ? '#64748b' : '#334155',
           font: {
-            size: 10,
-          },
+            size: 10
+          }
         },
         grid: {
-          color: darkMode ? '#1e293b' : '#cbd5e1',
-        },
-      },
-    },
+          color: darkMode ? '#1e293b' : '#cbd5e1'
+        }
+      }
+    }
   };
 
   return { dataGeneralResume, optionsGeneralResume };

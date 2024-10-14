@@ -14,10 +14,10 @@ describe('/api/createMerchant', () => {
     mock.reset();
   });
 
-  it('should create a merchant', async () => {
+  it('should create a merchant', async() => {
     const merchantData = {
       name: 'Test Merchant',
-      email: 'test@example.com',
+      email: 'test@example.com'
     };
 
     mock.onPost('/merchant/onboarding').reply(200, { id: '123' });

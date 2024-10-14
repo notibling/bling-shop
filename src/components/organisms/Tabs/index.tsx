@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import classNames from 'classnames';
 import React, { forwardRef, useEffect, useImperativeHandle, useMemo, useRef } from 'react';
 import { ITabItemProps, TabItem } from './TabItem';
@@ -13,7 +13,7 @@ type IController = ReturnType<typeof useTabController> | null;
 
 interface ITabsComponent extends React.ForwardRefExoticComponent<ITabsProps & React.RefAttributes<IController>> {
   Item: typeof TabItem;
-};
+}
 
 const TabsComponent = forwardRef<IController, ITabsProps>(({ children, defaultTab }, ref) => {
   const controller = useTabController();
@@ -25,16 +25,16 @@ const TabsComponent = forwardRef<IController, ITabsProps>(({ children, defaultTa
     const _itemProps = tabItem.props as ITabItemProps;
     const children = React.cloneElement(<div className={classNames('w-full', 'py-4', 'animate-fadeIn', 'text-blue-600', 'dark:text-blue-300')}>
       {_itemProps.children}
-    </div>)
+    </div>);
     tabContents.current[_itemProps.id] = children ?? null;
     return React.cloneElement(tabItem, {
       controller
-    })
+    });
   });
 
   const renderedTab = useMemo(() =>
     tabContents.current[controller.activeTab ?? ''] ?? null,
-    [controller.activeTab]
+  [controller.activeTab]
   );
 
   useEffect(() => {
@@ -44,14 +44,14 @@ const TabsComponent = forwardRef<IController, ITabsProps>(({ children, defaultTa
   return (
     <>
       <div
-       role="tablist" 
+        role='tablist' 
         className={classNames(
           
-          "w-full",
-          "h-10",
-          "tab",
-          "flex-grow",
-          "tabs", "tabs-lifted", "tabs-md",
+          'w-full',
+          'h-10',
+          'tab',
+          'flex-grow',
+          'tabs', 'tabs-lifted', 'tabs-md',
           'overflow-hidden',
           'text-slate-200', 
           'dark:text-slate-100',

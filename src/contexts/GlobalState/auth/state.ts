@@ -1,5 +1,6 @@
-import { IUser } from "@/entities/User";
-import { usePersistState } from "@/hooks/usePersistState";
+import React from 'react';
+import { IUser } from '@/entities/User';
+import { usePersistState } from '@/hooks/usePersistState';
 
 interface AuthState {
   user: IUser;
@@ -13,7 +14,7 @@ const authDefaultValue: AuthState = {
   accessToken: '',
   setAccessToken: () => { },
   setUser: () => { }
-}
+};
 
 function useAuth(): AuthState {
   const [user, setUser] = usePersistState<AuthState['user']>('@auth.user');

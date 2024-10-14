@@ -5,7 +5,7 @@ const RegularExpressions = {
   TEXT_LENGTH_RANGE: (minLength: number, maxLength?: number) =>
     new RegExp(`^[a-zA-ZñÑáéíóúÁÉÍÓÚüÜ ]{${minLength},${maxLength}}$`)
   // new RegExp(`^[a-zA-Z ]{${minLength},${maxLength}}$`)
-}
+};
 
 
 export { RegularExpressions };

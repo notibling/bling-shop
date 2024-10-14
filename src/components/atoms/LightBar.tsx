@@ -11,7 +11,7 @@ const LightBarPosition = {
   top: 'top-0 w-1/2 h-[3px]',
   bottom: 'bottom-0 w-1/2 h-[3px]',
   horizontalLeft: 'left-0 top-0 bottom-0 w-[3px] h-[50dvh]',
-  horizontalRight: 'right-0 top-0 bottom-0 w-[3px] h-[50dvh]',
+  horizontalRight: 'right-0 top-0 bottom-0 w-[3px] h-[50dvh]'
 };
 
 const LightBar: React.FC<LightBarProps> = ({ show = false, position = 'top', lightLevel = 1 }) => {
@@ -26,7 +26,7 @@ const LightBar: React.FC<LightBarProps> = ({ show = false, position = 'top', lig
     LightBarPosition[position],
     {
       'opacity-0': opacity === 0, 
-      'opacity-100': opacity > 0,
+      'opacity-100': opacity > 0
       // Opcionalmente puedes ajustar más clases según el estado del lightLevel
     }
   );

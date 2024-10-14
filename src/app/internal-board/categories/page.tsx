@@ -36,9 +36,9 @@ function InternalBoardCreateCategory() {
         </span>,
         <Button key={`category-${category.id}-3`} className={classNames('px-4', 'bg-blue-500', 'text-white')} onClick={() => setCategoryForUpdate(category)}>
           Editar
-        </Button>,
+        </Button>
       ],
-      children: category.children.map(generateCategories),
+      children: category.children.map(generateCategories)
     };
   }
 
@@ -52,12 +52,12 @@ function InternalBoardCreateCategory() {
   }, [search]);
 
   return (
-    <Section classNameContainer="flex !items-start flex-grow lg:!w-11/12">
+    <Section classNameContainer='flex !items-start flex-grow lg:!w-11/12'>
       <div className={classNames('w-full', 'px-6 py-6')}>
         <header className={classNames('w-full', 'flex', 'justify-between', 'items-center')}>
-          <Title title="Administrar categorias" />
+          <Title title='Administrar categorias' />
 
-          <Link href="/internal-board/categories?action=create">
+          <Link href='/internal-board/categories?action=create'>
             <Button size={ButtonSize.md} className={classNames('px-4', 'bg-blue-500', 'text-white')}>
               Añadir
             </Button>

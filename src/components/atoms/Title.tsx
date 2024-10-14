@@ -11,7 +11,7 @@ interface TitleProps {
   level?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
   icon?: React.ReactNode;
   description?: boolean | string | React.ReactNode;
-  title?: React.ReactNode;  // Cambiado de string a React.ReactNode
+  title?: React.ReactNode; // Cambiado de string a React.ReactNode
   tooltip?: boolean;
   tooltipContent?: string;
   iconName?: string;
@@ -47,7 +47,7 @@ const Title: React.FC<TitleProps> = ({
     h4: 'text-xl',
     h5: 'text-lg',
     h6: 'text-md',
-    p: 'text-sm',
+    p: 'text-sm'
   };
 
   // Lógica para determinar el tamaño de fuente de la descripción basado en el nivel del título
@@ -58,7 +58,7 @@ const Title: React.FC<TitleProps> = ({
     h4: 'text-xs',
     h5: 'text-xs',
     h6: 'text-[10px]',
-    p: 'text-xs',
+    p: 'text-xs'
   };
 
   return (
@@ -90,7 +90,7 @@ const Title: React.FC<TitleProps> = ({
           {title && <span className={classNames(levelFontSizeMap[level], titleClassName, 'select-none')}>{title}</span>}
           {tooltip && (
             <Tooltip position={tooltipPosition} className={classNames(tooltipClassName)} content={tooltipContent}>
-              <Icon name="InfoSquare" size={18} color="#64748b" />
+              <Icon name='InfoSquare' size={18} color='#64748b' />
             </Tooltip>
           )}
         </div>

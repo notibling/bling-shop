@@ -17,13 +17,23 @@ interface LogoProps {
 
 const Logo: React.FC<LogoProps> = ({ className = '', darkMode: _darkMode, width = 100, height = 100, color }) => {
   const { darkMode } = useDarkMode();
-
   const imagePath = (_darkMode || darkMode) ? '/images/svg/BlingLogoWhite.svg' : '/images/svg/BlingLogoBlack.svg';
-  const image = color ? color === 'light' ? '/images/svg/BlingLogoWhite.svg' : '/images/svg/BlingLogoBlack.svg' : imagePath;
+  let image;
+
+  if (color) {
+    if (color === 'light') {
+      image = '/images/svg/BlingLogoWhite.svg';
+    } else {
+      image = '/images/svg/BlingLogoBlack.svg';
+    }
+  } else {
+    image = imagePath;
+  }
+
   return (
     <div className={classNames(className)}>
-      <Link href="/">
-        <Image color={(_darkMode || darkMode) ? 'white' : 'black'} width={width} height={height} alt="Bling Logo" src={image} />
+      <Link href='/'>
+        <Image color={(_darkMode || darkMode) ? 'white' : 'black'} width={width} height={height} alt='Bling Logo' src={image} />
       </Link>
     </div>
   );

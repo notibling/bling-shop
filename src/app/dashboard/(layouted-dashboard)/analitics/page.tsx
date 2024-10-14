@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import React from 'react';
 import { useBreakpoint } from '@/hooks/useBreakpoint';
 import { Section } from '@/components/atoms';
@@ -12,7 +12,7 @@ interface AnaliticsProps {
 const Analitics: React.FC<AnaliticsProps> = ({
 
 }) => {
-  const { conditionalValue } = useBreakpoint();
+  const {} = useBreakpoint();
   return (
     <>
       <Section className='bg-blue-300'>

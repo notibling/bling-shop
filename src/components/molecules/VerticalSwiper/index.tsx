@@ -1,3 +1,4 @@
+'use client';
 import React, { useEffect, useRef, useState } from 'react';
 import './VerticalSwiper.css';
 
@@ -29,11 +30,11 @@ const VerticalSwiper: React.FC<VerticalSwiperProps> = ({ height, className, chil
       style={{ '--swiper-height': height } as React.CSSProperties}
     >
       <div
-        className="swiper-container"
+        className='swiper-container'
         style={{ transform: `translateY(-${currentIndex * heightValue}px)` }}
       >
         {React.Children.map(children, (child, index) => (
-          <div className="swiper-item" key={index}>
+          <div className='swiper-item' key={index}>
             {child}
           </div>
         ))}

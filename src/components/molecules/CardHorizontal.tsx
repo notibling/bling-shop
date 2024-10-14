@@ -58,7 +58,7 @@ const CardHorizontal: React.FC<ICardHorizontalProps> = (props) => {
     className,
     stock,
     footer,
-    padding,
+    padding
   } = props;
 
   return (
@@ -67,7 +67,7 @@ const CardHorizontal: React.FC<ICardHorizontalProps> = (props) => {
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         className={classNames('w-full', className, 'h-auto', 'relative', 'flex-row', 'duration-75', 'ease-in-out', {
-          'z-[100] drop-shadow-md scale-105': isHovered,
+          'z-[100] drop-shadow-md scale-105': isHovered
         })}
         style={{ padding }}
       >
@@ -78,11 +78,11 @@ const CardHorizontal: React.FC<ICardHorizontalProps> = (props) => {
           {image && (
             <div className={classNames('flex-shrink-0', 'aspect-square', 'max-h-[150px]', 'flex', 'box-border', 'overflow-hidden', 'm-2')}>
               <Image
-                unoptimized
-                src={image}
-                alt={imageAlt ?? ''}
-                width="100"
-                height="100"
+               unoptimized
+               src={image === 'true' || !image ? '/images/webp/banners/tshirts.webp' : image}
+               alt={imageAlt ?? ''}
+               width='100'
+               height='100'
                 className={classNames(imageClassName, 'flex', 'aspect-square', 'bg-contain', 'bg-center', 'bg-no-repeat', 'text-sm', 'w-full', 'h-full', 'rounded-xl')}
               />
             </div>
@@ -91,13 +91,13 @@ const CardHorizontal: React.FC<ICardHorizontalProps> = (props) => {
           {!content && (
             <div className={classNames('w-auto', 'transition-all', 'duration-300', 'w-auto', 'h-auto', 'flex', 'flex-grow', 'p-2', 'rounded', 'flex-col', 'gap-1', 'cursor-pointer', 'relative', 'box-border')}>
               {category && <p className={classNames('w-full', 'h-auto', 'flex', 'flex-grow', 'text-xs', 'text-slate-700')}>{category}</p>}
-              <div className="flex flex-row w-full h-auto">
-                <Title title={title && title} level="h6" titleClassName="text-sm line-clamp-2 dark:text-slate-300" descriptionClassName="text-xs line-clamp-1" description={description && description} />
-                <div className="flex flex-row items-center justify-end w-auto h-auto gap-2">
+              <div className='flex flex-row w-full h-auto'>
+                <Title title={title && title} level='h6' titleClassName='text-sm line-clamp-2 dark:text-slate-300' descriptionClassName='text-xs line-clamp-1' description={description && description} />
+                <div className='flex flex-row items-center justify-end w-auto h-auto gap-2'>
                   {deleteButton && (
-                    <div className="flex flex-row items-center justify-end w-auto flex-nowrap">
-                      <div className="w-[30px] h-[30px] ">
-                        <Button icon={<FaTrash />} className="w-[30px] h-[30px] bling-btn-primary dark:bling-btn-primary-dark rounded-full clickable" />
+                    <div className='flex flex-row items-center justify-end w-auto flex-nowrap'>
+                      <div className='w-[30px] h-[30px] '>
+                        <Button icon={<FaTrash />} className='w-[30px] h-[30px] bling-btn-primary dark:bling-btn-primary-dark rounded-full clickable' />
                       </div>{' '}
                     </div>
                   )}
@@ -117,27 +117,27 @@ const CardHorizontal: React.FC<ICardHorizontalProps> = (props) => {
                       antes:
                       <s className='font-JetBrainsMono'>
                         {badge}
-                        <span className={classNames('w-full', 'overflow-hidden','font-JetBrainsMono', 'text-balance')}>{priceBefore}</span>
+                        <span className={classNames('w-full', 'overflow-hidden', 'font-JetBrainsMono', 'text-balance')}>{priceBefore}</span>
                       </s>
                     </p>
                   )}
-                  <div className="flex flex-row items-center justify-between w-full h-auto">
+                  <div className='flex flex-row items-center justify-between w-full h-auto'>
                     <div className={classNames('w-full', 'h-auto', 'text-xl', 'font-semibold', 'dark:text-slate-400', 'justify-center', 'items-center', 'hyphens-auto', 'truncate', 'flex', 'flex-row', 'text-slate-700', 'text-balance')}>
                       <span className={classNames('uppercase', 'text-nowrap', 'text-sm', 'self-center')}>{badge}</span>
-                      <span className={classNames('w-full', 'text-nowrap', 'overflow-hidden')}>{price && price.length > 9 ? price.substring(1, 9) : price}</span>
+                      <span className={classNames('w-full', 'text-nowrap', 'overflow-hidden')}>{typeof price === 'number' && price > 9 ? price.toString().substring(1, 9) : price}</span>
                       <span className={classNames('uppercase', 'text-nowrap', 'text-sm', 'self-center')}>{badgeCountry}</span>
 
                       {term && <span className={classNames('uppercase', 'text-sm', 'self-center')}>{term}</span>}
                     </div>
                     {quantity && (
-                      <div className="flex flex-row items-center justify-end w-auto flex-nowrap">
-                        <Quantity />
+                      <div className='flex flex-row items-center justify-end w-auto flex-nowrap'>
+                        <Quantity onChange={() => {}} />
                       </div>
                     )}
                     {addButton && (
-                      <div className="flex flex-row items-center justify-end w-auto flex-nowrap">
-                        <div className="w-[35px] h-[35px] ">
-                          <Button icon={<FaShoppingBasket />} className="w-[35px] h-[35px] rounded-full clickable" />
+                      <div className='flex flex-row items-center justify-end w-auto flex-nowrap'>
+                        <div className='w-[35px] h-[35px] '>
+                          <Button icon={<FaShoppingBasket />} className='w-[35px] h-[35px] rounded-full clickable' />
                         </div>
                       </div>
                     )}
@@ -150,8 +150,8 @@ const CardHorizontal: React.FC<ICardHorizontalProps> = (props) => {
           {!footer && shareButton && isHovered && (
             <div className={classNames('w-full', 'absolute', 'translate-y-[calc(100%-1px)]', 'left-0', 'bottom-0', 'z-10', 'rounded-b-brand', 'overflow-hidden')}>
               <div className={classNames('w-full', 'h-auto', 'flex', 'flex-grow', 'text-sm', 'justify-between', 'items-center', 'bling-light', 'dark:bling-dark', 'p-2')}>
-                <Button text="Favoritos" icon={<FaHeart />} className={'btn-sm'} />
-                <Button text="Compartir" icon={<FaShare />} className={'btn-sm'} />
+                <Button text='Favoritos' icon={<FaHeart />} className={'btn-sm'} />
+                <Button text='Compartir' icon={<FaShare />} className={'btn-sm'} />
               </div>
             </div>
           )}

@@ -11,7 +11,7 @@ interface ChipProps {
   
 }
 
-const Chip: React.FC<ChipProps> = ({ text, number, status, color, className,textClassName }) => {
+const Chip: React.FC<ChipProps> = ({ text, number, status, color, className, textClassName }) => {
   const getStatusColorClass = (status: ChipProps['status']): string | undefined => {
     switch (status) {
       case 'success':
@@ -24,11 +24,11 @@ const Chip: React.FC<ChipProps> = ({ text, number, status, color, className,text
         return 'bling-status bling-status-warning dark:bling-status-warning-dark';
       case 'error':
         return 'bling-status bling-status-error dark:bling-status-error-dark';
-        case 'attention':
-          return 'bling-status bling-status-attention dark:bling-status-attention-dark';
+      case 'attention':
+        return 'bling-status bling-status-attention dark:bling-status-attention-dark';
       case 'info':
         return 'bling-status bling-status-info dark:bling-status-info-dark';
-            case 'neutral':
+      case 'neutral':
         return 'bg-bling-light dark:bg-bling-dark';
       case 'inherit':
         return 'bg-inherit text-inherit';

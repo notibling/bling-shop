@@ -1,18 +1,17 @@
-import { axios } from "@/common/AxiosClient";
+import { axios } from '@/common/AxiosClient';
 
-import { ICreateProductStepperState } from "@/app/dashboard/(create)/products/create/types";
-import { IAttribute, IAttributeValue } from "@/entities/Attribute";
-import { IProduct, IProductDisplay, IService, IVehicle } from "@/entities/ProductDisplay";
+import { ICreateProductStepperState } from '@/app/dashboard/(create)/products/create/types';
+import { IAttribute, IAttributeValue } from '@/entities/Attribute';
+import { IProduct, IProductDisplay, IService, IVehicle } from '@/entities/ProductDisplay';
 
-import { Response } from "@/entities/Response";
-import { Product } from "@/entities/Product";
-
+import { Response } from '@/entities/Response';
+import { Product } from '@/entities/Product';
 
 const productDisplaySummary = (productDisplay: IProductDisplay): IProductDisplay['summary'] => {
   switch (productDisplay.entity) {
-    case 'product':
-      const p = productDisplay.product as IProduct
-      const product = new Product(p)
+    case 'product': {
+      const p = productDisplay.product as IProduct;
+      const product = new Product(p);
       return {
         id: product.id,
         title: product.title,
@@ -22,9 +21,10 @@ const productDisplaySummary = (productDisplay: IProductDisplay): IProductDisplay
         priceBefore: product.getPriceBefore(),
         images: product.images,
         shortDescription: product.shortDescription
-      }
+      };
+    }
 
-    case 'service':
+    case 'service': {
       const service = productDisplay.service as IService;
       return {
         id: service.id,
@@ -35,9 +35,10 @@ const productDisplaySummary = (productDisplay: IProductDisplay): IProductDisplay
         priceBefore: service.price,
         images: service.images,
         shortDescription: service.shortDescription
-      }
+      };
+    }
 
-    case 'vehicle':
+    case 'vehicle': {
       const vehicle = productDisplay.vehicle as IVehicle;
       return {
         id: vehicle.id,
@@ -48,45 +49,43 @@ const productDisplaySummary = (productDisplay: IProductDisplay): IProductDisplay
         priceBefore: vehicle.price,
         images: vehicle.images,
         shortDescription: vehicle.shortDescription
-      }
+      };
+    }
+
+    default:
+      return { id: 0, title: '', entity: 'product', description: '', price: 0, priceBefore: 0, images: [], shortDescription: '' };
   }
-
-}
-
+};
 
 type IFetchProductDisplays = Response<{
   productDisplays: IProductDisplay[]
 }>;
-
 
 interface IFetchProductDisplaysPayload { page: number; pageSize?: number; query?: string; }
 const fetchProductDisplays = async (params: IFetchProductDisplaysPayload): Promise<IFetchProductDisplays> => {
   const response = await axios.get<IFetchProductDisplays>('/products/v2/displays', { params });
   const { productDisplays } = response.data;
 
-
   const _productDisplays = productDisplays.map(productDisplay => {
     return {
       ...productDisplay,
       summary: productDisplaySummary(productDisplay)
-    }
+    };
   });
 
   return { ...response.data, productDisplays: _productDisplays };
-}
+};
 
 type IFetchProducts = Response<{
   products: IProduct[]
 }>;
-
 
 interface IFetchProductsPayload { page: number; pageSize?: number; query?: string; }
 const fetchProducts = async (params: IFetchProductsPayload): Promise<IFetchProducts> => {
   const response = await axios.get('/products/v2', { params });
 
   return response.data;
-}
-
+};
 
 type IFetchAttributes = Response<{
   attributes: IAttribute[]
@@ -95,9 +94,9 @@ const fetchAttributes = async (type: string): Promise<IFetchAttributes> => {
   const response = await axios.get('/products/attributes', { params: { type } });
 
   return response.data;
-}
+};
 
-type ICreateAttribute = Response<{}>;
+type ICreateAttribute = Response<unknown>;
 interface ICreateAttributePayload {
   attribute: Partial<IAttribute>;
   values: Partial<IAttributeValue>[];
@@ -106,22 +105,19 @@ const createAttribute = async (payload: ICreateAttributePayload): Promise<ICreat
   const response = await axios.post('/products/attributes', payload);
 
   return response.data;
-}
+};
 
-
-
-const createProduct = async (product: ICreateProductStepperState): Promise<Response<{}>> => {
+const createProduct = async (product: ICreateProductStepperState): Promise<Response<unknown>> => {
   const response = await axios.post('/products', product);
 
   return response.data;
-}
+};
 
-const deleteProduct = async (id: number): Promise<Response<{}>> => {
+const deleteProduct = async (id: number): Promise<Response<unknown>> => {
   const response = await axios.delete(`/products/v2/displays/${id}`);
 
   return response.data;
-}
-
+};
 
 type GetProductDisplay = Response<{ productDisplay: IProductDisplay }>;
 const getProductDisplay = async (id: number): Promise<GetProductDisplay> => {
@@ -133,9 +129,7 @@ const getProductDisplay = async (id: number): Promise<GetProductDisplay> => {
   const summary = productDisplaySummary(productDisplay);
 
   return { ...data, productDisplay: { ...productDisplay, summary } };
-
-}
-
+};
 
 export {
   fetchProductDisplays, fetchAttributes,
@@ -145,4 +139,9 @@ export {
   type ICreateAttribute,
   type ICreateAttributePayload,
   type IFetchProducts, type IFetchProductsPayload
+};
+
+export const fetchCategories = async (nested: boolean) => {
+  // Implementación de la función
+  console.log(nested); // Usar el parámetro o eliminar si no es necesario
 };

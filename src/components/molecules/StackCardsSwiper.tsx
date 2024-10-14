@@ -27,7 +27,7 @@ const StackCardsSwiper = React.forwardRef<SwiperRef, IStackCardsSwiperProps>(({ 
         {...props}
       >
         {childrenToRender.map((child, index) => (
-          <SwiperSlide  {...swiperSlideProps} key={`${id}-${index}`}>
+          <SwiperSlide {...swiperSlideProps} key={`${id}-${index}`}>
             {child}
           </SwiperSlide>
         ))}
@@ -37,4 +37,4 @@ const StackCardsSwiper = React.forwardRef<SwiperRef, IStackCardsSwiperProps>(({ 
   );
 });
 
-export { StackCardsSwiper }
+export { StackCardsSwiper };

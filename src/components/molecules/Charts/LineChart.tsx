@@ -1,12 +1,12 @@
-'use client'
-import React, { Fragment, HTMLProps, useEffect, useRef } from "react";
-import dynamic from "next/dynamic";
+'use client';
+import React, { Fragment, HTMLProps, useEffect, useRef } from 'react';
+import dynamic from 'next/dynamic';
 
 import {
   Chart, ChartData, ChartOptions,
   LineElement, LineController, Tooltip,
-  CategoryScale, LinearScale, PointElement,
-} from "chart.js";
+  CategoryScale, LinearScale, PointElement
+} from 'chart.js';
 
 interface ILineChartProps {
   data: ChartData<'line'>;
@@ -20,14 +20,14 @@ const LineChartComponent: React.FC<ILineChartProps> = ({ data, options, containe
   Chart.register(LineElement, LineController, CategoryScale, LinearScale, PointElement, Tooltip);
 
   useEffect(() => {
-    const ctx = canvasRef.current?.getContext('2d')
+    const ctx = canvasRef.current?.getContext('2d');
     if (ctx) {
 
       if (chartRef.current) chartRef.current.destroy();
       chartRef.current = new Chart(ctx, {
         type: 'line',
         data,
-        options: options
+        options
       });
     }
 
@@ -37,7 +37,7 @@ const LineChartComponent: React.FC<ILineChartProps> = ({ data, options, containe
         chartRef.current.destroy();
       }
     };
-  }, [data, options])
+  }, [data, options]);
 
   const ContainerComponent = container ? 'div' : Fragment;
 
@@ -45,10 +45,10 @@ const LineChartComponent: React.FC<ILineChartProps> = ({ data, options, containe
     <ContainerComponent {...(container ?? {})}>
       <canvas ref={canvasRef} />
     </ContainerComponent>
-  )
-}
+  );
+};
 
 
-const LineChart = dynamic(async () => LineChartComponent, { ssr: false });
+const LineChart = dynamic(async() => LineChartComponent, { ssr: false });
 
-export {LineChart};
+export default {LineChart};

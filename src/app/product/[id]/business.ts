@@ -17,23 +17,21 @@ function getPageDJson(productDisplay: IProductDisplay) {
   const imageFile = productDisplay.summary?.images[0];
   const mainImage = imageFile ? getStaticFileUrl(imageFile) : undefined;
   return {
-    "@context": "https://schema.org/",
-    "@type": "Product",
+    '@context': 'https://schema.org/',
+    '@type': 'Product',
     name: productDisplay?.summary?.title ?? '',
     image: mainImage,
     description: productDisplay?.summary?.title,
     offers: {
-      "@type": "Offer",
+      '@type': 'Offer',
       url: `/product/${productDisplay.id}`,
-      priceCurrency: "UYU",
+      priceCurrency: 'UYU',
       price: productDisplay?.summary?.price,
-      itemCondition: "https://schema.org/NewCondition",
-      availability: "https://schema.org/InStock",
-    },
-  }
+      itemCondition: 'https://schema.org/NewCondition',
+      availability: 'https://schema.org/InStock'
+    }
+  };
 }
 
 
-
-
-export { getProductDisplay, getPageDJson }
+export { getProductDisplay, getPageDJson };

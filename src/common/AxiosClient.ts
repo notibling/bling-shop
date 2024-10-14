@@ -4,10 +4,10 @@ import { LocalStorage } from './LocalStorage';
 import { PersistedState } from '@/hooks/usePersistState';
 
 const axios = Axios.create({
-  baseURL: process.env.NEXT_PUBLIC_BACKEND_API_URL,
+  baseURL: process.env.NEXT_PUBLIC_BACKEND_API_URL
 });
 
-axios.interceptors.request.use(function (config) {
+axios.interceptors.request.use(function(config) {
 
   if (typeof window === 'undefined') return config;
 
@@ -18,19 +18,18 @@ axios.interceptors.request.use(function (config) {
   }
 
   return config;
-})
+});
 
-axios.interceptors.response.use(function (config) {
+axios.interceptors.response.use(function(config) {
 
-  return config
-}, function (error: AxiosError) {
-  console.log(error)
+  return config;
+}, function(error: AxiosError) {
+  console.log(error);
   if (typeof window !== 'undefined') {
     const protectedRoute = window.location.href.match(/\/dashboard/g);
-    if (error?.response?.status === 401 && protectedRoute)
-      window.location.href = '/';
+    if (error?.response?.status === 401 && protectedRoute) {window.location.href = '/';}
   }
   return error;
 });
 
-export { axios }
+export { axios };

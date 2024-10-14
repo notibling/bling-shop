@@ -1,4 +1,4 @@
-import { Charts } from "./Charts";
+import { Charts } from './Charts';
 
 function ChartExamplesPage() {
   return (
@@ -6,9 +6,8 @@ function ChartExamplesPage() {
 
       <Charts />
     </>
-  )
+  );
 }
-
 
 
 export default ChartExamplesPage;

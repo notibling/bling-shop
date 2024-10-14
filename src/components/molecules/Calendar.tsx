@@ -5,6 +5,7 @@ import './Calendar.css'; // Puedes definir estilos CSS aquí para que coincidan 
 interface CalendarProps {
   initialYear: number;
   initialMonth: number;
+  // eslint-disable-next-line no-unused-vars
   onDateRangeSelect: (startDate: Date, endDate: Date) => void;
 }
 
@@ -56,7 +57,7 @@ const Calendar: React.FC<CalendarProps> = ({ initialYear, initialMonth, onDateRa
   const renderDays = () => {
     const daysArray = [];
     for (let i = 0; i < firstDayOfMonth; i++) {
-      daysArray.push(<div key={`empty-${i}`} className="empty-day" />);
+      daysArray.push(<div key={`empty-${i}`} className='empty-day' />);
     }
     for (let day = 1; day <= daysInMonth; day++) {
       const date = new Date(year, month, day);
@@ -75,19 +76,19 @@ const Calendar: React.FC<CalendarProps> = ({ initialYear, initialMonth, onDateRa
   };
 
   return (
-    <div className="calendar test-component">
-      <div className="calendar-header">
+    <div className='calendar test-component'>
+      <div className='calendar-header'>
         <button onClick={handlePrevMonth}>◄</button>
         <span>{new Date(year, month).toLocaleString('default', { month: 'long' })} {year}</span>
         <button onClick={handleNextMonth}>►</button>
       </div>
-      <div className="calendar-body">
-        <div className="day-names ">
+      <div className='calendar-body'>
+        <div className='day-names '>
           {['Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab'].map((day) => (
-            <div key={day} className="day-name">{day}</div>
+            <div key={day} className='day-name'>{day}</div>
           ))}
         </div>
-        <div className="days-grid">
+        <div className='days-grid'>
           {renderDays()}
         </div>
       </div>

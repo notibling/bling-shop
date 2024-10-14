@@ -8,4 +8,4 @@ class NumberUtils {
   }
 }
 
-export { NumberUtils }
+export { NumberUtils };

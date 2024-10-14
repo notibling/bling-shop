@@ -59,18 +59,18 @@ class Modal extends React.Component<ModalProps> {
         onClick={this.handleBackgroundClick}
       >
         <div className={`w-fit h-fit max-w-[95vw] bg-white dark:bg-slate-900 rounded-md shadow-lg ${className} max-h-[90vh] flex justify-stretch`}>
-          <div className="flex flex-col w-full">
-          {title && (<div className="flex items-center justify-between p-4">
-              <Title title={title && title} description={description && description} level="h4" titleClassName="text-xl" />
-            <Button icon={<FaTimes />} onClick={onClose} className="w-[25px] h-[25px] bling-btn-secondary   dark:bg-slate-800 dark:hover:bg-red-500 dark:hover:text-white text-md text-lg text-slate-700 font-bold" />
+          <div className='flex flex-col w-full'>
+            {title && (<div className='flex items-center justify-between p-4'>
+              <Title title={title && title} description={description && description} level='h4' titleClassName='text-xl' />
+              <Button icon={<FaTimes />} onClick={onClose} className='w-[25px] h-[25px] bling-btn-secondary   dark:bg-slate-800 dark:hover:bg-red-500 dark:hover:text-white text-md text-lg text-slate-700 font-bold' />
 
-            </div> )}
+            </div>)}
            
-            <div className={classNames("p-2 text-slate-700 h-auto  overflow-y-auto overflow-x-hidden ", contentClassName)}>
+            <div className={classNames('p-2 text-slate-700 h-auto  overflow-y-auto overflow-x-hidden ', contentClassName)}>
               {content}
             </div>
           
-            {footer && <div className="flex flex-row items-center justify-end gap-2 p-4 flex-nowrap">{footer}</div>}
+            {footer && <div className='flex flex-row items-center justify-end gap-2 p-4 flex-nowrap'>{footer}</div>}
           </div>
         </div>
       </div>

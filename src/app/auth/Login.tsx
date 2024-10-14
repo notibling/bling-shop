@@ -35,10 +35,10 @@ const LoginScreen: React.FC = ({}) => {
   const handleError = (reset: boolean = true) => {
     setError(true);
     animate();
-    reset && resetFields();
+    if (reset) resetFields();
   };
 
-  const signIn = async () => {
+  const signIn = async() => {
     setLoading(true);
     try {
       const result = await authOperations.signIn(email, password);
@@ -56,33 +56,33 @@ const LoginScreen: React.FC = ({}) => {
   };
 
   return (
-    <LoginAndRegisterCard className={classNames({ 'animate-shake': shaking })} title="Ingresar">
+    <LoginAndRegisterCard className={classNames({ 'animate-shake': shaking })} title='Ingresar'>
       <fieldset className={classNames('flex', 'flex-col', 'gap-6')}>
         <Input
-          controlId="email"
-          error="Ingrese un correo electrónico válido"
+          controlId='email'
+          error='Ingrese un correo electrónico válido'
           errorRegexp={RegularExpressions.EMAIL}
           onChange={(e: ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
           value={email}
           size={InputSize.base}
-          placeholder="Ingrese su correo electrónico"
+          placeholder='Ingrese su correo electrónico'
         />
         <Input
-          controlId="password"
-          error="Ingrese una contraseña alfanumérica con al menos 8 caracteres y una mayúscula"
+          controlId='password'
+          error='Ingrese una contraseña alfanumérica con al menos 8 caracteres y una mayúscula'
           errorRegexp={RegularExpressions.PASSWORD}
           onChange={(e: ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)}
           value={password}
           size={InputSize.base}
-          type="password"
-          placeholder="Ingrese su contraseña"
+          type='password'
+          placeholder='Ingrese su contraseña'
         />
       </fieldset>
-{error && (
+      {error && (
         <Alert icon={<FaInfoCircle className={classNames('text-white')} />} className={classNames('bg-red-500')}>
           <span className={classNames('text-xs', 'text-white', 'font-bold')}>Los datos ingresados son incorrectos</span>
         </Alert>
-  )}
+      )}
       <div className={classNames('w-full', 'flex', 'justify-center')}>
         <Button
           disabled={formHasErrors || loading || noData}

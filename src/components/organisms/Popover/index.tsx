@@ -1,17 +1,17 @@
-'use client'
-import React, { forwardRef, useEffect, useImperativeHandle, useMemo, useState } from "react";
+'use client';
+import React, { forwardRef, useEffect, useImperativeHandle, useMemo, useState } from 'react';
 import { ClickAwayListener } from '@mui/base/ClickAwayListener';
 import { Portal } from '@mui/base/Portal';
 import _ from 'lodash';
-import classNames from "classnames";
-import { twMerge } from "tailwind-merge";
+import classNames from 'classnames';
+import { twMerge } from 'tailwind-merge';
 
 interface IPopoverProps {
   disabled?: boolean;
   toggle?: boolean;
   trigger: React.ReactNode;
   shouldClose?: boolean;
-  children: ((props: IPopoverRef) => React.ReactNode) |  React.ReactElement | React.ReactElement[] | React.ReactNode | React.ReactNode[] | null;
+  children: ((props: IPopoverRef) => React.ReactNode) | React.ReactElement | React.ReactElement[] | React.ReactNode | React.ReactNode[] | null;
   bodyClassName?: string;
   position?: 'top' | 'bottom' | 'left' | 'right' | 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
   portal?: boolean;
@@ -42,7 +42,7 @@ const Popover: Type = forwardRef<IPopoverRef, IPopoverProps>(function SimpleAuto
     if (disabled) return;
     if (open && !toggle) return;
     setOpen(prev => !prev);
-  }
+  };
 
   const func = _.debounce(() => {
     setKill((prev) => !prev);
@@ -50,11 +50,11 @@ const Popover: Type = forwardRef<IPopoverRef, IPopoverProps>(function SimpleAuto
 
   const handleOpen = () => {
     setOpen(true);
-  }
+  };
 
   const handleClose = () => {
     setOpen(false);
-  }
+  };
 
   useImperativeHandle(ref, () => ({
     open: handleOpen,

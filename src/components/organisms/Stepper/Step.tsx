@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import React, { HTMLProps, useEffect, useMemo } from 'react';
 import { useStepper } from '.';
 
@@ -13,20 +13,20 @@ export const Step: React.FC<IStepperStepProps> = ({ children, value, as = 'div',
   const stepperState = useStepper();
 
   const isActiveStep = useMemo(() => {
-    return stepperState.step === value
+    return stepperState.step === value;
   }, [stepperState.step]);
 
   useEffect(() => {
     stepperState.setRegisteredSteps((prev) => {
-      return [...prev.filter((val) => val != value), value]
+      return [...prev.filter((val) => val != value), value];
     });
 
     return () => {
       stepperState.setRegisteredSteps((prev) => {
-        return [...prev.filter((val) => val != value)]
+        return [...prev.filter((val) => val != value)];
       });
-    }
-  }, [])
+    };
+  }, []);
 
   const component = React.createElement(as, { ...props }, children);
 
@@ -34,5 +34,5 @@ export const Step: React.FC<IStepperStepProps> = ({ children, value, as = 'div',
     <React.Fragment>
       {component}
     </React.Fragment>
-  )
-}
+  );
+};

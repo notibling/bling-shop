@@ -7,11 +7,11 @@ const Contact = ({}) => {
   return (
     <>
       <TopMenu FastLinks={false} InfoBar={false} />
-      <Section className="bling-bg-dots-light" classNameContainer="!h-[400px] !flex-col items-center overflow-hidden relative justify-center">
+      <Section className='bling-bg-dots-light' classNameContainer='!h-[400px] !flex-col items-center overflow-hidden relative justify-center'>
         <div>
            Contact
         </div>
-        </Section>
+      </Section>
       <FooterComponent brandFooter />
     </>
   );

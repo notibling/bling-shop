@@ -1,7 +1,8 @@
-'use client'
-import { LocalStorage } from "@/common/LocalStorage";
-import { FunctionUtils } from "@/utils/functions";
-import { useEffect, useState } from "react";
+'use client';
+import React from 'react';
+import { LocalStorage } from '@/common/LocalStorage';
+import { FunctionUtils } from '@/utils/functions';
+import { useEffect, useState } from 'react';
 
 type PersistedState<T> = { value?: T };
 // type Cb = <T>(value: T) => Record<string, any> | string | number | undefined | null;
@@ -20,7 +21,7 @@ function usePersistState<T>(key?: `@${string}`, defaultValue?: T):
       setStorage(param);
       return param;
     });
-  }
+  };
 
   const setStorage = (value?: T) => {
     if (!key) {
@@ -29,12 +30,12 @@ function usePersistState<T>(key?: `@${string}`, defaultValue?: T):
     }
     console.log('SET', { [key]: value });
     LocalStorage.setItem(key, JSON.stringify({ value }));
-  }
+  };
   useEffect(() => {
     const storedValue = LocalStorage.getJsonItem<PersistedState<T>>(key ?? '');
-    console.log('READ', { [key ?? '']: storedValue })
+    console.log('READ', { [key ?? '']: storedValue });
     _setState(storedValue?.value ?? defaultValue);
-  }, [])
+  }, []);
 
   return [state as any, setState];
 }

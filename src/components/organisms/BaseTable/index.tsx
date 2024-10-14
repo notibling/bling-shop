@@ -13,7 +13,7 @@ const BaseTable: React.FC<BaseTableProps> = ({ headers = [], rows, summaryRows =
     <div className={classNames(
       'max-w-full w-full h-auto rounded-md',
       'overflow-auto', 'overflow-y-visible',
-      'box-border', 
+      'box-border' 
     
     )}>
       <table className={classNames(
@@ -33,7 +33,7 @@ const BaseTable: React.FC<BaseTableProps> = ({ headers = [], rows, summaryRows =
           ))}
           {summaryRows.map((row, index) => (
             <React.Fragment key={`summary-${index}`}>
-              <BaseTableRow rowClassName={rowClassName} rowHeaderClassName={rowHeaderClassName || ''} headers={headers} row={row} depth={0} className="table-cell" />
+              <BaseTableRow rowClassName={rowClassName} rowHeaderClassName={rowHeaderClassName || ''} headers={headers} row={row} depth={0} className='table-cell' />
             </React.Fragment>
           ))}
         </tbody>

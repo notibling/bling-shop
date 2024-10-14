@@ -24,6 +24,6 @@ const StatDataNumberCard: React.FC<StatDataNumberCardProps> = ({ title, icon, va
       {icon && <div className='self-center'>{icon}</div>}
     </div>
   );
-}
+};
 
 export { StatDataNumberCard };

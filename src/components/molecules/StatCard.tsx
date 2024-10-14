@@ -20,6 +20,6 @@ const StatCard: React.FC<StatCardProps> = ({ title, icon, value, percentageChang
       <span className='w-full bling-light-text dark:text-gray-500 h-auto text-xs'>{percentageChange}</span>
     </div>
   );
-}
+};
 
 export {StatCard};

@@ -18,8 +18,8 @@ const MultiOptionsProvider: React.FC<IMultiOptionsProviderProps> = ({ children }
   const [activeId, setActiveId] = useState<number | undefined>();
 
   useEffect(() => { 
-    console.log({activeId})
-  }, [activeId])
+    console.log({activeId});
+  }, [activeId]);
 
   return (
     <MultiOptionsContext.Provider

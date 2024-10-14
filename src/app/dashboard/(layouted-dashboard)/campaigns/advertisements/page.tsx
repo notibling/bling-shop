@@ -24,7 +24,7 @@ const items: MasonryItem[] = [
   { image: 'https://example.com/image2.jpg', alt: 'Imagen 2', size: 'vertical' },
   { image: 'https://example.com/image2.jpg', alt: 'Imagen 2', size: 'horizontal' },
   { image: 'https://example.com/image2.jpg', alt: 'Imagen 2', size: 'horizontal' },
-  { image: 'https://example.com/image2.jpg', alt: 'Imagen 2', size: 'vertical' },
+  { image: 'https://example.com/image2.jpg', alt: 'Imagen 2', size: 'vertical' }
   // Agrega más elementos según sea necesario
 ];
 const Advertisements: React.FC<AdvertisementsProps> = ({}) => {
@@ -32,11 +32,11 @@ const Advertisements: React.FC<AdvertisementsProps> = ({}) => {
   const { conditionalValue } = useBreakpoint();
   return (
     <>
-      <Section className='!py-5 !px-5 !m-0' classNameContainer="bg-blue-300 !m-0 !flex-col flex !w-full">
+      <Section className='!py-5 !px-5 !m-0' classNameContainer='bg-blue-300 !m-0 !flex-col flex !w-full'>
         <div className={classNames('w-full', 'flex-wrap', 'lg:flex-nowrap', 'gap-2', 'flex')}>
-          <Title icon={<FaTicketAlt />} iconColor="text-slate-700" titleClassName="text-slate-700" title="Anuncios" />
+          <Title icon={<FaTicketAlt />} iconColor='text-slate-700' titleClassName='text-slate-700' title='Anuncios' />
         </div>
-        <div className="w-full h-auto ">
+        <div className='w-full h-auto '>
           <Masonry items={items} />
         </div>
       </Section>

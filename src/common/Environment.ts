@@ -8,8 +8,7 @@ class Environment {
 
   static getEnv(name: keyof typeof Environment.properties) {
     const value = Environment.properties[name];
-    if (!value)
-      throw new Error(`Missing environment variable ${name}`);
+    if (!value) {throw new Error(`Missing environment variable ${name}`);}
     return value;
   }
 }

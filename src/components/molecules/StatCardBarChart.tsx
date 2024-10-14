@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import { ChartData, ChartOptions } from 'chart.js';
-import  { BarChart } from '@/components/molecules/Charts';
+import { BarChart } from '@/components/molecules/Charts';
 interface StatCardBarChartProps {
   title?: string;
   description?: string | string[];
@@ -11,7 +11,7 @@ interface StatCardBarChartProps {
   className?: string | string[];
 }
 
-const StatCardBarChart: React.FC<StatCardBarChartProps> = ({ title, icon, data, options,description, className  }) => {
+const StatCardBarChart: React.FC<StatCardBarChartProps> = ({ title, icon, data, options, description, className }) => {
   return (
     <div className={classNames('gap-2 rounded-md border bling-light-border dark:bling-dark-border p-4 flex flex-col', className)}>
       <div className='w-full flex flex-row items-center justify-between'>
@@ -20,10 +20,10 @@ const StatCardBarChart: React.FC<StatCardBarChartProps> = ({ title, icon, data, 
         <div className='self-center'>{icon}</div>
       </div>
       <div className='!w-full h-full '>
-        <BarChart data={data} options={options} className="h-full" />
+        <BarChart data={data} options={options} className='h-full' />
       </div>
     </div>
   );
-}
+};
 
 export {StatCardBarChart};

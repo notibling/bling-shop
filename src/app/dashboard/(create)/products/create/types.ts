@@ -1,3 +1,7 @@
+import { IFile } from '@/entities/File';
+import { PartialIProductVariant } from './Product/Steps/ProductVariants/types';
+import { IProductAttribute } from '@/entities/ProductAttribute';
+
 export interface ICreateProductStepperState {
   type?: 'product' | 'service' | 'vehicle' | 'property';
   title?: string;

@@ -1,14 +1,14 @@
-'use client'
-import { useMemo } from "react";
-import classNames from "classnames";
+'use client';
+import { useMemo } from 'react';
+import classNames from 'classnames';
 
-import { StringUtils } from "@/utils";
+import { StringUtils } from '@/utils';
 
-import { Button, Separator } from "@/components/atoms";
+import { Button, Separator } from '@/components/atoms';
 
-import { IProductVariant, IProductVariantAttribute } from "@/entities/ProductVariant";
-import { useSingleProduct } from "../../SingleProduct.context";
-import { IProduct } from "@/entities/Product";
+import { IProductVariant, IProductVariantAttribute } from '@/entities/ProductVariant';
+import { useSingleProduct } from '../../SingleProduct.context';
+import { IProduct } from '@/entities/Product';
 
 
 interface ISizesProps {
@@ -48,13 +48,11 @@ const Sizes: React.FC<ISizesProps> = ({ separator = true, onSelect }) => {
   }, [product]);
 
 
-
-
   return (
     <>
       {
         separator && renderSizes.length > 0 && (
-          <Separator textStart="Tamaños" size="my-3" className="text-xs text-slate-400" />
+          <Separator textStart='Tamaños' size='my-3' className='text-xs text-slate-400' />
         )
       }
       {renderSizes.map((item) => {
@@ -64,22 +62,22 @@ const Sizes: React.FC<ISizesProps> = ({ separator = true, onSelect }) => {
             key={item.size}
             className={classNames(
               'border-2 border-transparent',
-              "h-auto", "gap-1", "py-1",
-              "text-sm", "btn-sm", "bling-light",
-              "dark:bling-dark", "clickable",
+              'h-auto', 'gap-1', 'py-1',
+              'text-sm', 'btn-sm', 'bling-light',
+              'dark:bling-dark', 'clickable',
               '!transition-none',
               {
-                "border-2 border-slate-900": isActiveAttribute(item.variantAttribute),
-                "opacity-90 border border-dashed border-slate-900": !isCompatibleVariant(item.variant)
+                'border-2 border-slate-900': isActiveAttribute(item.variantAttribute),
+                'opacity-90 border border-dashed border-slate-900': !isCompatibleVariant(item.variant)
               }
             )}>
             {item.size}
           </Button >
-        )
+        );
       })}
     </>
-  )
+  );
 
-}
+};
 
 export { Sizes };

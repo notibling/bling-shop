@@ -1,4 +1,4 @@
-"use client"; 
+'use client'; 
 import { useEffect, useRef, useState } from 'react';
 import _ from 'lodash';
 /**
@@ -10,23 +10,35 @@ import _ from 'lodash';
  * anything
  * @param cb - (scrollTop: number) => void
  */
+// eslint-disable-next-line
 function useScroll(cb: (scrollTop: number) => void) {
-  typeof window !== 'undefined' &&
-    window.addEventListener('scroll', () => {
-      cb(document.body.scrollTop);
-    });
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const handleScroll = () => {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        cb(scrollTop);
+      };
+      window.addEventListener('scroll', handleScroll);
+
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    }
+
+    return undefined;
+  }, [cb]);
 }
 
 function useScrollElement() {
-  const elementRef = useRef<HTMLElement | any>(null);
+  const elementRef = useRef<HTMLElement | null>(null);
   const listener = useRef<boolean>(false);
-  const [data, setData] = useState<{offset: number, height: number, top: number}>({ offset: 0, height: 0, top:0 });
+  const [data, setData] = useState<{offset: number, height: number, top: number}>({ offset: 0, height: 0, top: 0 });
 
   const handleScroll = () => {
     if (elementRef.current) {
       const element = elementRef.current;
-      const { y = 0 , height,  top } = element?.getBoundingClientRect() ?? {};
-      setData({ offset: y - (height/2), height, top });
+      const { y = 0, height, top } = element?.getBoundingClientRect() ?? {};
+      setData({ offset: y - (height / 2), height, top });
     }
   };
 

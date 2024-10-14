@@ -1,3 +1,5 @@
+import React from 'react';
+
 interface IToast {
   id: number;
   duration?: number;
@@ -5,7 +7,7 @@ interface IToast {
   type: 'success' | 'error' | 'warning' | 'info';
 }
 
-
+// eslint-disable-next-line 
 type SimpleTrigger = (message: string, duration?: number) => Promise<number>;
 
 interface IToastsContext {
@@ -16,12 +18,13 @@ interface IToastsContext {
    * @param {Omit<IToast, 'id'>} toast - The toast to be added.
    * @return {Promise<number>} A promise that resolves with the `ID` of the added toast. This ID can be used to remove the toast later on using the `hide` method.
    */
-
+// eslint-disable-next-line
   show(toast: Omit<IToast, 'id'>): Promise<number>;
 
   /**
    * Remove a specific toast.
    */
+  // eslint-disable-next-line
   hide(id: number): void;
 
   /**
@@ -41,6 +44,4 @@ interface IToastsContext {
 }
 
 
-
-
-export { type IToastsContext, type IToast }
+export { type IToastsContext, type IToast };

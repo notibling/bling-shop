@@ -5,15 +5,15 @@ import { FooterComponent } from '@/components/molecules';
 import { TopMenu } from '@/components/organisms';
 
 const Security = ({}) => {
-  const [activeTab, setActiveTab] = useState(0);
+  const [] = useState(0);
   return (
     <>
       <TopMenu FastLinks={false} InfoBar={false} />
-      <Section className="bling-bg-dots-light" classNameContainer="!h-[400px] !flex-col items-center overflow-hidden relative justify-center">
+      <Section className='bling-bg-dots-light' classNameContainer='!h-[400px] !flex-col items-center overflow-hidden relative justify-center'>
         <div>
            Security
         </div>
-        </Section>
+      </Section>
       <FooterComponent brandFooter />
     </>
   );

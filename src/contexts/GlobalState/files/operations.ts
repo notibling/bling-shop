@@ -1,6 +1,6 @@
-import { axios } from "@/common/AxiosClient";
-import { Response } from "@/entities/Response";
-import { IFile } from "@/entities/File";
+import { axios } from '@/common/AxiosClient';
+import { Response } from '@/entities/Response';
+import { IFile } from '@/entities/File';
 
 
 type UploadFileResponse = Response<{

@@ -72,5 +72,6 @@
   ],
   "classnames.moduleName": "",
   "classnames.classnames": "classNames",
-  "classnames.copy": false
+  "classnames.copy": false,
+  "files.eol": "\n"
 }

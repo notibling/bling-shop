@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 function useTabController() {
   const [activeTab, setActiveTab] = useState<string>();
@@ -7,9 +7,9 @@ function useTabController() {
 
   const setTab = (tabId?: string) => {
     setActiveTab(tabId);
-  }
+  };
 
   return { activeTab, setTab };
 }
 
-export { useTabController }
+export { useTabController };

@@ -1,4 +1,4 @@
-import { FaHourglass } from "react-icons/fa";
+import { FaHourglass } from 'react-icons/fa';
 
 interface IGroup {
   label: string;
@@ -6,10 +6,9 @@ interface IGroup {
     label: string;
     href: string;
     icon?: JSX.Element;
-  }[]
+  }[]; 
 }
 
-// * Groups -> items[]
 const InternalBoardMenuItems: IGroup[] = [
   {
     label: 'Categorias',
@@ -61,6 +60,6 @@ const InternalBoardMenuItems: IGroup[] = [
       }
     ]
   }
-]
+];
 
-export { InternalBoardMenuItems }
+export { InternalBoardMenuItems };

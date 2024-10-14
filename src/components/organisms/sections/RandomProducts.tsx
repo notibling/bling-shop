@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import React from 'react';
 import classNames from 'classnames';
 import { Title, Section } from '@/components/atoms';
@@ -43,22 +43,22 @@ const RandomProducts: React.FC<RandomProductsProps> = ({className, rows = 4, col
 
   return (
     <>
-      <Section classNameContainer="flex !flex-col !h-auto" className='w-full !h-auto'>
-        <Title className={classNames('mb-1', 'self-start text-2xl')} level="h3" icon={<FaMarker />} iconColor=" text-3xl" titleClassName="text-lg lg:text-xl" title="Otras personas han buscado:" description="Productos relacionados" />
+      <Section classNameContainer='flex !flex-col !h-auto' className='w-full !h-auto'>
+        <Title className={classNames('mb-1', 'self-start text-2xl')} level='h3' icon={<FaMarker />} iconColor=' text-3xl' titleClassName='text-lg lg:text-xl' title='Otras personas han buscado:' description='Productos relacionados' />
         <div className={classNames('w-full', 'h-auto', 'grid', 'relative', 'p-0', 'gap-4', 'align-center')} style={{ gridTemplateColumns: gridColumnStyle }}>
           {new Array(totalProducts).fill(0).map((_val, index) => (
             <CardVertical
               key={index}
               shareButton={false}
               basketButton={true}
-              padding=""
-              className="h-[285px] lg:h-[320px]"
-              title="Altavoz Bluetooth resistente al agua y golpes"
-              priceBefore="1800"
-              price="399"
-              badge="UY$"
-              image="true"
-              alt="product"
+              padding=''
+              className='h-[285px] lg:h-[320px]'
+              title='Altavoz Bluetooth resistente al agua y golpes'
+              priceBefore='1800'
+              price='399'
+              badge='UY$'
+              image='true'
+              alt='product'
               rate={true}
               stock='ultimas unidades'
               condition='producto nuevo'

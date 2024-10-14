@@ -1,11 +1,10 @@
 'use client';
-import { createContext, useContext, useMemo, useState } from "react";
+import React, { createContext, useContext, useMemo, useState } from 'react';
 import { cloneDeep, compact } from 'lodash';
 
 
-
-import { ICartContext, ICartItem } from "./types";
-import { getStaticFileUrl } from "@/utils";
+import { ICartContext, ICartItem } from './types';
+import { getStaticFileUrl } from '@/utils';
 
 
 const CartContext = createContext<ICartContext>({
@@ -23,7 +22,7 @@ const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => 
 
   const getCartItem = (id: number) => {
     return cartItems.find(item => item.id === id);
-  }
+  };
 
 
   const cartItemsCount = useMemo(() => {
@@ -43,24 +42,24 @@ const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => 
               return {
                 ...v,
                 quantity
-              }
+              };
             }
             return v;
-          })
+          });
 
           return {
             ...item, quantity, details: {
               ...item.details,
               variants: _itemVariants
             }
-          }
+          };
         }
 
         return item;
-      })
+      });
 
-    })
-  }
+    });
+  };
 
   const addToCart: ICartContext['addToCart'] = ({ productDisplay, variant: _variant, quantity = 1 }) => {
     const variant: any = {
@@ -68,11 +67,11 @@ const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => 
       details: {},
       quantity,
       title: (_variant?.variantAttributes ?? []).map(attr => attr.attributeValue).join(' - '),
-      image: getStaticFileUrl(  productDisplay?.product?.images[0]) ?? '',
+      image: getStaticFileUrl(productDisplay?.product?.images[0]) ?? '',
       price: _variant?.price,
-      priceBefore: _variant?.price,
+      priceBefore: _variant?.price
 
-    }
+    };
 
     setCartItems(prev => {
       const cartItemIndex = prev.findIndex(item => item.id === productDisplay.id);
@@ -102,8 +101,8 @@ const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => 
               if (v.id === variant?.id) {
                 return { ...v, quantity: v.quantity + quantity };
               }
-              return v
-            })
+              return v;
+            });
             debugger;
 
             return {
@@ -124,15 +123,15 @@ const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => 
           };
         });
       }
-    })
-  }
+    });
+  };
 
   return (
     <CartContext.Provider value={{ cartItems, cartItemsCount, setCartItems, addToCart, getCartItem, changeProductQuantity }}>
       {children}
     </CartContext.Provider>
-  )
-}
+  );
+};
 
 function useCart() {
   return useContext(CartContext);

@@ -6,7 +6,7 @@ import { ICity, ICountryDetail, IState } from '@/entities/Country';
 import { IUserShipping } from '@/entities/UserShipping';
 
 import { usePersistState } from '@/hooks/usePersistState';
-import { usePromiseState } from '@/hooks/usePromise';
+import { usePromiseState } from '@/hooks/usePromiseState';
 
 import * as userOperations from '@/contexts/GlobalState/user/operations';
 import { ISimpleAutocompleteRef } from '@/components/organisms';
@@ -37,14 +37,13 @@ const Context = React.createContext<IInitialStepsState>({
   setUserShippings: () => { },
   setUser() { },
   getCities: () => [],
-  sync: async () => { return true; },
+  sync: async() => { return true; },
   countries: [],
   country: undefined,
   states: [],
   shippingInformationStateRef: {} as any,
-  shippingInformationCityRef: {} as any,
-})
-
+  shippingInformationCityRef: {} as any
+});
 
 const InitialStepsProvider: React.FC<IInitialStepsProviderProps> = ({ children }) => {
   const [user, setUser] =
@@ -57,20 +56,20 @@ const InitialStepsProvider: React.FC<IInitialStepsProviderProps> = ({ children }
   const shippingInformationCityRef = useRef<ISimpleAutocompleteRef>(null);
 
   const { result: gettedUserData } =
-    usePromiseState(async () => {
+    usePromiseState(async() => {
       const response = await userOperations.getCurrentUser();
-      return response
+      return response;
     }, []);
 
 
   const { result: countries } =
-    usePromiseState(async () => {
+    usePromiseState(async() => {
       const response = await generalOperations.getGeoData<generalOperations.IGetCountriesResponse>('list-countries');
       return response.data ?? [];
     }, []);
 
   const { result: country } =
-    usePromiseState(async () => {
+    usePromiseState(async() => {
       const response = await generalOperations.getGeoData<generalOperations.IGetSingleCountryResponse>('single-country', user?.residenceCountry ?? 'URY');
       return response.data;
     }, [user?.residenceCountry]);
@@ -80,9 +79,9 @@ const InitialStepsProvider: React.FC<IInitialStepsProviderProps> = ({ children }
   const getCities = useCallback((_state: string) => {
     const state = states.find((state) => state['name'] === _state);
     return state?.cities.flatMap((cities) => cities) || [];
-  }, [country])
+  }, [country]);
 
-  const sync = async () => {
+  const sync = async() => {
     const data = {
       user,
       userShipping: userShippings
@@ -93,15 +92,15 @@ const InitialStepsProvider: React.FC<IInitialStepsProviderProps> = ({ children }
     console.log('UPDATE USER RESPONSE', response);
 
     return response.success;
-  }
+  };
 
   useEffect(() => {
     if (gettedUserData) {
       setUser(gettedUserData.user);
       setUserShippings(gettedUserData.userShipping);
-      console.log('gettedUserData', { gettedUserData })
+      console.log('gettedUserData', { gettedUserData });
     }
-  }, [gettedUserData])
+  }, [gettedUserData]);
   if (!user || !userShippings) return null;
   return (
     <Context.Provider value={{
@@ -119,8 +118,8 @@ const InitialStepsProvider: React.FC<IInitialStepsProviderProps> = ({ children }
     }}>
       {children}
     </Context.Provider>
-  )
-}
+  );
+};
 
 function useInitialStepsState() {
   return React.useContext(Context);

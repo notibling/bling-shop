@@ -22,8 +22,8 @@ const LogoBlingPay: React.FC<LogoBlingPayProps> = ({ className = '', darkMode: _
   const image = color ? color === 'light' ? '/images/blingpay/blingpaylight.svg' : '/images/blingpay/blingpaydark.svg' : imagePath;
   return (
     <div className={classNames(className)}>
-      <Link href="/">
-        <Image color={(_darkMode || darkMode) ? 'white' : 'black'} width={width} height={height} alt="Bling Pay" src={image} />
+      <Link href='/'>
+        <Image color={(_darkMode || darkMode) ? 'white' : 'black'} width={width} height={height} alt='Bling Pay' src={image} />
       </Link>
     </div>
   );

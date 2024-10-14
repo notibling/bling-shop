@@ -8,7 +8,7 @@ interface IAttribute {
   id: number;
   name: string;
   description: string;
-  format: "string" | "number" | "boolean" | "json" | "json_array";
+  format: 'string' | 'number' | 'boolean' | 'json' | 'json_array';
   type: string[];
   values: IAttributeValue[];
 }

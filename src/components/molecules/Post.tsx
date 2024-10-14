@@ -41,8 +41,8 @@ const Post: React.FC<PostProps> = ({ title, description, info, image, open, moda
             <Image
               src={image}
               unoptimized
-              alt="Descripción de la imagen"
-              className="aspect-square object-cover rounded-md"
+              alt='Descripción de la imagen'
+              className='aspect-square object-cover rounded-md'
               width={500}
               height={500}
             />
@@ -55,14 +55,14 @@ const Post: React.FC<PostProps> = ({ title, description, info, image, open, moda
           description={description}
           descriptionClassName={'leading-normal'}
         />
-        <Button text="Ver más" onClick={() => setOpen(true)} className="btn-md border bling-light-border dark:border-bling-dark-bg-5 bling-btn-primary dark:bling-btn-primary-dark" />
+        <Button text='Ver más' onClick={() => setOpen(true)} className='btn-md border bling-light-border dark:border-bling-dark-bg-5 bling-btn-primary dark:bling-btn-primary-dark' />
       </div>
 
       <Modal
         isOpen={open}
         onClose={() => setOpen(false)}
         title={modalTitle}
-        className="p-2 min-w-[400px]"
+        className='p-2 min-w-[400px]'
         content={
           <div className={classNames('w-full', 'max-w-[500px]', 'flex', 'flex-col', 'gap-4')}>
             <div className='text-sm w-full h-auto leading-normal'>{modalContent}</div>

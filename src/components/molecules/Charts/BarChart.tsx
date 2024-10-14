@@ -1,12 +1,12 @@
-'use client'
-import React, { Fragment, HTMLProps, useEffect, useRef } from "react";
-import dynamic from "next/dynamic";
+'use client';
+import React, { Fragment, HTMLProps, useEffect, useRef } from 'react';
+import dynamic from 'next/dynamic';
 
 import {
   Chart, ChartData, ChartOptions,
   BarElement, BarController,
   CategoryScale, Tooltip, LinearScale // Importa LinearScale
-} from "chart.js";
+} from 'chart.js';
 
 interface IBarChartProps {
   data: ChartData<'bar'>;
@@ -22,7 +22,7 @@ const BarChartComponent: React.FC<IBarChartProps> = ({ data, options, container 
   Chart.register(BarElement, BarController, CategoryScale, Tooltip, LinearScale);
 
   useEffect(() => {
-    const ctx = canvasRef.current?.getContext('2d')
+    const ctx = canvasRef.current?.getContext('2d');
     if (ctx) {
 
       if (chartRef.current) chartRef.current.destroy();
@@ -38,7 +38,7 @@ const BarChartComponent: React.FC<IBarChartProps> = ({ data, options, container 
         chartRef.current.destroy();
       }
     };
-  }, [data, options])
+  }, [data, options]);
 
   const ContainerComponent = container ? 'div' : Fragment;
 
@@ -46,9 +46,9 @@ const BarChartComponent: React.FC<IBarChartProps> = ({ data, options, container 
     <ContainerComponent {...(container ?? {})}>
       <canvas ref={canvasRef} />
     </ContainerComponent>
-  )
-}
+  );
+};
 
-const BarChart = dynamic(async () => BarChartComponent, { ssr: false });
+const BarChart = dynamic(async() => BarChartComponent, { ssr: false });
 
 export {BarChart};

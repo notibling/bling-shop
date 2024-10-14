@@ -1,13 +1,13 @@
-import classNames from "classnames";
-import { useEffect, useState } from "react";
-import { FaPencil } from "react-icons/fa6";
+import classNames from 'classnames';
+import { useEffect, useState } from 'react';
+import { FaPencil } from 'react-icons/fa6';
 
 import * as categoryOperations from '@/contexts/GlobalState/product/categoryOperations';
 
-import { Modal } from "@/components/molecules";
-import { Button, ButtonSize, Input } from "@/components/atoms";
+import { Modal } from '@/components/molecules';
+import { Button, ButtonSize, Input } from '@/components/atoms';
 
-import { usePromise } from "@/hooks";
+import { usePromise } from '@/hooks';
 
 import { ICategory, INestedCategories } from '@/entities/Category';
 
@@ -36,9 +36,9 @@ const UpdateCategoryModal: React.FC<IUpdateCategoryModalProps> = ({ open, setOpe
 
   const handleChange = (field: keyof typeof form, value: any) => {
     setForm(prev => ({ ...prev, [field]: value }));
-  }
+  };
 
-  const handleUpdate = async () => {
+  const handleUpdate = async() => {
     if (!category?.id) alert('An error has ocurred');
 
     await perform({
@@ -49,7 +49,7 @@ const UpdateCategoryModal: React.FC<IUpdateCategoryModalProps> = ({ open, setOpe
     setForm(formInitialValue);
     onSave();
     setOpen(false);
-  }
+  };
 
   useEffect(() => {
     setForm({
@@ -57,38 +57,38 @@ const UpdateCategoryModal: React.FC<IUpdateCategoryModalProps> = ({ open, setOpe
       description: category?.description ?? '',
       parentId: category?.parentId || null
     });
-  }, [category])
+  }, [category]);
 
 
   useEffect(() => {
     if (!open) {
       setForm(formInitialValue);
     }
-  }, [open])
+  }, [open]);
   return (
     <Modal
 
       isOpen={open}
       onClose={() => setOpen(false)}
-      title="Editar Categoría"
+      title='Editar Categoría'
       content={
         <div className={classNames('flex', 'flex-col', 'gap-4')}>
-          <Input value={form.name} onChange={(e) => handleChange('name', e.target.value)} className={classNames('border !border-gray-200')} placeholder="Category Name" />
-          <Input value={form.description} onChange={(e) => handleChange('description', e.target.value)} className={classNames('border !border-gray-200')} placeholder="Category Description" />
+          <Input value={form.name} onChange={(e) => handleChange('name', e.target.value)} className={classNames('border !border-gray-200')} placeholder='Category Name' />
+          <Input value={form.description} onChange={(e) => handleChange('description', e.target.value)} className={classNames('border !border-gray-200')} placeholder='Category Description' />
           <div>
             <select
               value={form.parentId ?? ''}
               onChange={(e) => handleChange('parentId', e.target.value)}
               className={classNames(
-                "w-full",
-                "select",
-                "select-bordered",
-                "w-full",
-                "!outline-none",
-                "text-slate-700")}
+                'w-full',
+                'select',
+                'select-bordered',
+                'w-full',
+                '!outline-none',
+                'text-slate-700')}
 
             >
-              <option value="">Categoría principal, no tiene parent</option>
+              <option value=''>Categoría principal, no tiene parent</option>
               {categories.map((category) => (
                 <option key={category.id} value={category.id}>{category.id} - {category.name}</option>
               ))}
@@ -99,11 +99,11 @@ const UpdateCategoryModal: React.FC<IUpdateCategoryModalProps> = ({ open, setOpe
       }
       footer={
         <>
-          <Button className="bling-btn-secondary btn-md" onClick={() => setOpen(false)} text="Cerrar" />
+          <Button className='bling-btn-secondary btn-md' onClick={() => setOpen(false)} text='Cerrar' />
           <Button
-            text="Editar"
+            text='Editar'
             icon={<FaPencil />}
-            className="gap-2 bg-blue-500  text-white !px-4 !py-2"
+            className='gap-2 bg-blue-500  text-white !px-4 !py-2'
             size={ButtonSize.small}
 
             onClick={handleUpdate}
@@ -111,12 +111,12 @@ const UpdateCategoryModal: React.FC<IUpdateCategoryModalProps> = ({ open, setOpe
           />
         </>
       }
-      contentClassName="!h-auto flex-grow"
-      className="p-2 min-w-[400px] !h-auto"
-      overlayClassName="custom-overlay"
+      contentClassName='!h-auto flex-grow'
+      className='p-2 min-w-[400px] !h-auto'
+      overlayClassName='custom-overlay'
     />
-  )
-}
+  );
+};
 
 
-export { UpdateCategoryModal }
+export { UpdateCategoryModal };

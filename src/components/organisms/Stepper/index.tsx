@@ -1,6 +1,6 @@
-'use client'
+'use client';
 import { usePersistState } from '@/hooks/usePersistState';
-import React, {  useState } from 'react'
+import React, { useState } from 'react';
 
 
 interface StepperContextValue<T> {
@@ -32,11 +32,11 @@ const Context = React.createContext<StepperContextValue<any>>({
 
 
   setRegisteredSteps: () => { },
-  registeredSteps: [],
+  registeredSteps: []
 
 });
 
-const StepperHOC = <T,>({ defaultValue, id, persistState }: IStepperHOCProps<T>, Component: React.FC<any>) => {
+const StepperHOC = <T, >({ defaultValue, id, persistState }: IStepperHOCProps<T>, Component: React.FC<any>) => {
   const stepKey: undefined | `@${string}` = persistState ? `@stepper_${id}-step` : undefined;
   const stateKey: undefined | `@${string}` = persistState ? `@stepper_${id}-state` : undefined;
   return (props: any) => {
@@ -47,11 +47,11 @@ const StepperHOC = <T,>({ defaultValue, id, persistState }: IStepperHOCProps<T>,
 
     const nextStep = () => {
       setStep((prev) => prev < registeredSteps.length - 1 ? prev + 1 : prev);
-    }
+    };
 
     const previousStep = () => {
       setStep((prev) => prev > 0 ? prev - 1 : prev);
-    }
+    };
 
     return (
       <Context.Provider value={{
@@ -64,13 +64,13 @@ const StepperHOC = <T,>({ defaultValue, id, persistState }: IStepperHOCProps<T>,
       }}>
         <Component {...props} />
       </Context.Provider>
-    )
-  }
-}
+    );
+  };
+};
 
 
 function useStepper<T = any>() {
-  return React.useContext<StepperContextValue<T>>(Context)
+  return React.useContext<StepperContextValue<T>>(Context);
 }
 
-export { StepperHOC, useStepper }
+export { StepperHOC, useStepper };

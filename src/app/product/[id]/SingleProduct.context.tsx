@@ -1,9 +1,6 @@
-'use client'
+'use client';
+import React from 'react';
 import { createContext, useContext, useEffect, useState } from 'react';
-
-import  * as categoryOperations from '@/contexts/GlobalState/product/categoryOperations';
-
-import { usePromise, usePromiseState } from '@/hooks';
 
 import { IProductDisplay } from '@/entities/ProductDisplay';
 import { IProductVariant, IProductVariantAttribute } from '@/entities/ProductVariant';
@@ -38,7 +35,7 @@ const SingleProductContext = createContext<ISingleProductContext>({
   isActiveAttribute: () => false,
   isCompatibleVariant: () => false,
   selectProductVariantAttribute: () => { },
-  setProductVariantFilters: () => { },
+  setProductVariantFilters: () => { }
 });
 
 
@@ -62,19 +59,19 @@ const SingleProductProvider: React.FC<ISingleProductProps> = ({ children, produc
       // * Check if the variant has all the required attributes
       const fillRequirements = variantAttributes.some((attr) => {
         const productVariantAttribute = productVariantAttributes.find(el => el.attributeId === attr.attributeId && el.attributeValue === attr.attributeValue);
-        return productVariantAttribute
+        return productVariantAttribute;
       });
       return fillRequirements;
     });
-  }
+  };
 
   const isActiveAttribute = (attribute: IProductVariantAttribute) => attribute.attributeId in productVariantFilters;
   const compatibleVariants = getCompatibleVariants(productDisplay);
 
   const isCompatibleVariant = (variant: IProductVariant) => {
 
-    return compatibleVariants.some(i => i.id === variant.id)
-  }
+    return compatibleVariants.some(i => i.id === variant.id);
+  };
 
   const selectProductVariantAttribute: ISingleProductContext['selectProductVariantAttribute'] = ({ variant, variantAttribute }) => {
     const nonFilters = !Object.values(productVariantFilters).length;
@@ -82,7 +79,7 @@ const SingleProductProvider: React.FC<ISingleProductProps> = ({ children, produc
       const attrs = (variant.variantAttributes ?? []).reduce((acc, crr) => ({
         ...acc,
         [crr.attributeId]: crr
-      }), {})
+      }), {});
       setProductVariantFilters({
         ...attrs,
         [variantAttribute.attributeId]: variantAttribute
@@ -92,24 +89,24 @@ const SingleProductProvider: React.FC<ISingleProductProps> = ({ children, produc
 
     setProductVariantFilters(prev => ({
       ...prev,
-      [variantAttribute.attributeId]: variantAttribute,
-    }))
+      [variantAttribute.attributeId]: variantAttribute
+    }));
 
-  }
+  };
 
   useEffect(() => {
-    if(productDisplay.entity !== 'product') return;
-    const variants = productDisplay.product?.variants?? [];
+    if (productDisplay.entity !== 'product') return;
+    const variants = productDisplay.product?.variants ?? [];
     const mainVariant = variants.find(variant => variant.main);
-    if(!mainVariant) return;
+    if (!mainVariant) return;
 
     const attrs = (mainVariant.variantAttributes ?? []).reduce((acc, crr) => ({
       ...acc,
       [crr.attributeId]: crr
-    }), {})
+    }), {});
     console.log(attrs);
     setProductVariantFilters(attrs);
-  }, [productDisplay])
+  }, [productDisplay]);
   return (
     <SingleProductContext.Provider value={{
       getCompatibleVariants,
@@ -119,8 +116,8 @@ const SingleProductProvider: React.FC<ISingleProductProps> = ({ children, produc
     }}>
       {children}
     </SingleProductContext.Provider>
-  )
-}
+  );
+};
 
 
 function useSingleProduct() {

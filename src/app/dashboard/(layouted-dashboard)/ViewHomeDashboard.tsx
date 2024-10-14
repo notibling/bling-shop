@@ -13,11 +13,11 @@ const ViewHomeDashboard: React.FC<ViewHomeDashboardProps> = ({}) => {
           <div className={classNames('w-full', 'h-[350px]', 'bg-slate-200', 'rounded-xl')}>
             <Banner
               image={'/images/webp/banners/BlingProductScene1.webp'}
-              imageAlt="Descripción de la imagen"
+              imageAlt='Descripción de la imagen'
               size={BannerSize.base}
-              title="Crea nuevos productos"
-              buttonText="Crear Nuevo Producto"
-              description="Genera más ventas con publicaciones de Alta Calidad."
+              title='Crea nuevos productos'
+              buttonText='Crear Nuevo Producto'
+              description='Genera más ventas con publicaciones de Alta Calidad.'
               polarized
             ></Banner>
           </div>
@@ -25,21 +25,21 @@ const ViewHomeDashboard: React.FC<ViewHomeDashboardProps> = ({}) => {
             <div className={classNames('w-1/2', 'h-[150px]', 'bg-slate-200', 'rounded-xl', 'flex', 'flex-row')}>
               <Banner
                 image={'/images/webp/banners/BlingProductScene2.webp'}
-                imageAlt="Descripción de la imagen"
+                imageAlt='Descripción de la imagen'
                 size={BannerSize.xs}
-                title="Revisa tus métricas"
-                description="Apoyate en tus mediciones para crecer infinitamente."
-                buttonBackground="!bg-slate-900"
+                title='Revisa tus métricas'
+                description='Apoyate en tus mediciones para crecer infinitamente.'
+                buttonBackground='!bg-slate-900'
                 polarized
               ></Banner>
             </div>
             <div className={classNames('w-1/2', 'h-[150px]', 'bg-slate-200', 'rounded-xl', 'flex', 'flex-grow')}>
               <Banner
                 image={'/images/webp/banners/BlingProductScene8.webp'}
-                imageAlt="Atiende a tus clientes"
+                imageAlt='Atiende a tus clientes'
                 size={BannerSize.xs}
-                title="Atiende a tus clientes"
-                description="Responde las consultas de tus clientes, ganale a tu competencia con una mejor atención."
+                title='Atiende a tus clientes'
+                description='Responde las consultas de tus clientes, ganale a tu competencia con una mejor atención.'
                 polarized
               ></Banner>
             </div>
@@ -47,20 +47,20 @@ const ViewHomeDashboard: React.FC<ViewHomeDashboardProps> = ({}) => {
         </div>
         <div className={classNames('w-full', 'lg:w-1/3', 'h-auto', 'gap-2', 'rounded-sm', 'flex', 'flex-col')}>
           <div className={classNames('w-full', 'h-[171px]', 'bg-slate-200', 'rounded-xl')}>
-            <Banner image={'/images/webp/banners/BlingProductScene4.webp'} imageAlt="Crea nuevas Campañas" size={BannerSize.xs} title="Crea nuevas Campañas" description="Llega más lejos, encuentra más clientes." polarized></Banner>
+            <Banner image={'/images/webp/banners/BlingProductScene4.webp'} imageAlt='Crea nuevas Campañas' size={BannerSize.xs} title='Crea nuevas Campañas' description='Llega más lejos, encuentra más clientes.' polarized></Banner>
           </div>
           <div className={classNames('w-full', 'h-[171px]', 'bg-slate-200', 'rounded-xl')}>
             <Banner
               image={'/images/webp/banners/BlingProductScene6.webp'}
-              imageAlt="Descripción de la imagen"
+              imageAlt='Descripción de la imagen'
               size={BannerSize.xs}
-              title="Coordina tus Envíos"
-              description="Mantén ordenados tus horarios, envíos, y agiliza tus entregas."
+              title='Coordina tus Envíos'
+              description='Mantén ordenados tus horarios, envíos, y agiliza tus entregas.'
               polarized
             ></Banner>
           </div>
           <div className={classNames('w-full', 'h-[150px]', 'bg-slate-200', 'rounded-xl')}>
-            <Banner image={'/images/webp/banners/BlingProductScene3.webp'} imageAlt="Descripción de la imagen" size={BannerSize.lg} title="Crea Tu Propia Tienda" description="Genera más ventas con publicaciones de Alta Calidad." polarized></Banner>
+            <Banner image={'/images/webp/banners/BlingProductScene3.webp'} imageAlt='Descripción de la imagen' size={BannerSize.lg} title='Crea Tu Propia Tienda' description='Genera más ventas con publicaciones de Alta Calidad.' polarized></Banner>
           </div>
         </div>
       </div>

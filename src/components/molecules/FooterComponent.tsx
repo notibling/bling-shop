@@ -26,7 +26,7 @@ import {
   FaTwitter,
   FaUserCheck,
   FaUserCircle,
-  FaUserCog,
+  FaUserCog
 } from 'react-icons/fa';
 
 import { FaArrowRightArrowLeft, FaBasketShopping, FaCircleQuestion, FaFileLines, FaRotate, FaShield } from 'react-icons/fa6';
@@ -62,7 +62,7 @@ const FooterComponent: React.FC<IFooterComponentProps> = ({ className, brandFoot
               )}
             >
               <span className={classNames('w-fit', 'h-full', 'text-nowrap', 'px-2', 'text-slate-700', 'p-2', 'font-bold', 'text-xs', 'bling-badge', 'px-2')}>LO ÚLTIMO:</span>
-              {/*<marquee className={classNames('marquee-info', 'mx-2', 'w-full', 'h-full', 'text-nowrap', 'text-slate-100', 'p-2', 'font-bold', 'text-xs')} onMouseEnter={detenerMarquee} onMouseLeave={reiniciarMarquee}>
+              {/* <marquee className={classNames('marquee-info', 'mx-2', 'w-full', 'h-full', 'text-nowrap', 'text-slate-100', 'p-2', 'font-bold', 'text-xs')} onMouseEnter={detenerMarquee} onMouseLeave={reiniciarMarquee}>
                 🚀 ¡Descubre los últimos productos añadidos a la categoría de [categoría]! Haz clic para ver más ➡️ ♦ ⏳ ¡Apresúrate! Quedan pocas unidades del popular [nombre del producto]. ¡Consigue el tuyo antes de que se agoten! 🛒 • 🎉
                 ¡Prepárate para la BlingWeek! Este 22 de Marzo llegan nuevas promociones y ofertas irresistibles en todo el país. ¡No te lo pierdas! 🎁{' '}
               </marquee>*/}
@@ -72,7 +72,7 @@ const FooterComponent: React.FC<IFooterComponentProps> = ({ className, brandFoot
                   <span className={classNames('')}>Más</span>
                 </div>
                 <span className={classNames('w-fit', 'h-full', 'text-nowrap', 'px-1', 'text-slate-100', 'p-2', 'font-bold', 'text-xs')}>
-                  <FaArrowCircleRight className="text-bling-yellow" />
+                  <FaArrowCircleRight className='text-bling-yellow' />
                 </span>
               </div>
             </div>
@@ -85,19 +85,19 @@ const FooterComponent: React.FC<IFooterComponentProps> = ({ className, brandFoot
             <div className={classNames('w-full', 'h-auto', 'flex', 'gap-5', 'p-2', 'hidden', 'lg:flex')}>
               <div className={classNames('w-3/12', 'rounded', 'flex', 'flex-col', 'gap-1')}>
                 <div className={classNames('flex', 'h-auto', 'w-full', 'join-item', ' text-slate-100', 'self-center', 'items-center', 'justify-center')}>
-                  <Image width="100" height="100" className="pr-10 w-52" alt="Bling Logo" src="./images/svg/BlingLogoWhite.svg" />
+                  <Image width='100' height='100' className='pr-10 w-52' alt='Bling Logo' src='./images/svg/BlingLogoWhite.svg' />
                 </div>
                 <Title
-                  title="Hashtags:"
-                  titleClassName="text-sm text-slate-500"
-                  iconClassName="!p-1"
-                  level="h6"
-                  className="w-full px-1 mb-2 leading-4 border-b rounded-none border-slate-700 "
-                  icon={<Icon name="HashtagSquare" color="#64748b"   size={30} />}
-                  tooltipPosition="top"
-                  tooltipClassName="min-w-[250px]"
+                  title='Hashtags:'
+                  titleClassName='text-sm text-slate-500'
+                  iconClassName='!p-1'
+                  level='h6'
+                  className='w-full px-1 mb-2 leading-4 border-b rounded-none border-slate-700 '
+                  icon={<Icon name='HashtagSquare' color='#64748b' size={30} />}
+                  tooltipPosition='top'
+                  tooltipClassName='min-w-[250px]'
                   tooltip={true}
-                  tooltipContent="Hazle click a estos hashtags y utilizalos en tus post para referenciar tus productos favoritos."
+                  tooltipContent='Hazle click a estos hashtags y utilizalos en tus post para referenciar tus productos favoritos.'
                 />
 
                 <ToCopy textToCopy={'#Bling #BlingUy #BlingUruguay #NotiBling #Blinger #Blingers #BlingersLove #BlingBell #BlingShop  #BlingServices'}>
@@ -107,12 +107,12 @@ const FooterComponent: React.FC<IFooterComponentProps> = ({ className, brandFoot
 
               <div className={classNames('w-3/12', 'rounded', 'flex', 'gap-1', 'flex-wrap', 'align-top', 'flex-start', 'content-start')}>
                 <Title
-                  title="Responsabilidades:"
-                  titleClassName="text-sm text-slate-500"
-                  iconClassName="!p-1"
-                  level="h6"
-                  className="w-full px-1 mb-2 leading-4 border-b rounded-none border-slate-700"
-                  icon={<Icon name="ShieldUser" color="#64748b"   size={30} />}
+                  title='Responsabilidades:'
+                  titleClassName='text-sm text-slate-500'
+                  iconClassName='!p-1'
+                  level='h6'
+                  className='w-full px-1 mb-2 leading-4 border-b rounded-none border-slate-700'
+                  icon={<Icon name='ShieldUser' color='#64748b' size={30} />}
                 />
 
                 <span className={classNames('bling-badge-primary', 'text-xs')}>Términos y Condiciones</span>
@@ -124,12 +124,12 @@ const FooterComponent: React.FC<IFooterComponentProps> = ({ className, brandFoot
               </div>
               <div className={classNames('w-3/12', 'rounded', 'flex', 'gap-1', 'flex-wrap', 'align-top', 'flex-start', 'content-start')}>
                 <Title
-                  title="Preguntas Frecuentes:"
-                  titleClassName="text-sm text-slate-500"
-                  iconClassName="!p-1"
-                  level="h6"
-                  className="w-full px-1 mb-2 leading-4 border-b rounded-none border-slate-700"
-                  icon={<Icon name="QuestionCircle" color="#64748b"   size={30} />}
+                  title='Preguntas Frecuentes:'
+                  titleClassName='text-sm text-slate-500'
+                  iconClassName='!p-1'
+                  level='h6'
+                  className='w-full px-1 mb-2 leading-4 border-b rounded-none border-slate-700'
+                  icon={<Icon name='QuestionCircle' color='#64748b' size={30} />}
                 />
 
                 <span className={classNames('bling-badge-primary', 'text-xs')}>Cómo Crear un Usuario</span>
@@ -143,12 +143,12 @@ const FooterComponent: React.FC<IFooterComponentProps> = ({ className, brandFoot
 
               <div className={classNames('w-3/12', 'rounded', 'flex', 'gap-1', 'flex-wrap', 'align-top', 'flex-start', 'content-start')}>
                 <Title
-                  title="Central de Recursos:"
-                  titleClassName="text-sm text-slate-500"
-                  iconClassName="!p-1"
-                  level="h6"
-                  className="w-full px-1 mb-2 leading-4 border-b rounded-none border-slate-700"
-                  icon={<Icon name="Layers" color="#64748b"   size={30} />}
+                  title='Central de Recursos:'
+                  titleClassName='text-sm text-slate-500'
+                  iconClassName='!p-1'
+                  level='h6'
+                  className='w-full px-1 mb-2 leading-4 border-b rounded-none border-slate-700'
+                  icon={<Icon name='Layers' color='#64748b' size={30} />}
                 />
 
                 <span className={classNames('bling-badge-primary', 'text-xs')}>Centro de Seguridad</span>
@@ -160,17 +160,17 @@ const FooterComponent: React.FC<IFooterComponentProps> = ({ className, brandFoot
               </div>
               <div className={classNames('w-3/12', 'rounded', 'flex', 'gap-1', 'flex-wrap', 'align-top', 'flex-start', 'content-start')}>
                 <Title
-                  title="Contacto & Redes:"
-                  titleClassName="text-sm text-slate-500 "
-                  iconClassName="!p-1"
-                  level="h6"
-                  className="w-full px-1 mb-2 leading-4 border-b rounded-none border-slate-700 "
-                  icon={<Icon name="Translation" color="#64748b"   size={30} />}
+                  title='Contacto & Redes:'
+                  titleClassName='text-sm text-slate-500 '
+                  iconClassName='!p-1'
+                  level='h6'
+                  className='w-full px-1 mb-2 leading-4 border-b rounded-none border-slate-700 '
+                  icon={<Icon name='Translation' color='#64748b' size={30} />}
                 />
 
                 <label className={classNames('w-full', 'h-15', 'bg-slate-800', 'input', 'input-bordered', 'flex', 'items-center', 'rounded-full', 'text-xs', 'p-1')}>
                   <FaEnvelope className={classNames('w-10', 'h-10', 'p-3', 'text-sm', 'text-slate-500')}></FaEnvelope>
-                  <input type="text" className={classNames('p-2', 'flex-grow')} placeholder="Ingrese su Email" />
+                  <input type='text' className={classNames('p-2', 'flex-grow')} placeholder='Ingrese su Email' />
                   <Button icon={<FaPaperPlane />} className={classNames('w-10', 'h-10', 'rounded-full', 'cursor-pointer', 'text-slate-500', 'bg-slate-700', 'hover:bg-slate-600', 'hover:text-slate-100', 'rounded-full')}></Button>
                 </label>
                 <span className={classNames('w-full', 'text-xs', 'text-center', 'text-slate-500')}>¡Recibí las ofertas, descuentos y cupones semanales!</span>
@@ -212,37 +212,37 @@ const FooterComponent: React.FC<IFooterComponentProps> = ({ className, brandFoot
           <div className={classNames('w-full', 'p-2')}>
             <ul className={classNames('w-full', 'p-2', 'text-slate-500', 'gap-1', 'text-sm')}>
               <li className={classNames('w-full', 'h-10', 'active:bg-slate-900', 'active:text-white', 'focus:bg-slate-900', 'focus:text-white', 'rounded-md')}>
-                <a href="#" className={classNames('w-full', 'h-full', 'items-center', 'flex', 'text-slate-500', 'hover:text-slate-100', 'hover:bg-slate-700', 'rounded-md', 'hover:drop-shadow-lg')}>
+                <a href='#' className={classNames('w-full', 'h-full', 'items-center', 'flex', 'text-slate-500', 'hover:text-slate-100', 'hover:bg-slate-700', 'rounded-md', 'hover:drop-shadow-lg')}>
                   <FaHandshake className={classNames('w-4', 'h-4', 'ml-4', 'mr-3')}></FaHandshake>
                   Términos y Condiciones
                 </a>
               </li>
               <li className={classNames('w-full', 'h-10', 'active:bg-slate-900', 'active:text-white', 'focus:bg-slate-900', 'focus:text-white', 'rounded-md')}>
-                <a href="#" className={classNames('w-full', 'h-full', 'items-center', 'flex', 'text-slate-500', 'hover:text-slate-100', 'hover:bg-slate-700', 'rounded-md', 'hover:drop-shadow-lg')}>
+                <a href='#' className={classNames('w-full', 'h-full', 'items-center', 'flex', 'text-slate-500', 'hover:text-slate-100', 'hover:bg-slate-700', 'rounded-md', 'hover:drop-shadow-lg')}>
                   <FaEye className={classNames('w-4', 'h-4', 'ml-4', 'mr-3')}></FaEye>
                   Políticas de Privacidad
                 </a>
               </li>
               <li className={classNames('w-full', 'h-10', 'active:bg-slate-900', 'active:text-white', 'focus:bg-slate-900', 'focus:text-white', 'rounded-md')}>
-                <a href="#" className={classNames('w-full', 'h-full', 'items-center', 'flex', 'text-slate-500', 'hover:text-slate-100', 'hover:bg-slate-700', 'rounded-md', 'hover:drop-shadow-lg')}>
+                <a href='#' className={classNames('w-full', 'h-full', 'items-center', 'flex', 'text-slate-500', 'hover:text-slate-100', 'hover:bg-slate-700', 'rounded-md', 'hover:drop-shadow-lg')}>
                   <FaTruck className={classNames('w-4', 'h-4', 'ml-4', 'mr-3')}></FaTruck>
                   Políticas de Envíos
                 </a>
               </li>
               <li className={classNames('w-full', 'h-10', 'active:bg-slate-900', 'active:text-white', 'focus:bg-slate-900', 'focus:text-white', 'rounded-md')}>
-                <a href="#" className={classNames('w-full', 'h-full', 'items-center', 'flex', 'text-slate-500', 'hover:text-slate-100', 'hover:bg-slate-700', 'rounded-md', 'hover:drop-shadow-lg')}>
+                <a href='#' className={classNames('w-full', 'h-full', 'items-center', 'flex', 'text-slate-500', 'hover:text-slate-100', 'hover:bg-slate-700', 'rounded-md', 'hover:drop-shadow-lg')}>
                   <FaArrowRightArrowLeft className={classNames('w-4', 'h-4', 'ml-4', 'mr-3')}></FaArrowRightArrowLeft>
                   Políticas de Devoluciones
                 </a>
               </li>
               <li className={classNames('w-full', 'h-10', 'active:bg-slate-900', 'active:text-white', 'focus:bg-slate-900', 'focus:text-white', 'rounded-md')}>
-                <a href="#" className={classNames('w-full', 'h-full', 'items-center', 'flex', 'text-slate-500', 'hover:text-slate-100', 'hover:bg-slate-700', 'rounded-md', 'hover:drop-shadow-lg')}>
+                <a href='#' className={classNames('w-full', 'h-full', 'items-center', 'flex', 'text-slate-500', 'hover:text-slate-100', 'hover:bg-slate-700', 'rounded-md', 'hover:drop-shadow-lg')}>
                   <FaCookie className={classNames('w-4', 'h-4', 'ml-4', 'mr-3')}></FaCookie>
                   Políticas de Cookies
                 </a>
               </li>
               <li className={classNames('w-full', 'h-10', 'active:bg-slate-900', 'active:text-white', 'focus:bg-slate-900', 'focus:text-white', 'rounded-md')}>
-                <a href="#" className={classNames('w-full', 'h-full', 'items-center', 'flex', 'text-slate-500', 'hover:text-slate-100', 'hover:bg-slate-700', 'rounded-md', 'hover:drop-shadow-lg')}>
+                <a href='#' className={classNames('w-full', 'h-full', 'items-center', 'flex', 'text-slate-500', 'hover:text-slate-100', 'hover:bg-slate-700', 'rounded-md', 'hover:drop-shadow-lg')}>
                   <FaPeopleArrows className={classNames('w-4', 'h-4', 'ml-4', 'mr-3')}></FaPeopleArrows>
                   Políticas de Terceros
                 </a>
@@ -266,49 +266,49 @@ const FooterComponent: React.FC<IFooterComponentProps> = ({ className, brandFoot
           <div className={classNames('w-full', 'p-2')}>
             <ul className={classNames('w-full', 'p-2', 'text-slate-500', 'gap-1', 'text-sm')}>
               <li className={classNames('w-full', 'h-10', 'active:bg-slate-900', 'active:text-white', 'focus:bg-slate-900', 'focus:text-white', 'rounded-md')}>
-                <a href="#" className={classNames('w-full', 'h-full', 'items-center', 'flex', 'text-slate-500', 'hover:text-slate-100', 'hover:bg-slate-700', 'rounded-md', 'hover:drop-shadow-lg')}>
+                <a href='#' className={classNames('w-full', 'h-full', 'items-center', 'flex', 'text-slate-500', 'hover:text-slate-100', 'hover:bg-slate-700', 'rounded-md', 'hover:drop-shadow-lg')}>
                   <FaUserCircle className={classNames('w-4', 'h-4', 'ml-4', 'mr-3')}></FaUserCircle>
                   Cómo Crear un Usuario
                 </a>
               </li>
               <li className={classNames('w-full', 'h-10', 'active:bg-slate-900', 'active:text-white', 'focus:bg-slate-900', 'focus:text-white', 'rounded-md')}>
-                <a href="#" className={classNames('w-full', 'h-full', 'items-center', 'flex', 'text-slate-500', 'hover:text-slate-100', 'hover:bg-slate-700', 'rounded-md', 'hover:drop-shadow-lg')}>
+                <a href='#' className={classNames('w-full', 'h-full', 'items-center', 'flex', 'text-slate-500', 'hover:text-slate-100', 'hover:bg-slate-700', 'rounded-md', 'hover:drop-shadow-lg')}>
                   <FaEye className={classNames('w-4', 'h-4', 'ml-4', 'mr-3')}></FaEye>
                   Políticas de Privacidad
                 </a>
               </li>
               <li className={classNames('w-full', 'h-10', 'active:bg-slate-900', 'active:text-white', 'focus:bg-slate-900', 'focus:text-white', 'rounded-md')}>
-                <a href="#" className={classNames('w-full', 'h-full', 'items-center', 'flex', 'text-slate-500', 'hover:text-slate-100', 'hover:bg-slate-700', 'rounded-md', 'hover:drop-shadow-lg')}>
+                <a href='#' className={classNames('w-full', 'h-full', 'items-center', 'flex', 'text-slate-500', 'hover:text-slate-100', 'hover:bg-slate-700', 'rounded-md', 'hover:drop-shadow-lg')}>
                   <FaDollarSign className={classNames('w-4', 'h-4', 'ml-4', 'mr-3')}></FaDollarSign>
                   Cómo Vender
                 </a>
               </li>
               <li className={classNames('w-full', 'h-10', 'active:bg-slate-900', 'active:text-white', 'focus:bg-slate-900', 'focus:text-white', 'rounded-md')}>
-                <a href="#" className={classNames('w-full', 'h-full', 'items-center', 'flex', 'text-slate-500', 'hover:text-slate-100', 'hover:bg-slate-700', 'rounded-md', 'hover:drop-shadow-lg')}>
+                <a href='#' className={classNames('w-full', 'h-full', 'items-center', 'flex', 'text-slate-500', 'hover:text-slate-100', 'hover:bg-slate-700', 'rounded-md', 'hover:drop-shadow-lg')}>
                   <FaBasketShopping className={classNames('w-4', 'h-4', 'ml-4', 'mr-3')}></FaBasketShopping>
                   Cómo Comprar
                 </a>
               </li>
               <li className={classNames('w-full', 'h-10', 'active:bg-slate-900', 'active:text-white', 'focus:bg-slate-900', 'focus:text-white', 'rounded-md')}>
-                <a href="#" className={classNames('w-full', 'h-full', 'items-center', 'flex', 'text-slate-500', 'hover:text-slate-100', 'hover:bg-slate-700', 'rounded-md', 'hover:drop-shadow-lg')}>
+                <a href='#' className={classNames('w-full', 'h-full', 'items-center', 'flex', 'text-slate-500', 'hover:text-slate-100', 'hover:bg-slate-700', 'rounded-md', 'hover:drop-shadow-lg')}>
                   <FaRotate className={classNames('w-4', 'h-4', 'ml-4', 'mr-3')}></FaRotate>
                   Cómo hacer un reclamo
                 </a>
               </li>
               <li className={classNames('w-full', 'h-10', 'active:bg-slate-900', 'active:text-white', 'focus:bg-slate-900', 'focus:text-white', 'rounded-md')}>
-                <a href="#" className={classNames('w-full', 'h-full', 'items-center', 'flex', 'text-slate-500', 'hover:text-slate-100', 'hover:bg-slate-700', 'rounded-md', 'hover:drop-shadow-lg')}>
+                <a href='#' className={classNames('w-full', 'h-full', 'items-center', 'flex', 'text-slate-500', 'hover:text-slate-100', 'hover:bg-slate-700', 'rounded-md', 'hover:drop-shadow-lg')}>
                   <FaClock className={classNames('w-4', 'h-4', 'ml-4', 'mr-3')}></FaClock>
                   Cuándo llega mi pedido
                 </a>
               </li>
               <li className={classNames('w-full', 'h-10', 'active:bg-slate-900', 'active:text-white', 'focus:bg-slate-900', 'focus:text-white', 'rounded-md')}>
-                <a href="#" className={classNames('w-full', 'h-full', 'items-center', 'flex', 'text-slate-500', 'hover:text-slate-100', 'hover:bg-slate-700', 'rounded-md', 'hover:drop-shadow-lg')}>
+                <a href='#' className={classNames('w-full', 'h-full', 'items-center', 'flex', 'text-slate-500', 'hover:text-slate-100', 'hover:bg-slate-700', 'rounded-md', 'hover:drop-shadow-lg')}>
                   <FaCreditCard className={classNames('w-4', 'h-4', 'ml-4', 'mr-3')}></FaCreditCard>
                   Cuántas cuotas hay
                 </a>
               </li>
               <li className={classNames('w-full', 'h-10', 'active:bg-slate-900', 'active:text-white', 'focus:bg-slate-900', 'focus:text-white', 'rounded-md')}>
-                <a href="#" className={classNames('w-full', 'h-full', 'items-center', 'flex', 'text-slate-500', 'hover:text-slate-100', 'hover:bg-slate-700', 'rounded-md', 'hover:drop-shadow-lg')}>
+                <a href='#' className={classNames('w-full', 'h-full', 'items-center', 'flex', 'text-slate-500', 'hover:text-slate-100', 'hover:bg-slate-700', 'rounded-md', 'hover:drop-shadow-lg')}>
                   <FaUserCog className={classNames('w-4', 'h-4', 'ml-4', 'mr-3')}></FaUserCog>
                   Cómo recuperar mi cuenta
                 </a>
@@ -332,31 +332,31 @@ const FooterComponent: React.FC<IFooterComponentProps> = ({ className, brandFoot
           <div className={classNames('w-full', 'p-2')}>
             <ul className={classNames('w-full', 'p-2', 'text-slate-500', 'gap-1', 'text-sm')}>
               <li className={classNames('w-full', 'h-10', 'active:bg-slate-900', 'active:text-white', 'focus:bg-slate-900', 'focus:text-white', 'rounded-md')}>
-                <a href="#" className={classNames('w-full', 'h-full', 'items-center', 'flex', 'text-slate-500', 'hover:text-slate-100', 'hover:bg-slate-700', 'rounded-md', 'hover:drop-shadow-lg')}>
+                <a href='#' className={classNames('w-full', 'h-full', 'items-center', 'flex', 'text-slate-500', 'hover:text-slate-100', 'hover:bg-slate-700', 'rounded-md', 'hover:drop-shadow-lg')}>
                   <FaShield className={classNames('w-4', 'h-4', 'ml-4', 'mr-3')}></FaShield>
                   Centro de Seguridad
                 </a>
               </li>
               <li className={classNames('w-full', 'h-10', 'active:bg-slate-900', 'active:text-white', 'focus:bg-slate-900', 'focus:text-white', 'rounded-md')}>
-                <a href="#" className={classNames('w-full', 'h-full', 'items-center', 'flex', 'text-slate-500', 'hover:text-slate-100', 'hover:bg-slate-700', 'rounded-md', 'hover:drop-shadow-lg')}>
+                <a href='#' className={classNames('w-full', 'h-full', 'items-center', 'flex', 'text-slate-500', 'hover:text-slate-100', 'hover:bg-slate-700', 'rounded-md', 'hover:drop-shadow-lg')}>
                   <FaHeadset className={classNames('w-4', 'h-4', 'ml-4', 'mr-3')}></FaHeadset>
                   Soporte Online 24/7
                 </a>
               </li>
               <li className={classNames('w-full', 'h-10', 'active:bg-slate-900', 'active:text-white', 'focus:bg-slate-900', 'focus:text-white', 'rounded-md')}>
-                <a href="#" className={classNames('w-full', 'h-full', 'items-center', 'flex', 'text-slate-500', 'hover:text-slate-100', 'hover:bg-slate-700', 'rounded-md', 'hover:drop-shadow-lg')}>
+                <a href='#' className={classNames('w-full', 'h-full', 'items-center', 'flex', 'text-slate-500', 'hover:text-slate-100', 'hover:bg-slate-700', 'rounded-md', 'hover:drop-shadow-lg')}>
                   <FaUserCheck className={classNames('w-4', 'h-4', 'ml-4', 'mr-3')}></FaUserCheck>
                   Trabaja con Nosotros
                 </a>
               </li>
               <li className={classNames('w-full', 'h-10', 'active:bg-slate-900', 'active:text-white', 'focus:bg-slate-900', 'focus:text-white', 'rounded-md')}>
-                <a href="#" className={classNames('w-full', 'h-full', 'items-center', 'flex', 'text-slate-500', 'hover:text-slate-100', 'hover:bg-slate-700', 'rounded-md', 'hover:drop-shadow-lg')}>
+                <a href='#' className={classNames('w-full', 'h-full', 'items-center', 'flex', 'text-slate-500', 'hover:text-slate-100', 'hover:bg-slate-700', 'rounded-md', 'hover:drop-shadow-lg')}>
                   <FaFileLines className={classNames('w-4', 'h-4', 'ml-4', 'mr-3')}></FaFileLines>
                   Comunicados de Prensa
                 </a>
               </li>
               <li className={classNames('w-full', 'h-10', 'active:bg-slate-900', 'active:text-white', 'focus:bg-slate-900', 'focus:text-white', 'rounded-md')}>
-                <a href="#" className={classNames('w-full', 'h-full', 'items-center', 'flex', 'text-slate-500', 'hover:text-slate-100', 'hover:bg-slate-700', 'rounded-md', 'hover:drop-shadow-lg')}>
+                <a href='#' className={classNames('w-full', 'h-full', 'items-center', 'flex', 'text-slate-500', 'hover:text-slate-100', 'hover:bg-slate-700', 'rounded-md', 'hover:drop-shadow-lg')}>
                   <FaEnvelopeOpenText className={classNames('w-4', 'h-4', 'ml-4', 'mr-3')}></FaEnvelopeOpenText>
                   Formularios de Contacto
                 </a>

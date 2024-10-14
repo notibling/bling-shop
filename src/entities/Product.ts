@@ -1,6 +1,6 @@
-import { IFile } from "./File";
-import { ICategory, IProductAttribute } from "./ProductDisplay";
-import { IProductVariant } from "./ProductVariant";
+import { IFile } from './File';
+import { ICategory, IProductAttribute } from './ProductDisplay';
+import { IProductVariant } from './ProductVariant';
 
 export interface IProduct {
   id: number;
@@ -33,13 +33,17 @@ export interface IProduct {
   deletedAt: string;
 }
 
+// Añade esta interfaz
+export interface INestedCategories extends ICategory {
+  children?: INestedCategories[];
+}
 
 class Product {
   public id!: number;
   public title!: string;
   public description!: string;
   public shortDescription!: string;
-  public category!: string;
+  public category!: string | any;
   public price!: number;
   public priceBefore!: number;
   public stock!: number;
@@ -99,4 +103,4 @@ class Product {
   }
 }
 
-export { Product }
+export { Product };

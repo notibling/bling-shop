@@ -1,9 +1,9 @@
-import { AxiosError } from "axios";
-import { axios } from "@/common/AxiosClient";
+import { AxiosError } from 'axios';
+import { axios } from '@/common/AxiosClient';
 
-import { IUser } from "@/entities/User";
-import { IUserShipping } from "@/entities/UserShipping";
-import { Response } from "@/entities/Response";
+import { IUser } from '@/entities/User';
+import { IUserShipping } from '@/entities/UserShipping';
+import { Response } from '@/entities/Response';
 
 
 export type GetCurrentUserResponse = Response<{
@@ -22,7 +22,7 @@ export type IUpdateUserResponse = Response<{
   userShipping: IUserShipping[];
 }>
 
-export const getCurrentUser = async (): Promise<GetCurrentUserResponse> => {
+export const getCurrentUser = async(): Promise<GetCurrentUserResponse> => {
   try {
     const response = await axios.get<GetCurrentUserResponse>('/user/current');
 
@@ -31,14 +31,14 @@ export const getCurrentUser = async (): Promise<GetCurrentUserResponse> => {
     const err = error as AxiosError;
     return err.response?.data as GetCurrentUserResponse;
   }
-}
+};
 
 
-export const updateUser = async (data: IUpdateUserBody): Promise<IUpdateUserResponse> => {
+export const updateUser = async(data: IUpdateUserBody): Promise<IUpdateUserResponse> => {
   const { data: _data } = await axios.put<IUpdateUserResponse>('/user', data);
 
   return _data;
-}
+};
 
 export const getInitialStepsFulfilled = (user: IUser) => {
   return [
@@ -50,4 +50,4 @@ export const getInitialStepsFulfilled = (user: IUser) => {
     user.legalIdentification,
     user.type
   ].every((condition) => condition);
-}
+};

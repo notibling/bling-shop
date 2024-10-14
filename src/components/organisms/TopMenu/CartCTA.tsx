@@ -1,11 +1,11 @@
-import classNames from "classnames";
-import { Dropdown } from "@/components/organisms/Dropdown";
-import { FaShoppingBasket } from "react-icons/fa";
-import { useCart } from "@/contexts/Cart";
-import { DropdownItem } from "../Dropdown/DropdownItem";
-import { CardHorizontal, CartVariantQuantity } from "@/components/molecules";
-import { Item } from "@/components/atoms";
-import { FaBasketShopping } from "react-icons/fa6";
+import classNames from 'classnames';
+import { Dropdown } from '@/components/organisms/Dropdown';
+import { FaShoppingBasket } from 'react-icons/fa';
+import { useCart } from '@/contexts/Cart';
+import { DropdownItem } from '../Dropdown/DropdownItem';
+import { CardHorizontal, CartVariantQuantity } from '@/components/molecules';
+import { Item } from '@/components/atoms';
+import { FaBasketShopping } from 'react-icons/fa6';
 
 
 interface ICartCTAProps {
@@ -18,8 +18,8 @@ const CartCTA: React.FC<ICartCTAProps> = () => {
   return (
     <>
       <Dropdown
-        bodyClassName="w-auto h-auto overflow-visible"
-        position="bottom"
+        bodyClassName='w-auto h-auto overflow-visible'
+        position='bottom'
         trigger={
           <div
             className={classNames(
@@ -44,7 +44,7 @@ const CartCTA: React.FC<ICartCTAProps> = () => {
             )}
           >
             <div className={classNames('w-auto', 'h-auto', 'flex', 'mr-2')}>
-              {cartItemsCount> 0 && (
+              {cartItemsCount > 0 && (
                 <div className={classNames('w-[16px]', 'h-[16px]', 'items-center', 'text-center', 'absolute', 'left-[28px]', 'justify-center', 'flex', 'text-[8px]', 'bg-blue-500', 'font-bold', 'rounded-full', 'top-[5px]', 'text-white')}>
                   {cartItemsCount}
                 </div>
@@ -74,7 +74,7 @@ const CartCTA: React.FC<ICartCTAProps> = () => {
                             text={variant.title}
                             quantity={variant.quantity}
                             onChange={(quantity) => {
-                              changeProductQuantity({ item: item, variant: variant, quantity })
+                              changeProductQuantity({ item, variant, quantity });
                             }}
                           />
                         ))
@@ -82,26 +82,26 @@ const CartCTA: React.FC<ICartCTAProps> = () => {
                     </div>
                   }
                 </>}
-                className="flex-grow-0"
+                className='flex-grow-0'
                 title={item.title}
-                imageClassName="!h-[80px]"
+                imageClassName='!h-[80px]'
                 price={item.price}
-                badge="UY $"
+                badge='UY $'
                 actions={true}
                 deleteButton={true}
                 quantity={false}
                 image={item.image}
-                imageAlt="product"
+                imageAlt='product'
                 shareButton={true}
               />
             ))}
-            {cartItems.length > 3 && <Item content="icon" contentClassName="flex flex-row dark:bg-slate-800  rounded-md !justify-center !items-center" icon={<FaBasketShopping />} text="Ver Carrito Completo" onClick={() => { }} />}
+            {cartItems.length > 3 && <Item content='icon' contentClassName='flex flex-row dark:bg-slate-800  rounded-md !justify-center !items-center' icon={<FaBasketShopping />} text='Ver Carrito Completo' onClick={() => { }} />}
           </DropdownItem>
         ) : null}
       </Dropdown>
 
     </>
-  )
-}
+  );
+};
 
-export { CartCTA }
+export { CartCTA };

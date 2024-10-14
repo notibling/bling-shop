@@ -26,4 +26,4 @@ export {
   type IState,
   type ICountry,
   type ICountryDetail
-}
+};

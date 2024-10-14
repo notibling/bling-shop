@@ -1,10 +1,10 @@
 'use client';
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 interface Option {
   label: string;
   value: number;
-  result: string; // Añadir el campo result
+  result: string; 
 }
 
 interface InputRangeProps {
@@ -20,16 +20,16 @@ const InputRange: React.FC<InputRangeProps> = ({ labelText, options = [], isStep
   const [value, setValue] = useState(min);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setValue(parseInt(event.target.value));
+    setValue(parseInt(event.target.value, 10)); // Añadir el parámetro radix
   };
 
   return (
-    <div className="flex flex-row justify-center items-center gap-2">
-      <label htmlFor="range">{labelText}</label>
+    <div className='flex flex-row justify-center items-center gap-2'>
+      <label htmlFor='range'>{labelText}</label>
       <input
-        type="range"
-        id="range"
-        name="range"
+        type='range'
+        id='range'
+        name='range'
         min={isStepped ? Math.min(...options.map((option) => option.value)) : min}
         max={isStepped ? Math.max(...options.map((option) => option.value)) : max}
         step={isStepped ? 1 : step}

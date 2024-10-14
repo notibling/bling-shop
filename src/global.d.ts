@@ -1,10 +1,10 @@
+import React from 'react';
 declare global {
+   // eslint-disable-next-line 
   namespace JSX {
+    // eslint-disable-next-line
     interface IntrinsicElements {
-      marquee?: any;
+      marquee?: React.HTMLAttributes<HTMLElement>;
     }
-  }
-  namespace GlobalTypes {
-    type Optional<T, K extends keyof T> = Pick<Partial<T>, K> & Omit<T, K>;
   }
 }

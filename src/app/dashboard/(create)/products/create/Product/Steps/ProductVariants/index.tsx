@@ -16,10 +16,10 @@ const ProductVariants: React.FC = () => {
   const stepper = useStepper<ICreateProductStepperState>();
   const [productVariants, setProductVariants] = useState<PartialIProductVariant[]>([]);
   const { result: availableAttributes } = usePromiseState(() => productOperations.fetchAttributes('product_variant'));
-
-  const handleSetProductVariants = (value: PartialIProductVariant[]) => {
-    setProductVariants(value);
-    stepper.setState((prev) => ({ ...prev, variants: value }));
+  const someFunction = () => {
+    const newVariants = [...productVariants];
+    setProductVariants(newVariants);
+    stepper.setState((prev) => ({ ...prev, variants: newVariants }));
   };
 
   const addVariant = () => {
@@ -35,14 +35,14 @@ const ProductVariants: React.FC = () => {
         variantAttributes: prev[0]?.variantAttributes
           ? prev[0].variantAttributes
           : [
-              {
-                id: Math.floor(Date.now() * Math.random()),
-                attributeId: Math.floor(Date.now() * Math.random()),
-                attributeValue: undefined,
-              },
-            ],
-        productId: 0,
-      },
+            {
+              id: Math.floor(Date.now() * Math.random()),
+              attributeId: Math.floor(Date.now() * Math.random()),
+              attributeValue: undefined
+            }
+          ],
+        productId: 0
+      }
     ]);
   };
 
@@ -83,7 +83,7 @@ const ProductVariants: React.FC = () => {
   }, []);
   return (
     <>
-      <div className="w-full h-auto  px-4 flex items-center justify-center flex-col gap-2">
+      <div className='w-full h-auto  px-4 flex items-center justify-center flex-col gap-2'>
         <div
           className={classNames(
             'w-fit',
@@ -113,9 +113,9 @@ const ProductVariants: React.FC = () => {
         </div>
       </div>
 
-      <div className="w-full min-w-[50%] h-auto min-h-[60dvh] flex-wrap flex rounded-brand flex-col flex-grow justify-center items-center">
-        <div className="w-auto  self-center justify-center flex flex-col rounded-brand">
-          <div className="w-auto h-auto flex flex-col order-1 ">
+      <div className='w-full min-w-[50%] h-auto min-h-[60dvh] flex-wrap flex rounded-brand flex-col flex-grow justify-center items-center'>
+        <div className='w-auto  self-center justify-center flex flex-col rounded-brand'>
+          <div className='w-auto h-auto flex flex-col order-1 '>
             {productVariants.map((productVariant, index) => (
               <SingleProductVariant
                 control={index === 0}
@@ -131,10 +131,10 @@ const ProductVariants: React.FC = () => {
             {productVariants.length < MAX_PRODUCT_VARIANTS && (
               <Button
                 icon={<FaPlus />}
-                text="Crear Variante"
+                text='Crear Variante'
                 id={`CreateVariant${productVariants.length + 1}`}
                 onClick={addVariant}
-                className="w-auto h-[55px] outline-none mt-3 order-2 bling-light dark:bling-dark flex flex-row items-center rounded-brand justify-center text-sm flex-nowrap text-nowrap box-border"
+                className='w-auto h-[55px] outline-none mt-3 order-2 bling-light dark:bling-dark flex flex-row items-center rounded-brand justify-center text-sm flex-nowrap text-nowrap box-border'
               />
             )}
           </div>

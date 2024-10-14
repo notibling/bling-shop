@@ -1,5 +1,5 @@
-import { IAttribute } from "./Attribute";
-import { IFile } from "./File";
+import { IAttribute } from './Attribute';
+import { IFile } from './File';
 
 interface IProductVariantAttribute {
   id: number;
@@ -30,4 +30,4 @@ interface IProductVariant {
   deletedAt: string;
 }
 
-export { type IProductVariant, type IProductVariantAttribute }
+export { type IProductVariant, type IProductVariantAttribute };

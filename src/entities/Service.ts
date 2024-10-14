@@ -1,5 +1,5 @@
-import { IFile } from "./File";
-import { IProductAttribute } from "./ProductDisplay";
+import { IFile } from './File';
+import { IProductAttribute } from './ProductDisplay';
 
 export interface IService {
   id: number;

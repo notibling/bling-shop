@@ -31,33 +31,33 @@ function FloatingMultipleButtons() {
             onClick() {
               console.log('hello world');
             },
-            className: 'bg-slate-900',
+            className: 'bg-slate-900'
           },
           {
             icon: <IoMdSettings />,
             onClick() {
               console.log('hello world');
             },
-            className: 'bg-slate-900',
+            className: 'bg-slate-900'
           },
           {
             icon: <BiSupport />,
             onClick() {
               console.log('hello world');
             },
-            className: 'bg-slate-900',
+            className: 'bg-slate-900'
           },
           {
             icon: <FaBell />,
             onClick() {
               console.log('hello world');
             },
-            className: 'bg-slate-900',
+            className: 'bg-slate-900'
           },
           {
             icon: <PiSignOutBold />,
             onClick: handleSignOut,
-            className: 'bg-slate-900',
+            className: 'bg-slate-900'
           },
           {
             id: 2,
@@ -72,15 +72,15 @@ function FloatingMultipleButtons() {
                     onClick() {
                       console.log('hello world');
                     },
-                    className: 'bg-slate-900',
+                    className: 'bg-slate-900'
                   },
                   {
                     icon: <FaBell />,
                     onClick() {
                       console.log('hello world');
                     },
-                    className: 'bg-slate-900' ,
-                  },
+                    className: 'bg-slate-900' 
+                  }
                 ]}
                 width={40}
                 height={40}
@@ -90,8 +90,8 @@ function FloatingMultipleButtons() {
               </MultiOptionsButton>
             ),
             onClick: () => {},
-            className: 'bg-slate-900',
-          },
+            className: 'bg-slate-900'
+          }
         ]}
         className={classNames('hidden', 'lg:flex', 'fixed', 'bottom-20', 'right-5', 'z-50')}
         triggerClassName={classNames('bg-slate-900')}

@@ -5,7 +5,7 @@ interface Props {
   children?: ReactNode;
   className?: string;
   classNameContainer?: string;
-  Empty?: Boolean | undefined;
+  Empty?: boolean | undefined;
 }
 
 const Section = forwardRef(({ children, className, Empty, classNameContainer }: Props, ref: any) => {

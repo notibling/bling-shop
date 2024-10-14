@@ -60,9 +60,6 @@ export const BlingColors = {
   'bling-dark-bg-7': '#64748B',
 
 
-
-
-
   'bling-black': '#09090b',
   'bling-black-text': '#71717a',
   'bling-black-text-hover': '#E2E8F0',
@@ -76,6 +73,6 @@ export const BlingColors = {
   'bling-black-bg-4': '#3f3f46',
   'bling-black-bg-5': '#52525b',
   'bling-black-bg-6': '#71717a',
-  'bling-black-bg-7': '#a1a1aa',
+  'bling-black-bg-7': '#a1a1aa'
 };
 

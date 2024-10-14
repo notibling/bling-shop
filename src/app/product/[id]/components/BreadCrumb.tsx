@@ -1,13 +1,9 @@
-'use client'
+'use client';
 import React, { useMemo } from 'react';
-import { FaBox, FaHeart, FaLink, FaMicrochip, FaMobileAlt, FaShare } from 'react-icons/fa';
+import { FaBox, FaHeart, FaLink, FaShare } from 'react-icons/fa';
 import { ToCopy, Button, Section } from '@/components/atoms';
 import { useSingleProduct } from '../SingleProduct.context';
 import Link from 'next/link';
-
-interface IBreadCrumbProps {
-
-}
 
 const BreadCrumb = () => {
   const { productDisplay } = useSingleProduct();
@@ -24,14 +20,14 @@ const BreadCrumb = () => {
         return { text: 'Vehículos', link: '/vehicles' };
 
       default:
-        return { text: 'Productos', link: '/products' }
+        return { text: 'Productos', link: '/products' };
     }
   }, [productDisplay]);
 
 
   const categories = useMemo(() => {
     const _categories = productDisplay.product?.categories ?? [];
-    const [category] = _categories
+    const [category] = _categories;
 
     if (!category) return [];
 
@@ -45,17 +41,17 @@ const BreadCrumb = () => {
         link: `/result?category=${category.id}`
       }
     ].filter((Boolean));
-  }, [productDisplay])
+  }, [productDisplay]);
 
 
   return (
     <>
-      <Section className="hidden lg:flex">
-        <div className="w-full lg:w-2/3 h-auto   text-slate-700 text-sm py-0 breadcrumbs">
+      <Section className='hidden lg:flex'>
+        <div className='w-full lg:w-2/3 h-auto   text-slate-700 text-sm py-0 breadcrumbs'>
           <ul>
             <li>
               <a>
-                <div className="flex flex-row w-fit gap-2 justify-center items-center p-1">
+                <div className='flex flex-row w-fit gap-2 justify-center items-center p-1'>
                   <FaBox />
                   <span>{entity.text}</span>
                 </div>
@@ -65,7 +61,7 @@ const BreadCrumb = () => {
               categories.map((category) => (
                 <li>
                   <Link href={category.link}>
-                    <div className="flex flex-row w-fit gap-2 justify-center items-center p-1">
+                    <div className='flex flex-row w-fit gap-2 justify-center items-center p-1'>
                       <span>{category.text}</span>
                     </div>
                   </Link>
@@ -74,17 +70,17 @@ const BreadCrumb = () => {
             }
           </ul>
         </div>
-        <div className="w-full lg:w-1/3 h-auto hidden lg:flex gap-2  flex-row justify-end items-center">
-          <ToCopy textToCopy="https://bling.uy">
-            <Button icon={<FaLink />} text="Copiar" className="py-5 px-4 bling-btn-secondary rounded-md bling-light dark:bling-dark clickable gap-2 flex " />
+        <div className='w-full lg:w-1/3 h-auto hidden lg:flex gap-2  flex-row justify-end items-center'>
+          <ToCopy textToCopy='https://bling.uy'>
+            <Button icon={<FaLink />} text='Copiar' className='py-5 px-4 bling-btn-secondary rounded-md bling-light dark:bling-dark clickable gap-2 flex ' />
           </ToCopy>
-          <Button icon={<FaShare />} text="Compartir" className="py-5 px-4 bling-btn-secondary rounded-md bling-light dark:bling-dark clickable gap-2 flex " />
-          <Button icon={<FaHeart />} text="Favoritos" className="py-5 px-4 bling-btn-secondary rounded-md bling-light dark:bling-dark clickable gap-2 flex " />
+          <Button icon={<FaShare />} text='Compartir' className='py-5 px-4 bling-btn-secondary rounded-md bling-light dark:bling-dark clickable gap-2 flex ' />
+          <Button icon={<FaHeart />} text='Favoritos' className='py-5 px-4 bling-btn-secondary rounded-md bling-light dark:bling-dark clickable gap-2 flex ' />
         </div>
       </Section>
     </>
   );
 
-}
+};
 
 export { BreadCrumb };

@@ -1,16 +1,18 @@
 'use client';
-import React, { useEffect, useMemo, useState } from "react";
-import classNames from "classnames";
+import React, { useEffect, useMemo, useState } from 'react';
+import classNames from 'classnames';
 import { ClickAwayListener } from '@mui/base/ClickAwayListener';
 
 import _ from 'lodash';
 
-import { Input, InputProps } from "@/components/atoms";
-import { AutocompleteItem, IAutocompleteItemProps } from "./AutocompleteItem";
+import { Input, InputProps } from '@/components/atoms';
+import { AutocompleteItem, IAutocompleteItemProps } from './AutocompleteItem';
 
 interface IAutocompleteProps<T = any> extends Omit<InputProps, 'onChange' | 'onSelect'> {
   children: React.ReactElement | React.ReactElement[];
+  // eslint-disable-next-line no-unused-vars
   onChange?: (value: string, selected: T) => void;
+  // eslint-disable-next-line no-unused-vars
   onSelect?: (selected: T, value: string) => void;
   field: keyof T;
   value?: string;
@@ -40,7 +42,7 @@ function Autocomplete<T>({
     setSelected(value);
     setOpen(false);
     _onSelect && _onSelect(value, value[field]);
-  }
+  };
 
 
   const items =
@@ -50,7 +52,7 @@ function Autocomplete<T>({
 
   const [filteredItems, nonIncluded] = useMemo(() => {
     const elements = items.filter((element) =>
-      element.value?.[field]?.toLowerCase().includes(value.toLowerCase()))
+      element.value?.[field]?.toLowerCase().includes(value.toLowerCase()));
     const keys = elements.map((el) => el.value?.[field]);
     const elementsNotIncluded = items.filter((element) => !keys.includes(element?.value?.[field]));
 
@@ -62,32 +64,32 @@ function Autocomplete<T>({
     return {
       onFocus: () => setOpen(true),
       onClick() {
-        if (open && toggle) setOpen(false)
+        if (open && toggle) setOpen(false);
       }
-    }
-  }, [toggle])
+    };
+  }, [toggle]);
 
 
   const func = _.debounce(() => {
     setKill((prev) => !prev);
-  }, 300)
+  }, 300);
 
 
   useEffect(() => {
-    if (!open) func()
+    if (!open) func();
     else setKill(false);
-  }, [open])
+  }, [open]);
 
   useEffect(() => {
     if (kill && strict && !selected && value != defaultValue) {
       setValue('');
     }
-  }, [kill])
+  }, [kill]);
 
 
   useEffect(() => {
     setValue(defaultValue ?? '');
-  }, [defaultValue])
+  }, [defaultValue]);
 
   return (
     <ClickAwayListener onClickAway={() => setOpen(false)}>
@@ -114,7 +116,7 @@ function Autocomplete<T>({
               'translate-y-[5px]', 'z-[2]',
               'w-full', 'max-h-[300px]', 'overflow-y-auto',
               'options-body', 'bg-white', 'rounded-brand',
-              'shadow-md', 'list-none',
+              'shadow-md', 'list-none'
             )}>
             {filteredItems.map(({ children, ...props }, index) => (
               <AutocompleteItem {...props} key={props.value?.[field] + index} onSelect={onSelect}>{children}</AutocompleteItem>
@@ -128,8 +130,8 @@ function Autocomplete<T>({
 
       </div>
     </ClickAwayListener>
-  )
+  );
 }
-const _AutocompleteItem = AutocompleteItem as React.FC<IAutocompleteItemProps>
+const _AutocompleteItem = AutocompleteItem as React.FC<IAutocompleteItemProps>;
 
 export { Autocomplete, _AutocompleteItem as AutocompleteItem };

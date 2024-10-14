@@ -17,7 +17,7 @@ const BaseTableRow: React.FC<IBaseTableRowProps> = ({ headers, row, depth = 0, r
   return (
     <React.Fragment>
       <tr
-        style={depth > 0 ? { borderLeft: `${depth*10}px inset solid blue` } : {}}
+        style={depth > 0 ? { borderLeft: `${depth * 10}px inset solid blue` } : {}}
         onClick={() => setCollapsed((prev) => !prev)}
         className={classNames(
           'cursor-pointer',

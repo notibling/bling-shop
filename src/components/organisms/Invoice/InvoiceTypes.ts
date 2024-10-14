@@ -5,14 +5,14 @@ export interface CustomerInfo {
     shippingAddress: string;
   }
   
-  export interface CompanyInfo {
+export interface CompanyInfo {
     name: string;
     address: string;
     phone: string;
     email: string;
   }
   
-  export interface InvoiceInfo {
+export interface InvoiceInfo {
     number: string;
     date: string;
     warrantyPeriod: string;

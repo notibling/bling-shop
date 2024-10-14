@@ -33,35 +33,35 @@ const ImageViewer = ({ imageUrls }: Props) => {
   };
 
   return (
-    <div className="w-full h-auto flex flex-row flex-grow ">
-      <div className="h-full flex flex-col overflow-hidden ">
+    <div className='w-full h-auto flex flex-row flex-grow '>
+      <div className='h-full flex flex-col overflow-hidden '>
         {imageUrls.map((imageUrl, index) => (
           <div
             key={index}
-            className="w-[80px] hidden lg:flex aspect-square box-border cursor-pointer !focus:border-slate-900 border-2 border-transparent flex-row overflow-hidden rounded-md"
+            className='w-[80px] hidden lg:flex aspect-square box-border cursor-pointer !focus:border-slate-900 border-2 border-transparent flex-row overflow-hidden rounded-md'
             onClick={() => handleImageClick(imageUrl)}
           >
-            <Image unoptimized src={imageUrl} className="w-full h-full bg-contain flex flex-row overflow-hidden" alt={`Product Image ${index + 1}`} width={80} height={80} />
+            <Image unoptimized src={imageUrl} className='w-full h-full bg-contain flex flex-row overflow-hidden' alt={`Product Image ${index + 1}`} width={80} height={80} />
           </div>
         ))}
       </div>
-      <div className="w-full lg:aspect-square aspect-[5/6] flex-1  flex flex-row  relative" ref={imageContainerRef} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onMouseMove={handleMouseMove}>
-        <div className="w-full h-full overflow-hidden rounded-md  " style={{ position: 'relative' }}>
+      <div className='w-full lg:aspect-square aspect-[5/6] flex-1  flex flex-row  relative' ref={imageContainerRef} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onMouseMove={handleMouseMove}>
+        <div className='w-full h-full overflow-hidden rounded-md  ' style={{ position: 'relative' }}>
           <Image
             unoptimized
             src={selectedImage}
-            alt="Main Image"
-            className="w-full h-full bg-contain cursor-none flex flex-row overflow-hidden"
-            layout="fill"
-            objectFit="cover"
+            alt='Main Image'
+            className='w-full h-full bg-contain cursor-none flex flex-row overflow-hidden'
+            layout='fill'
+            objectFit='cover'
             style={{
               transform: `scale(${isHovered ? 2 : 1})`,
-              transformOrigin: `${mousePosition.x}px ${mousePosition.y}px`,
+              transformOrigin: `${mousePosition.x}px ${mousePosition.y}px`
             }}
           />
           {isHovered && (
             <div
-              className="absolute"
+              className='absolute'
               style={{
                 top: `${mousePosition.y}px`,
                 left: `${mousePosition.x}px`,
@@ -73,7 +73,7 @@ const ImageViewer = ({ imageUrls }: Props) => {
                 border: '1px rgba(255, 255, 255, 0.5) solid',
                 pointerEvents: 'none',
                 cursor: 'none',
-                overflow: 'hidden',
+                overflow: 'hidden'
               }}
             />
           )}
@@ -84,7 +84,7 @@ const ImageViewer = ({ imageUrls }: Props) => {
 };
 
 ImageViewer.propTypes = {
-  imageUrls: PropTypes.arrayOf(PropTypes.string).isRequired,
+  imageUrls: PropTypes.arrayOf(PropTypes.string).isRequired
 };
 
 export { ImageViewer };

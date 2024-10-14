@@ -23,23 +23,22 @@ const AutocompleteItem: React.FC<IAutocompleteItemWithSelectProps> =
 
               'duration-300',
               'cursor-pointer',
-              'bling-light-text','dark:bling-dark-text',
+              'bling-light-text', 'dark:bling-dark-text',
               'text-sm',
               'flex',
-              'bg-transparent', 'dark:hover:!bling-dark-bg-2',' hover:bling-light-bg-3',
-              'flex-grow', 'py-2', 'px-3', 'flex-grow',
+              'bg-transparent', 'dark:hover:!bling-dark-bg-2', ' hover:bling-light-bg-3',
+              'flex-grow', 'py-2', 'px-3', 'flex-grow'
             ),
             className
           )}
-          href="#"
+          href='#'
           {...rest}
         >
           {children}
         </a>
       </li>
-    )
-  }
-
+    );
+  };
 
 
 export { AutocompleteItem, type IAutocompleteItemProps, type IAutocompleteItemWithSelectProps };

@@ -40,7 +40,7 @@ const Masonry: React.FC<Props> = ({ items }) => {
   };
 
   return (
-    <div className="masonryGrid">
+    <div className='masonryGrid'>
       <Modal
         isOpen={isModalOpen1}
         onClose={() => setModalOpen1(false)}
@@ -48,19 +48,19 @@ const Masonry: React.FC<Props> = ({ items }) => {
         content={<AdvertisementsRent blockSize={selectedItemSize} />}
         footer={
           <>
-            <Button className="bling-btn-md" onClick={() => setModalOpen1(false)} text="Cerrar" />
-            <Button className="gap-2 bling-btn-primary btn-md" text="Añadir al Carrito" icon={<FaCartShopping />} />
+            <Button className='bling-btn-md' onClick={() => setModalOpen1(false)} text='Cerrar' />
+            <Button className='gap-2 bling-btn-primary btn-md' text='Añadir al Carrito' icon={<FaCartShopping />} />
           </>
         }
-        className="p-2 min-w-[400px]"
-        overlayClassName="custom-overlay"
+        className='p-2 min-w-[400px]'
+        overlayClassName='custom-overlay'
       />
       {items.map((item, index) => (
         <div key={index} className={`masonryItem ${item.size}`} style={{ backgroundImage: `url(${item.image})` }}>
-          <div className="overlay">
-            <div className="flex flex-col self-center gap-2">
-              <Title level="h6" title="Alquilar este espacio" titleClassName="text-white" />
-              <Button text="Alquilar" className="bling-btn-primary dark:bling-btn-primary-dark btn-sm" onClick={() => handleViewAllClick1(item.size)} />
+          <div className='overlay'>
+            <div className='flex flex-col self-center gap-2'>
+              <Title level='h6' title='Alquilar este espacio' titleClassName='text-white' />
+              <Button text='Alquilar' className='bling-btn-primary dark:bling-btn-primary-dark btn-sm' onClick={() => handleViewAllClick1(item.size)} />
             </div>
           </div>
         </div>

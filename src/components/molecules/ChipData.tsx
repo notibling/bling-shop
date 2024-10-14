@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import { Icon, Title } from '@/components/atoms';
+import { Icon } from '@/components/atoms';
 import { Container } from '@/components/molecules';
 
 interface ChipDataProps {
@@ -23,8 +23,15 @@ interface ChipDataProps {
   numberClassName?: string | string[] | Record<string, any> | any;
 }
 
-const ChipData: React.FC<ChipDataProps> = ({ className,numberClassName, title, titleIconName, titleClassNameContainer,description, titleClassName, iconSize, iconName, level, button, number, buttonSrc, symbol, unity }) => {
-  const iconColor = iconName === 'ArrowUp' ? 'green' : iconName === 'ArrowDown' ? 'red' : 'defaultColor';
+const ChipData: React.FC<ChipDataProps> = ({ className, numberClassName, title, titleIconName, titleClassNameContainer, description, titleClassName, iconSize, iconName, level, button, number, buttonSrc, symbol, unity }) => {
+  let iconColor;
+  if (iconName === 'ArrowUp') {
+    iconColor = 'green';
+  } else if (iconName === 'ArrowDown') {
+    iconColor = 'red';
+  } else {
+    iconColor = 'defaultColor';
+  }
 
   return (
     <Container
@@ -40,18 +47,18 @@ const ChipData: React.FC<ChipDataProps> = ({ className,numberClassName, title, t
       buttonSrc={buttonSrc}
       titleClassNameContainer={titleClassNameContainer}
     >
-      <div className="w-auto h-auto flex justify-between flex-row items-end">
-        <div className="w-auto h-auto flex justify-end flex-row items-center">
-          <div className={classNames('text-4xl grow font-JetBrainsMono',numberClassName)}>
+      <div className='w-auto h-auto flex justify-between flex-row items-end'>
+        <div className='w-auto h-auto flex justify-end flex-row items-center'>
+          <div className={classNames('text-4xl grow font-JetBrainsMono', numberClassName)}>
             <span className='text-2xl'>{symbol}</span>
             {number}
           </div>
         </div>
-        <div className="w-auto h-auto flex-col flex flex-wrap justify-end  ">
-          <span className="text-2xl w-auto h-1/2 flex self-end">
-            <Icon name={iconName} color={iconColor} size={15} />
+        <div className='w-auto h-auto flex-col flex flex-wrap justify-end'>
+          <span className='text-2xl w-auto h-1/2 flex self-end'>
+            {iconName ? <Icon name={iconName} color={iconColor} size={15} /> : null}
           </span>
-          <span className="text-2xl w-auto h-1/2 flex justify-end font-JetBrainsMono">{unity}</span>
+          <span className='text-2xl w-auto h-1/2 flex justify-end font-JetBrainsMono'>{unity || ''}</span>
         </div>
       </div>
     </Container>

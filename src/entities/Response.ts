@@ -4,4 +4,4 @@ type Response<T> = T & {
   message: string;
 }
 
-export { type Response }
+export { type Response };

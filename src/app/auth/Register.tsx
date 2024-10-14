@@ -1,20 +1,20 @@
 'use client';
-import { ChangeEvent, useMemo, useState } from "react";
-import classNames from "classnames";
-import { useRouter } from "next/navigation";
-import { FaInfoCircle } from "react-icons/fa";
-import { useGlobalState } from "@/contexts/GlobalState";
+import React, { ChangeEvent, useMemo, useState } from 'react';
+import classNames from 'classnames';
+import { useRouter } from 'next/navigation';
+import { FaInfoCircle } from 'react-icons/fa';
+import { useGlobalState } from '@/contexts/GlobalState';
 import * as authOperations from '@/contexts/GlobalState/auth/operations';
-import { useAnimation } from "@/hooks/useAnimation";
-import { LoginAndRegisterCard } from "./LoginAndRegisterCard";
-import { RegularExpressions } from "@/common/RegularExpression";
-import { Form, useForm } from "@/components/organisms";
+import { useAnimation } from '@/hooks/useAnimation';
+import { LoginAndRegisterCard } from './LoginAndRegisterCard';
+import { RegularExpressions } from '@/common/RegularExpression';
+import { Form, useForm } from '@/components/organisms';
 import {
   Input, Button, ButtonSize,
-  InputSize, Checkbox, Alert,
-} from "@/components/atoms";
+  InputSize, Checkbox, Alert
+} from '@/components/atoms';
 export const RegisterScreen : React.FC = ({
- }) => {
+}) => {
   const router = useRouter();
   const [name, setName] = useState<string>('');
   const [email, setEmail] = useState<string>('hello.blingcompany@gmail.com');
@@ -33,9 +33,9 @@ export const RegisterScreen : React.FC = ({
   const resetFields = () => {
     setEmail('');
     setPassword('');
-  }
-  const register = async () => {
-    setLoading(true)
+  };
+  const register = async() => {
+    setLoading(true);
     try {
       const result = await authOperations.register(name, email, password);
       if (result.success) {
@@ -54,80 +54,80 @@ export const RegisterScreen : React.FC = ({
       }
       console.log(error);
     }
-    setLoading(false)
-  }
+    setLoading(false);
+  };
   return (
-    <LoginAndRegisterCard className={classNames({ 'animate-shake': shaking })} title="Registrarme">
-      <fieldset className={classNames("flex", "flex-col", "gap-4")}>
+    <LoginAndRegisterCard className={classNames({ 'animate-shake': shaking })} title='Registrarme'>
+      <fieldset className={classNames('flex', 'flex-col', 'gap-4')}>
         <Input
-          error="Debes ingresar un nombre de almenos 3 letras"
+          error='Debes ingresar un nombre de almenos 3 letras'
           errorRegexp={RegularExpressions.TEXT_LENGTH_RANGE(3, 12)}
-          controlId="name"
+          controlId='name'
           size={InputSize.base}
-          placeholder="Ingrese su Nombre"
+          placeholder='Ingrese su Nombre'
           value={name}
           onChange={(e: ChangeEvent<HTMLInputElement>) => setName(e.target.value)}
         />
         <Input
-          controlId="email"
-          error="Ingrese un correo electrónico válido"
+          controlId='email'
+          error='Ingrese un correo electrónico válido'
           errorRegexp={RegularExpressions.EMAIL}
           size={InputSize.base}
-          placeholder="Ingrese su correo electrónico"
+          placeholder='Ingrese su correo electrónico'
           value={email}
           onChange={(e: ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
         />
         <Input
-          controlId="password"
-          error="Ingrese una contraseña alfanumérica con al menos 8 caracteres y una mayúscula"
+          controlId='password'
+          error='Ingrese una contraseña alfanumérica con al menos 8 caracteres y una mayúscula'
           errorRegexp={RegularExpressions.PASSWORD}
           size={InputSize.base}
-          type="password"
-          placeholder="Ingrese su contraseña"
+          type='password'
+          placeholder='Ingrese su contraseña'
           value={password}
           onChange={(e: ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)}
         />
       </fieldset>
       <div
         className={classNames(
-          "w-full",
-          "flex",
-          "justify-center",
-          "bling-light-text",
-          "dark:bling-dark-text",
-          "text-xs",
-          "flex",
-          "flex-row",
+          'w-full',
+          'flex',
+          'justify-center',
+          'bling-light-text',
+          'dark:bling-dark-text',
+          'text-xs',
+          'flex',
+          'flex-row',
           'gap-2'
         )}
       >
         <Checkbox
           checked={termsAndConditions}
           onChange={(value) => setTermsAndConditions(value)}
-        ></Checkbox> <span  className={classNames(
+        ></Checkbox> <span className={classNames(
        
-          "bling-light-text",
-          "dark:bling-dark-text",
+          'bling-light-text',
+          'dark:bling-dark-text'
         
         )}>Al registrarte,
-          entendemos que has leido, comprendes y aceptas nuestros <a className="text-blue-500" href="">Términos y
-            Condiciones</a>, Nuestras <a href="" className="text-blue-500">Políticas Generales</a> y de <a className="text-blue-500" href="">terceros</a>.</span>
+          entendemos que has leido, comprendes y aceptas nuestros <a className='text-blue-500' href=''>Términos y
+            Condiciones</a>, Nuestras <a href='' className='text-blue-500'>Políticas Generales</a> y de <a className='text-blue-500' href=''>terceros</a>.</span>
       </div>
       {error && (
         <Alert icon={<FaInfoCircle className={classNames('text-white')} />} className={classNames('bg-red-500')}>
           <span className={classNames('text-xs', 'text-white', 'font-bold')}>Los datos ingresados son incorrectos</span>
         </Alert>
-  )}
+      )}
       
-      <div className={classNames("w-full", "flex", "justify-center")}>
+      <div className={classNames('w-full', 'flex', 'justify-center')}>
         <Button
           disabled={formHasErrors || loading || noData}
           onClick={register}
           loading={loading}
           size={ButtonSize.base}
           className={classNames(
-            "w-full",
-            "text-white",
+            'w-full',
+            'text-white',
             'bg-green-500',
             'focus:scale-95',
             'hover:bg-green-400',
@@ -143,4 +143,4 @@ export const RegisterScreen : React.FC = ({
   );
 };
 
-export const Register = ( props: any) => <Form><RegisterScreen {...props} /></Form>
+export const Register = (props: any) => <Form><RegisterScreen {...props} /></Form>;

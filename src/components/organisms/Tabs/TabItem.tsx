@@ -20,10 +20,10 @@ const TabItem: React.FC<ITabItemProps> = ({ children, id, trigger, ...props }) =
   const isActive = controller.activeTab === id;
 
   return (
-    <a role="tab" className={classNames('tab','flex-grow','flex-shrin-0',{ 'tab-active animate-tabsBorderFadeIn': isActive })} onClick={() => controller.setTab(id)}>
+    <a role='tab' className={classNames('tab', 'flex-grow', 'flex-shrin-0', { 'tab-active animate-tabsBorderFadeIn': isActive })} onClick={() => controller.setTab(id)}>
       {trigger}
     </a>
-  )
-}
+  );
+};
 
 export { TabItem, type ITabItemProps };

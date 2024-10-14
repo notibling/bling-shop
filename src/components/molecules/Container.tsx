@@ -49,12 +49,12 @@ const Container: React.FC<ContainerProps> = ({
   buttonSrc,
   titleClassNameContainer,
   titleTooltipPosition,
-  icon,
+  icon
 }) => {
   return (
     <div id={id} className={classNames('p-2 rounded-md  flex', className)} style={{ width, height }}>
       {title && (
-        <div className="w-full h-auto flex flex-row flex-nowrap justify-between items-center gap-1">
+        <div className='w-full h-auto flex flex-row flex-nowrap justify-between items-center gap-1'>
           <Title
             titleClassNameContainer={classNames('w-auto leading-4', titleClassNameContainer)}
             titleClassName={titleClassName}
@@ -71,7 +71,7 @@ const Container: React.FC<ContainerProps> = ({
             tooltipContent={titleTooltip}
             tooltipPosition={titleTooltipPosition}
           />
-          {button && <Button text={buttonText} src={buttonSrc} icon={buttonIcon} iconClassName="bling-light-border dark:bling-dark" className="w-[35px] h-[35px] bling-btn-primary bling-light dark:bling-dark p-0 flex rounded-full m-0" />}
+          {button && <Button text={buttonText} src={buttonSrc} icon={buttonIcon} iconClassName='bling-light-border dark:bling-dark' className='w-[35px] h-[35px] bling-btn-primary bling-light dark:bling-dark p-0 flex rounded-full m-0' />}
         </div>
       )}
 

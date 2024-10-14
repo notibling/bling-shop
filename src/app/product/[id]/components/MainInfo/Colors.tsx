@@ -1,12 +1,12 @@
-'use client'
-import { useMemo } from "react";
-import classNames from "classnames";
-import { StringUtils } from "@/utils";
-import { ColorAttributeConstants } from "@/constants";
-import { ButtonColor, Separator } from "@/components/atoms";
-import { IProductVariant, IProductVariantAttribute } from "@/entities/ProductVariant";
-import { useSingleProduct } from "../../SingleProduct.context";
-import { IProduct } from "@/entities/Product";
+'use client';
+import { useMemo } from 'react';
+import classNames from 'classnames';
+import { StringUtils } from '@/utils';
+import { ColorAttributeConstants } from '@/constants';
+import { ButtonColor, Separator } from '@/components/atoms';
+import { IProductVariant, IProductVariantAttribute } from '@/entities/ProductVariant';
+import { useSingleProduct } from '../../SingleProduct.context';
+import { IProduct } from '@/entities/Product';
 
 
 interface IColorsProps {
@@ -48,7 +48,7 @@ const Colors: React.FC<IColorsProps> = ({ separator = true, onSelect }) => {
     <>
       {
         separator && renderColors.length > 0 && (
-          <Separator textStart="Colores" size="my-3" className="text-xs text-slate-400 " />
+          <Separator textStart='Colores' size='my-3' className='text-xs text-slate-400 ' />
         )
       }
       {renderColors.map((item) => {
@@ -57,7 +57,7 @@ const Colors: React.FC<IColorsProps> = ({ separator = true, onSelect }) => {
             className={classNames('border-2 border-transparent', 'disabled:!opacity-90',
               '!transition-none',
               {
-                "!border-2 !border-slate-900": isActiveAttribute(item.variantAttribute),
+                '!border-2 !border-slate-900': isActiveAttribute(item.variantAttribute),
                 '!border !border-dashed !border-slate-900': !isCompatibleVariant(item.variant)
               })}
             key={item.color}
@@ -69,11 +69,11 @@ const Colors: React.FC<IColorsProps> = ({ separator = true, onSelect }) => {
             color={item.value}
             loading={false}
           />
-        )
+        );
       })}
     </>
-  )
+  );
 
-}
+};
 
 export { Colors };

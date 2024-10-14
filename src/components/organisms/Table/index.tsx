@@ -1,9 +1,9 @@
-"use client";
-import React from "react";
-import classNames from "classnames";
-import { TableRow } from "./TableRow";
-import { TableRowHeader } from "./TableRowHeader";
-import { TableProps } from "./types";
+'use client';
+import React from 'react';
+import classNames from 'classnames';
+import { TableRow } from './TableRow';
+import { TableRowHeader } from './TableRowHeader';
+import { TableProps } from './types';
 
 const Table: React.FC<TableProps> = ({
   headers = [],
@@ -11,12 +11,12 @@ const Table: React.FC<TableProps> = ({
   summaryRows = [],
   className,
   rowClassName,
-  rowHeaderClassName,
+  rowHeaderClassName
 }) => {
   const [collapsed, setCollapsed] = React.useState(false);
 
   return (
-    <table className={classNames('table', 'bling-light-text','dark:bling-dark-text', 'overflow-x-auto',  'w-full','text-xs', 'mt-4', className)}>
+    <table className={classNames('table', 'bling-light-text', 'dark:bling-dark-text', 'overflow-x-auto', 'w-full', 'text-xs', 'mt-4', className)}>
       <thead >
         <TableRowHeader
           headers={headers}
@@ -51,6 +51,6 @@ const Table: React.FC<TableProps> = ({
       </tbody>
     </table>
   );
-}
+};
 
 export { Table };

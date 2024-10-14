@@ -1,9 +1,9 @@
-'use client'
-import React, { forwardRef, useEffect, useImperativeHandle, useMemo, useRef, useState } from "react";
-import classNames from "classnames";
+'use client';
+import React, { forwardRef, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
+import classNames from 'classnames';
 import _ from 'lodash';
-import { twMerge } from "tailwind-merge";
-import { IDropdownItemProps } from "..";
+import { twMerge } from 'tailwind-merge';
+import { IDropdownItemProps } from '..';
 
 interface IDropdownProps {
   disabled?: boolean;
@@ -34,9 +34,9 @@ const ClickAwayListener: React.FC<{ onClickAway: () => void }> = ({ children, on
         onClickAway();
       }
     }
-    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener('mousedown', handleClickOutside);
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [ref, onClickAway]);
 
@@ -48,7 +48,7 @@ const Dropdown: Type = forwardRef<IDropdownRef, IDropdownProps>(function Dropdow
   trigger,
   disabled,
   bodyClassName,
-  position = 'bottom-left',
+  position = 'bottom-left'
 }: IDropdownProps, ref: React.ForwardedRef<IDropdownRef>) {
   const [open, setOpen] = useState<boolean>(false);
   const [kill, setKill] = useState<boolean>(true);
@@ -66,7 +66,7 @@ const Dropdown: Type = forwardRef<IDropdownRef, IDropdownProps>(function Dropdow
   const handleClick = () => {
     if (disabled) return;
     setOpen(prev => !prev);
-  }
+  };
 
   const func = _.debounce(() => {
     setKill((prev) => !prev);
@@ -111,7 +111,7 @@ const Dropdown: Type = forwardRef<IDropdownRef, IDropdownProps>(function Dropdow
 
   return (
     <ClickAwayListener onClickAway={() => setOpen(false)}>
-      <div className={classNames('relative','', 'cursor-pointer')}>
+      <div className={classNames('relative', '', 'cursor-pointer')}>
         <div onClick={handleClick}>
           {trigger}
         </div>

@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import Image from 'next/image';
 import React from 'react';
 import classNames from 'classnames';
@@ -29,7 +29,7 @@ const InformativeTag: React.FC<InformativeTagProps> = ({
   height = 'h-auto',
   className,
   iconColor = '#1C274C',
-  iconSize = 24,
+  iconSize = 24
 }) => {
   return (
     <>
@@ -39,10 +39,10 @@ const InformativeTag: React.FC<InformativeTagProps> = ({
             <Image
               unoptimized={true}
               src={imageSrc}
-              width="100"
-              alt="Informative Tag"
-              height="100"
-              objectFit="cover"
+              width='100'
+              alt='Informative Tag'
+              height='100'
+              objectFit='cover'
               className={classNames('flex', 'select-none', 'bg-contain', 'bg-center', 'bg-no-repeat', 'text-sm', 'w-full', 'h-full', 'rounded-md', 'aspect-square')}
             />
           )}

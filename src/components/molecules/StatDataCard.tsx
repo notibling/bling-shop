@@ -16,7 +16,7 @@ interface StatDataCardProps {
   className?: string | string[];
 }
 
-const StatDataCard: React.FC<StatDataCardProps> = ({ title, icon, value, percentageChange, sections = [], className }) => {
+const StatDataCard: React.FC<StatDataCardProps> = ({ title, icon, percentageChange, sections = [], className }) => {
   return (
     <div className={classNames('gap-2 rounded-md border bling-light-border dark:bling-dark-border p-4 flex flex-col', className)}>
       <div className='w-full flex flex-row items-center justify-between'>
@@ -24,9 +24,9 @@ const StatDataCard: React.FC<StatDataCardProps> = ({ title, icon, value, percent
         <div className='self-center'>{icon}</div>
       </div>
       
-      <div className="w-full flex flex-col gap-1">
+      <div className='w-full flex flex-col gap-1'>
         {sections.map((section, index) => (
-          <div key={index} className="w-full flex flex-row items-center justify-between bling-light-text dark:text-white text-[12px]">
+          <div key={index} className='w-full flex flex-row items-center justify-between bling-light-text dark:text-white text-[12px]'>
             <div className='w-2/3 flex flex-row items-center flex-nowrap'>
               <span
                 style={{
@@ -35,7 +35,7 @@ const StatDataCard: React.FC<StatDataCardProps> = ({ title, icon, value, percent
                   height: 12,
                   borderRadius: '50%',
                   display: 'inline-block',
-                  marginRight: 8,
+                  marginRight: 8
                 }}
               ></span>
               <span className='text-nowrap'>{section.label}:</span>
@@ -48,6 +48,6 @@ const StatDataCard: React.FC<StatDataCardProps> = ({ title, icon, value, percent
       <span className='w-full bling-light-text dark:text-gray-500 text-xs'>{percentageChange}</span>
     </div>
   );
-}
+};
 
 export { StatDataCard };

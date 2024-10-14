@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useMemo } from 'react';
 
 interface IFrozenProps {
   children: React.ReactNode,
@@ -7,7 +7,7 @@ interface IFrozenProps {
 const Frozen: React.FC<IFrozenProps> = ({ children, deps = [] }) => {
   return useMemo(() => {
     return <>{children}</>;
-  }, [...deps])
-}
+  }, [...deps]);
+};
 
 export { Frozen };

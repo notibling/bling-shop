@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 // Definición de tipos de celdas
 export type CellType = 'input' | 'dropdown' | 'text' | 'statusBadge' | 'user';

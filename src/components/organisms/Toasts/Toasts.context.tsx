@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import { createContext, useContext, useMemo, useState } from 'react';
 import { createPortal } from 'react-dom';
 
@@ -19,7 +19,7 @@ const ToastsContext = createContext<IToastsContext>({
   success: () => Promise.resolve(0),
   error: () => Promise.resolve(0),
   warning: () => Promise.resolve(0),
-  info: () => Promise.resolve(0),
+  info: () => Promise.resolve(0)
 });
 
 interface IToastsProviderProps {
@@ -52,15 +52,15 @@ const ToastsProvider: React.FC<IToastsProviderProps> = ({ children }) => {
 
       resolve(generatedId);
     });
-  }
+  };
 
   const hide = (id: number) => {
     setToasts(prev => prev.filter(toast => toast.id !== id));
-  }
+  };
 
   const clear = () => {
     setToasts([]);
-  }
+  };
 
   const toastsContainer = useMemo(() => {
     const node = typeof document !== 'undefined' ? document.body : null;
@@ -70,8 +70,8 @@ const ToastsProvider: React.FC<IToastsProviderProps> = ({ children }) => {
     return createPortal(
       <ToastsContainer toasts={toasts} hide={hide} />,
       node
-    )
-  }, [toasts])
+    );
+  }, [toasts]);
 
   return (
     <ToastsContext.Provider value={{ toasts, show, success, error, warning, info, hide, clear }}>
@@ -81,11 +81,11 @@ const ToastsProvider: React.FC<IToastsProviderProps> = ({ children }) => {
         <NoSSR><>{toastsContainer}</> </NoSSR>
       </>
     </ToastsContext.Provider>
-  )
-}
+  );
+};
 
 const useToasts = () => {
-  return useContext(ToastsContext)
-}
+  return useContext(ToastsContext);
+};
 
-export { ToastsProvider, useToasts }
+export { ToastsProvider, useToasts };

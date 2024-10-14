@@ -16,4 +16,4 @@ interface IUserShipping {
   deletedAt: Date;
 }
 
-export { type IUserShipping }
+export { type IUserShipping };

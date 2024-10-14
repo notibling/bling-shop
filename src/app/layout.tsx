@@ -22,8 +22,8 @@ const font = localFont({
     {
       path: '../fonts/montserrat/Montserrat-Regular.ttf',
       weight: '400',
-      style: 'normal',
-    },
+      style: 'normal'
+    }
     // {
     //   path: '../fonts/montserrat/Montserrat-Italic.ttf',
     //   weight: '400',
@@ -50,24 +50,24 @@ const font = localFont({
   ],
 
   weight: '400'
-})
+});
 console.log(font);
 
 export const metadata: Metadata = {
   title: 'BLING - Tienda Online 24/7',
-  description: 'Todo a un 🔔 de distancia.',
+  description: 'Todo a un 🔔 de distancia.'
 };
 
 export default function RootLayout({
-  children,
+  children
 }: Readonly<{
   children: React.ReactNode;
 }>) {
 
  
   return (
-    <html suppressHydrationWarning={true} data-theme="bumblebee" lang="en"  >
-      <head><meta name="viewport" content="width=device-width, initial-scale=1" /></head>
+    <html suppressHydrationWarning={true} data-theme='bumblebee' lang='en' >
+      <head><meta name='viewport' content='width=device-width, initial-scale=1' /></head>
       <body suppressHydrationWarning={true} className={classNames(font.className, 'overflow-x-hidden', 'bling-scrollbar')}>
         <ToastsProvider>
           <CartProvider>

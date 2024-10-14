@@ -25,7 +25,7 @@ const ToastsContainer: React.FC<IToastsContainerProps> = ({ toasts, hide }) => {
         >{toast.message}</Toast>
       ))}
     </div>
-  )
-}
+  );
+};
 
-export { ToastsContainer }
+export { ToastsContainer };

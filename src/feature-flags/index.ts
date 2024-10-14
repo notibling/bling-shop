@@ -1,6 +1,6 @@
 export const featureFlags = {
-    views: {
-        /* dashboard */
+  views: {
+    /* dashboard */
     Notifications: true,
     Advertisements: true,
     Announcements: true,
@@ -18,24 +18,24 @@ export const featureFlags = {
     PaymentMethods: true,  
     GeneralInformation: true,  
     ShippingAddress: true, 
-    Security: true, 
+    Security: true 
 
 
-    },
-    pages: {
-        auth:true,
-        home:true,
-        dashboard:true,
-        singlepageproduct:true,
-        checkout:true,
-        profile:true,
-        error:true,
-        result:true,
+  },
+  pages: {
+    auth: true,
+    home: true,
+    dashboard: true,
+    singlepageproduct: true,
+    checkout: true,
+    profile: true,
+    error: true,
+    result: true
         
-    },
-    components: {
-        adsFeature: true,
-    }
+  },
+  components: {
+    adsFeature: true
+  }
    
 
-}
+};

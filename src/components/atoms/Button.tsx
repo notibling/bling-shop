@@ -7,15 +7,23 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 enum ButtonSize {
+  // eslint-disable-next-line no-unused-vars
   xs = 'text-xs h-6',
+  // eslint-disable-next-line no-unused-vars
   small = 'text-sm h-8',
+  // eslint-disable-next-line no-unused-vars
   md = 'text-md h-10',
+  // eslint-disable-next-line no-unused-vars
   base = 'text-base h-12',
+    // eslint-disable-next-line no-unused-vars
   lg = 'text-lg h-14',
+    // eslint-disable-next-line no-unused-vars
   xl = 'text-xl h-16',
+    // eslint-disable-next-line no-unused-vars
   xxl = 'text-2xl h-18',
+    // eslint-disable-next-line no-unused-vars
   xxxl = 'text-3xl h-20',
-}
+} 
 
 interface IButtonProps extends Omit<HTMLProps<HTMLButtonElement>, 'size' | 'type'> {
   id?: string;
@@ -83,8 +91,8 @@ const Button: React.FC<IButtonProps> = ({
         { 'opacity-50 cursor-not-allowed': disabled },
         size
       ),
-      className,
-    ),
+      className
+    )
   };
 
   const buttonContent = (

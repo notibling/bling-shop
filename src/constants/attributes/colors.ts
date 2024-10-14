@@ -11,7 +11,7 @@ class ColorAttributeConstants {
     'negro': '#000000',
     'blanco': '#ffffff',
     'rosado': '#ff00ff',
-    'gris': '#808080',
+    'gris': '#808080'
   };
 
 
@@ -21,4 +21,4 @@ class ColorAttributeConstants {
   }
 }
 
-export { ColorAttributeConstants }
+export { ColorAttributeConstants };

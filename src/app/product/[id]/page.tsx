@@ -18,8 +18,8 @@ interface IProps {
 async function SinglePageProduct({ params: { id } }: IProps) {
 
   const productDisplay = await getProductDisplay(Number(id));
-  if (!productDisplay) return (<h1>NOT FOUND</h1>)
-  const DJSON = getPageDJson(productDisplay)
+  if (!productDisplay) return (<h1>NOT FOUND</h1>);
+  const DJSON = getPageDJson(productDisplay);
 
 
   const mainVariant = productDisplay.product?.variants[0];
@@ -52,20 +52,20 @@ async function SinglePageProduct({ params: { id } }: IProps) {
         <meta name='description' content={productDisplay.summary?.description} />
         <meta name='viewport' content='initial-scale=1, width=device-width' />
         {/* Open Graph Meta Tags */}
-        <meta property="og:title" content={productDisplay.summary?.title} />
-        <meta property="og:description" content={productDisplay.summary?.description} />
-        <meta property="og:image" content={DJSON.image} />
-        <meta property="og:url" content={`/ product / ${productDisplay.id}`} />
-        <meta property="og:type" content={productDisplay.entity} />
+        <meta property='og:title' content={productDisplay.summary?.title} />
+        <meta property='og:description' content={productDisplay.summary?.description} />
+        <meta property='og:image' content={DJSON.image} />
+        <meta property='og:url' content={`/ product / ${productDisplay.id}`} />
+        <meta property='og:type' content={productDisplay.entity} />
 
         {/* Twitter Card Meta Tags */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={productDisplay.summary?.title} />
-        <meta name="twitter:description" content={productDisplay.summary?.description} />
-        <meta name="twitter:image" content={DJSON.image} />
+        <meta name='twitter:card' content='summary_large_image' />
+        <meta name='twitter:title' content={productDisplay.summary?.title} />
+        <meta name='twitter:description' content={productDisplay.summary?.description} />
+        <meta name='twitter:image' content={DJSON.image} />
 
         <script
-          type="application/ld+json"
+          type='application/ld+json'
           dangerouslySetInnerHTML={{ __html: JSON.stringify(DJSON) }}
         />
         <link rel='icon' href='/favicon.ico' />
@@ -87,7 +87,7 @@ async function SinglePageProduct({ params: { id } }: IProps) {
 
             <RandomProducts lgCols={6} lgRows={3} smCols={2} smRows={2} />
 
-            <FooterComponent className="lg:mb-0 mb-14" brandFooter></FooterComponent>
+            <FooterComponent className='lg:mb-0 mb-14' brandFooter></FooterComponent>
 
             <MobileMenu />
           </>

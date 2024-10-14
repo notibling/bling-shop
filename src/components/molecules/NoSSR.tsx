@@ -1,5 +1,5 @@
-import dynamic from "next/dynamic"
-import React from "react";
+import dynamic from 'next/dynamic';
+import React from 'react';
 
 
 interface INoSSRProps {
@@ -9,4 +9,4 @@ interface INoSSRProps {
 const NoSSR: React.ComponentType<INoSSRProps> =
   dynamic(() => Promise.resolve(({ children }) => children), { ssr: false });
 
-export { NoSSR }
+export { NoSSR };

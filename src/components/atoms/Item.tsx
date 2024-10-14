@@ -43,6 +43,7 @@ interface ItemProps {
   tooltipIconColor?: string;
   switchChecked?: boolean;
   enableHoverPattern?: boolean;
+  // eslint-disable-next-line no-unused-vars
   switchOnChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
@@ -84,28 +85,30 @@ const Item: React.FC<ItemProps> = ({
   enableActive = false,
   enableDropShadow = false,
   enableFocus = false,
-  switchChecked = false,
+  switchChecked = false,  
+  // eslint-disable-next-line no-unused-vars
   enableHoverPattern = true,
-  switchOnChange = () => {},
+  // eslint-disable-next-line no-unused-vars
+  switchOnChange = () => {}
 }) => {
   const renderContent = () => {
     switch (content) {
       case 'icon':
         return (
-          <div className={classNames(contentClassName, 'w-full', 'rounded-md', 'h-10', 'gap-1', 'leading-tight', 'px-4', 'flex', 'flex-row',  'text-bling-light-text', 'dark:text-bling-dark-text', 'clickable', tooltip ? 'justify-between' : 'justify-between', showText ? 'justify-start' : 'justify-between', 'items-center')}>
+          <div className={classNames(contentClassName, 'w-full', 'rounded-md', 'h-10', 'gap-1', 'leading-tight', 'px-4', 'flex', 'flex-row', 'text-bling-light-text', 'dark:text-bling-dark-text', 'clickable', tooltip ? 'justify-between' : 'justify-between', showText ? 'justify-start' : 'justify-between', 'items-center')}>
             <div className={classNames(
               'h-auto flex flex-row items-center w-full justify-start text-center',
               {
                 'justify-start': showText,
-                'justify-center': !showText,
+                'justify-center': !showText
               }
             )}>
               {icon && <span className={classNames(showText ? 'justify-start min-w-[25px]' : 'justify-center min-w-[auto]')}>{icon}</span>}
               {showText && text && <span className={classNames(textClassName)}>{text}</span>}
             </div>
-            {(suffix || tooltip ) && showText && (
+            {(suffix || tooltip) && showText && (
               <div className='w-fit h-auto flex flex-row'>
-                {suffix &&  <span className='z-[1]'>{suffix}</span>}
+                {suffix && <span className='z-[1]'>{suffix}</span>}
                 {tooltip && (
                   <Tooltip position={tooltipPosition} color={tooltipColor} className={tooltipClassName} content={tooltipContent}>
                     {tooltipIcon && (<Icon name={tooltipIcon} size={tooltipIconSize} color={tooltipIconColor} />)}
@@ -119,8 +122,8 @@ const Item: React.FC<ItemProps> = ({
       case 'checkbox':
         return (
           <div className={classNames('w-full', 'rounded-md', 'h-10', 'gap-1', 'px-4', 'flex', 'flex-row', 'dark:bling-dark', 'bling-light', 'text-bling-light-text', 'dark:text-bling-dark-text', 'clickable', showText ? 'justify-start' : 'justify-center', 'items-center')}>
-            <span className="min-w-[25px]">
-              <input type="checkbox" />
+            <span className='min-w-[25px]'>
+              <input type='checkbox' />
             </span>
             {showText && text && <span className={classNames(textClassName)}>{text}</span>}
           </div>
@@ -128,7 +131,7 @@ const Item: React.FC<ItemProps> = ({
       case 'data':
         return (
           <div className={classNames(contentClassName, 'w-full', 'rounded-md', 'h-10', 'gap-1', 'px-4', 'flex', 'flex-row', 'dark:bling-dark', 'bling-light', 'text-bling-light-text', 'dark:text-bling-dark-text', 'clickable', 'justify-start', 'items-center')}>
-            {data && <span className="min-w-[25px] font-bold text-center rounded-md">{data}</span>}
+            {data && <span className='min-w-[25px] font-bold text-center rounded-md'>{data}</span>}
             {showText && text && <span className={classNames(textClassName)}>{text}</span>}
           </div>
         );
@@ -153,14 +156,14 @@ const Item: React.FC<ItemProps> = ({
                 icon={titleIcon}
                 level={titleLevel}
                 iconColor={titleIconColor}
-                className="text-inherit"
+                className='text-inherit'
                 titleClassName={`${titleClassName} text-inherit`}
                 title={title}
                 description={titleDescription}
                 descriptionClassName={`${descriptionClassName} text-inherit`}
               />
             )}
-            <Switch checked={switchChecked} onChange={switchOnChange} switchClass="bling-light-bg-3 dark:bling-dark-bg-3" sliderClass="dark:bling-dark-bg-4" />
+            <Switch checked={switchChecked} onChange={switchOnChange} switchClass='bling-light-bg-3 dark:bling-dark-bg-3' sliderClass='dark:bling-dark-bg-4' />
           </div>
         );
       case 'suffix':
@@ -188,14 +191,14 @@ const Item: React.FC<ItemProps> = ({
     <ul className={classNames(`${className} relative act-on-h-dhb-pat act-on-h-dhb-grad `)}>
       {pattern && (
         <>
-        <div
-          className={classNames(`${pattern} z-0 absolute rounded-md top-0 z-1 bottom-0 right-0 w-1/4 pointer-events-none`, {
+          <div
+            className={classNames(`${pattern} z-0 absolute rounded-md top-0 z-1 bottom-0 right-0 w-1/4 pointer-events-none`, {
        
-          })}
-        >
+            })}
+          >
 
 
-        </div>
+          </div>
         </>
       )}
       <li

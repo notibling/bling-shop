@@ -5,7 +5,7 @@ import { twMerge } from 'tailwind-merge';
 
 interface IDropdownItemProps extends HTMLProps<HTMLLIElement> {
   closeOnClick?: boolean;
-  shouldClose?: boolean;  // Añadimos shouldClose a la interfaz
+  shouldClose?: boolean; // Añadimos shouldClose a la interfaz
   close?: () => void;
 }
 

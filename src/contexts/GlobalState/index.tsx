@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import React, { useContext } from 'react';
 import { useTheme, ThemeState, themeDefaultValue } from './theme/state';
 import { AuthState, authDefaultValue, useAuth } from './auth/state';
@@ -15,8 +15,8 @@ const GlobalProvider: React.FC<{ children: React.ReactNode }> = ({ children }) =
   const auth = useAuth();
   const theme = useTheme();
 
-  return <GlobalState.Provider value={{ auth, theme }}>{children}</GlobalState.Provider>
-}
+  return <GlobalState.Provider value={{ auth, theme }}>{children}</GlobalState.Provider>;
+};
 
 
 function useGlobalState() {

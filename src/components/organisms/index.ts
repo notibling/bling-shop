@@ -26,10 +26,10 @@ export * from './sections/InformativeTags';
 export * from './sections/RandomProducts';
 export * from './sections/SwiperDedicatedCards';
 export * from './sections/TabsCategories';
-export * from './Table'
+export * from './Table';
 export * from './Table/TableRow';
 export * from './Table/TableRowHeader';
-export * from './BaseTable'
+export * from './BaseTable';
 export * from './BaseTable/BaseTableRow';
 export * from './BaseTable/BaseTableRowHeader';
 export * from './TestComponent';

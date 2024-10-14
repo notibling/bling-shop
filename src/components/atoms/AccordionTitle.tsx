@@ -37,19 +37,19 @@ const AccordionTitle: React.FC<AccordionTitleProps> = ({ content, icon, text, cl
         );
       case 'checkbox':
         return (
-          <div className="flex flex-row items-center justify-start gap-1">
-            <span className="min-w-[25px]">
-              <input type="checkbox" />
+          <div className='flex flex-row items-center justify-start gap-1'>
+            <span className='min-w-[25px]'>
+              <input type='checkbox' />
             </span>
             {showText && text && <span>{text}</span>}
           </div>
         );
       case 'text':
-        return <div className={classNames('flex','flex-row', 'items-center', 'px-4','justify-start', 'gap-1', className)}>{showText && text}</div>;
+        return <div className={classNames('flex', 'flex-row', 'items-center', 'px-4', 'justify-start', 'gap-1', className)}>{showText && text}</div>;
       case 'switch':
         return (
-          <div className="flex flex-row items-center justify-start gap-1">
-            <Switch checked={false} onChange={() => {}} className="mr-2" switchClass="bg-blue-600" sliderClass="bg-yellow-400" />
+          <div className='flex flex-row items-center justify-start gap-1'>
+            <Switch checked={false} onChange={() => {}} className='mr-2' switchClass='bg-blue-600' sliderClass='bg-yellow-400' />
             {showText && text && <span>{text}</span>}
           </div>
         );
@@ -62,7 +62,7 @@ const AccordionTitle: React.FC<AccordionTitleProps> = ({ content, icon, text, cl
     <ul className={classNames(className, { active: isActive })} onClick={handleClick}>
       <li
         tabIndex={0}
-        className={classNames('w-auto', 'h-auto', 'flex', 'flex-row','justify-between','items-center', { focus: isActive })}
+        className={classNames('w-auto', 'h-auto', 'flex', 'flex-row', 'justify-between', 'items-center', { focus: isActive })}
         onFocus={handleFocus}
         onBlur={handleBlur}
       >

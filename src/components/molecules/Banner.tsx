@@ -1,5 +1,5 @@
 'use client';
-import React, { HTMLProps,  useState } from 'react';
+import React, { HTMLProps } from 'react';
 import classNames from 'classnames';
 import { FaHeart } from 'react-icons/fa';
 import { twMerge } from 'tailwind-merge';
@@ -7,11 +7,17 @@ import { Button } from '../atoms';
 import Image from 'next/image';
 
 enum BannerSize {
+  // eslint-disable-next-line no-unused-vars
   xs = '',
+  // eslint-disable-next-line no-unused-vars
   sm = '',
+  // eslint-disable-next-line no-unused-vars
   base = '',
+  // eslint-disable-next-line no-unused-vars
   md = '',
+  // eslint-disable-next-line no-unused-vars
   lg = '',
+  // eslint-disable-next-line no-unused-vars
   customlg = '',
 }
 
@@ -56,47 +62,36 @@ const Banner: React.FC<IBannerProps> = ({
   category,
   title,
   description,
-  badge,
   button,
-  badgeCountry,
   buttonColor,
   buttonIcon,
-  buttonText,
   buttonBackground,
-  priceBefore,
   sponsor,
-  price,
-  offerPrice,
-  term,
   image,
   imageAlt,
   polarized = false,
-  stock,
   titleClassName,
   descriptionClassName,
   categoryClassName,
-  contentSize,
-  colOne = "Default content for colOne",
+  colOne = 'Default content for colOne',
   colTwo,
-  colThree,
   colOneClassName,
   colTwoClassName,
-  colThreeClassName,
   ...rest
 }) => {
   const isColOneActive = !!colOne;
   const isColTwoActive = !!colTwo;
-  const isColThreeActive = !!colThree;
+
 
   return (
-    <section className={classNames('w-full', 'h-full','mx-0,','gap-2','border-box', 'flex-col', 'flex', 'relative', '@container', 'shiny-effect', 'rounded-md', 'overflow-hidden', size, className)} {...rest} >
+    <section className={classNames('w-full', 'h-full', 'mx-0,', 'gap-2', 'border-box', 'flex-col', 'flex', 'relative', '@container', 'shiny-effect', 'rounded-md', 'overflow-hidden', size, className)} {...rest} >
       <Image
         unoptimized
         width={100}
         height={100}
         src={image ? `${image}` : '../images/avif/fondo-banner.avif'}
         alt={imageAlt ? `${imageAlt}` : 'Default image'}
-        className="object-cover w-full absolute h-full z-0"
+        className='object-cover w-full absolute h-full z-0'
       />
      
       
@@ -123,10 +118,10 @@ const Banner: React.FC<IBannerProps> = ({
       )}
 
 
-      <div className="w-full h-full flex justify-between p-3 gap-2 z-[1] items-center flex-nowrap">
+      <div className='w-full h-full flex justify-between p-3 gap-2 z-[1] items-center flex-nowrap'>
         {isColOneActive && (
-          <div className={classNames(isColTwoActive ? 'w-1/2' : 'w-full', 'box-border', 'flex-shrink-0', 'items-center', 'justify-center', 'flex', 'flex-col', 'h-auto',  colOneClassName)}>
-            <div className={classNames('w-full', 'h-auto', 'flex', 'flex-col', '@base:p-2', '@xs:p-2', '@lg:p-3',  'items-startr', 'justify-start', 'gap-1')}>
+          <div className={classNames(isColTwoActive ? 'w-1/2' : 'w-full', 'box-border', 'flex-shrink-0', 'items-center', 'justify-center', 'flex', 'flex-col', 'h-auto', colOneClassName)}>
+            <div className={classNames('w-full', 'h-auto', 'flex', 'flex-col', '@base:p-2', '@xs:p-2', '@lg:p-3', 'items-startr', 'justify-start', 'gap-1')}>
               {category && <div className={twMerge(classNames('w-full', 'select-none', 'h-auto', 'flex', 'flex-grow', '@base:text-xs', '@xs:text-xs', 'font-bold', 'text-slate-100', 'pointer-none'), categoryClassName)}>{category}</div>}
               {title && (
                 <div
@@ -190,14 +185,14 @@ const Banner: React.FC<IBannerProps> = ({
         )}
 
         {isColTwoActive && (
-          <div className={classNames(isColOneActive ? 'w-1/2' : 'w-full', 'box-border', 'flex-shrink-0', 'h-auto', 'flex', 'flex-col',  colTwoClassName)}>
+          <div className={classNames(isColOneActive ? 'w-1/2' : 'w-full', 'box-border', 'flex-shrink-0', 'h-auto', 'flex', 'flex-col', colTwoClassName)}>
             {colTwo}
           </div>
         )}
-</div>
+      </div>
 
-{(sponsor || button) && (
-        <div className={classNames('w.full','p-3','z-20', 'bling-light','dark:bling-dark','rounded-md', '!bg-opacity-10', 'z-20',  'w-full', 'h-auto', 'flex', 'flex-grow', 'text-sm', 'justify-between', 'items-center', '@lg:flex', '@xs:hidden', '@base:hidden', )}>
+      {(sponsor || button) && (
+        <div className={classNames('w.full', 'p-3', 'z-20', 'bling-light', 'dark:bling-dark', 'rounded-md', '!bg-opacity-10', 'z-20', 'w-full', 'h-auto', 'flex', 'flex-grow', 'text-sm', 'justify-between', 'items-center', '@lg:flex', '@xs:hidden', '@base:hidden')}>
           {sponsor && (
             <div className={classNames('w-auto', 'h-auto', 'flex', 'text-xs', 'select-none', 'overflow-hidden', 'p-1', 'pr-3', 'rounded-md', 'items-center', 'drop-shadow-lg', 'bling-light', 'dark:bling-dark', 'clickable')}>
               <FaHeart className={classNames('mx-2')}></FaHeart>
@@ -208,7 +203,7 @@ const Banner: React.FC<IBannerProps> = ({
             <Button
               text={button}
               icon={buttonIcon}
-              aria-label="See banner details"
+              aria-label='See banner details'
               className={classNames(
                 'btn-md',
                 'w-auto',
@@ -232,7 +227,6 @@ const Banner: React.FC<IBannerProps> = ({
           )}
         </div>
       )}
-  
 
     
     </section>

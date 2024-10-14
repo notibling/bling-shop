@@ -1,18 +1,25 @@
-'use client'
-import { HTMLProps, forwardRef, useContext, useEffect, useRef, useState } from "react"
-import classNames from "classnames"
-import { FormContext } from "../organisms/Form";
-import _ from "lodash";
+'use client';
+import React, { HTMLProps, forwardRef, useContext, useEffect, useRef, useState } from 'react';
+import classNames from 'classnames';
+import { FormContext } from '../organisms/Form';
 
 // Definición de enum para los tamaños de Input
 enum InputSize {
+  // eslint-disable-next-line no-unused-vars
   xs = 'text-xs h-6',
+  // eslint-disable-next-line no-unused-vars
   small = 'text-sm h-8',
+  // eslint-disable-next-line no-unused-vars
   md = 'text-md h-10',
+  // eslint-disable-next-line no-unused-vars
   base = 'text-base h-12',
+  // eslint-disable-next-line no-unused-vars
   lg = 'text-lg h-14',
+  // eslint-disable-next-line no-unused-vars
   xl = 'text-xl h-16',
+  // eslint-disable-next-line no-unused-vars
   xxl = 'text-2xl h-18',
+  // eslint-disable-next-line no-unused-vars
   xxxl = 'text-3xl h-20'
 }
 
@@ -61,8 +68,7 @@ const validateInput = (type: string | undefined, value: string): boolean => {
 
 // Componente Input
 const Input = forwardRef<HTMLInputElement, InputProps>(({
-  id, controlId, className, label, debounce, type,
-  showError, error, errorRegexp, onChange,
+  id, controlId, className, label, type, error, errorRegexp, onChange,
   right, left, value: _value, maxLength,
   size = InputSize.md, ...rest
 }, ref: any) => {
@@ -74,13 +80,14 @@ const Input = forwardRef<HTMLInputElement, InputProps>(({
   const reference = ref ?? inputRef;
 
   const setFormInput = () => {
-    if (controlId && formContext)
+    if (controlId && formContext) {
       formContext.setField(controlId, {
         hasError,
         errorText: error,
         value: reference.current?.value
-      })
-  }
+      });
+    }
+  };
 
   // Manejo de errores
   const handleError = (value: string) => {
@@ -90,7 +97,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(({
       const hasValidationError = !errorRegexp.test(value);
       setHasError(hasValidationError);
     }
-  }
+  };
 
   // Manejo de cambios en el input
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -100,28 +107,28 @@ const Input = forwardRef<HTMLInputElement, InputProps>(({
 
     setValue(inputValue);
     handleError(inputValue);
-    onChange && onChange(event);
+    if (onChange) onChange(event);
   };
 
   useEffect(() => {
     if (controlId) {
       setFormInput();
     }
-  }, [controlId, reference])
+  }, [controlId, reference]);
 
   useEffect(() => {
-    setFormInput()
-  }, [hasError, _value])
+    setFormInput();
+  }, [hasError, _value]);
 
   useEffect(() => {
     if (value !== _value) setValue(_value as string);
-  }, [_value])
+  }, [_value]);
 
   return (
     <div className={classNames('flex', 'w-full', 'flex-col')}>
-      {label && <label className={classNames('text-gray-600','border','border-red-500', 'font-bold')} htmlFor={id}>{label}</label>}
-      <div className={classNames('flex','w-full','bling-light-bg-2','rounded-md','flex-row','items-center','justify-between','dark:bling-dark',
-       className, 
+      {label && <label className={classNames('text-gray-600', 'border', 'border-red-500', 'font-bold')} htmlFor={id}>{label}</label>}
+      <div className={classNames('flex', 'w-full', 'bling-light-bg-2', 'rounded-md', 'flex-row', 'items-center', 'justify-between', 'dark:bling-dark',
+        className 
       )}>
         {left && <span className='pl-2'>{left}</span>}
         <input
@@ -137,7 +144,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(({
             'w-full',
             'bling-light-text',
             'dark:bling-dark-text',
-            'bling-light-bg-3', 'dark:bling-dark-bg-1','dark:border-bling-dark-bg-3',
+            'bling-light-bg-3', 'dark:bling-dark-bg-1', 'dark:border-bling-dark-bg-3',
             '!shadow-none',
             '!outline-none',
             'px-2',
@@ -156,7 +163,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(({
         </p>
       )}
     </div>
-  )
+  );
 });
 
-export { Input, InputSize, type InputProps }
+export { Input, InputSize, type InputProps };
