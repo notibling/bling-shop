@@ -9,31 +9,32 @@ import { Banner, FooterComponent, SearchBar } from '@/components/molecules';
 import { FloatingMultipleButtons } from './FloatingMultipleButtons';
 import { useLightBar } from '@/hooks/useLightBar';
 
+
 function Dashboard({ children }: { children: React.ReactNode }) {
   const [isWide, setIsWide] = useState(true);
   const [isHover, setHover] = useState(false);
   const togglePanelWidth = () => {
     setIsWide(!isWide);
   };
-
+  
   const {
     showLightBar,
     lightBarPosition,
     lightLevel,
     toggleLightBar,
     setPosition,
-    changeLightLevel 
+    changeLightLevel, 
   } = useLightBar();
 
   const handleLightLevelChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    changeLightLevel(Number(e.target.value));
+    changeLightLevel(Number(e.target.value)); // Asegúrate de pasar el valor numérico
   };
-
   return (
     <>
       <UserGuardNonBlocking />
       <Section Empty={true} className='!flex-row !p-0 bling-light-bg-1 !m-0 min-h-[100dvh] h-auto relative max-w-[100dvw]'>
-        <LightBar show={showLightBar} position={lightBarPosition} lightLevel={lightLevel} />
+      <LightBar show={showLightBar} position={lightBarPosition} lightLevel={lightLevel} />
+
         <div className='w-full z-[1] items-stretch grid h-auto min-h-[100dvh] grid-cols-12 grid-flow-row-dense'>
           <div
             className={classNames('relative hidden lg:flex z-[10] !justify-start transition-all ease-in-out duration-500 min-h-screen gap-1 self-stretch flex-col prevent-select box-border', {

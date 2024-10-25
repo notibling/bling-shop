@@ -25,12 +25,19 @@ const Header = ({}) => {
             init={true}
             slidesPerView={conditionalValue({ sm: 1, md: 2, lg: 2 })}
             centeredSlides={true}
-            spaceBetween={10}
+            spaceBetween={5}
             autoplay={{ delay: 6000 }}
             initialSlide={1}
             grabCursor={true}
             speed={400}
             loop={true}
+            effect='coverflow'
+            coverflowEffect={{
+              rotate: 150,
+              depth: -100,
+              modifier: .1,
+              scale: .2,
+            }}
             modules={[EffectCoverflow, Pagination, Autoplay]}
             className={classNames('', 'w-full', 'h-full', 'p-1')}
           >

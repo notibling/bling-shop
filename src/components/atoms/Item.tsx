@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {} from 'react';
 import classNames from 'classnames';
 import { Title, Switch, Tooltip, Icon } from '@/components/atoms';
 
@@ -9,6 +9,7 @@ interface ItemProps {
   textClassName?: string | string[] | Record<string, any>;
   className?: string | string[] | Record<string, any>;
   suffix?: React.ReactNode;
+  suffixClassName?: string | string[] | Record<string, any>;
   data?: string;
   contentClassName?: string;
   onClick?: () => void;
@@ -26,6 +27,7 @@ interface ItemProps {
   activeBgColor?: string;
   activeTextColor?: string;
   enableHover?: boolean;
+  props?: string ;
   enableDropShadow?: boolean;
   enableFocus?: boolean;
   enableActive?: boolean;
@@ -43,6 +45,8 @@ interface ItemProps {
   tooltipIconColor?: string;
   switchChecked?: boolean;
   enableHoverPattern?: boolean;
+  hideSuffix?: boolean; 
+  defaultSuffixClasses?: string;
   // eslint-disable-next-line no-unused-vars
   switchOnChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
@@ -66,12 +70,14 @@ const Item: React.FC<ItemProps> = ({
   tooltipClassName,
   tooltipIconSize,
   tooltipIconColor,
-  suffix,
+  suffix, 
+  suffixClassName, 
   icon,
   text,
   pattern,
   textClassName,
   className,
+  defaultSuffixClasses,
   data,
   onClick,
   hoverBgColor = 'hover:bg-slate-700',
@@ -86,11 +92,13 @@ const Item: React.FC<ItemProps> = ({
   enableDropShadow = false,
   enableFocus = false,
   switchChecked = false,  
+  hideSuffix = false,
   // eslint-disable-next-line no-unused-vars
   enableHoverPattern = true,
   // eslint-disable-next-line no-unused-vars
   switchOnChange = () => {}
 }) => {
+
   const renderContent = () => {
     switch (content) {
       case 'icon':
@@ -107,8 +115,18 @@ const Item: React.FC<ItemProps> = ({
               {showText && text && <span className={classNames(textClassName)}>{text}</span>}
             </div>
             {(suffix || tooltip) && showText && (
-              <div className='w-fit h-auto flex flex-row'>
-                {suffix && <span className='z-[1]'>{suffix}</span>}
+              <div className={classNames('w-fit h-auto flex flex-row suffix', suffixClassName)}>
+                {suffix && <span
+              className={classNames(
+                'transition-opacity duration-300',
+                defaultSuffixClasses,
+                {
+                  'opacity-0': hideSuffix, // Ocultar por defecto
+                  'opacity-100 group-hover:opacity-100': !hideSuffix, // Mostrar en hover
+                  'group-hover:opacity-100': true // Asegura que el sufijo se muestre al hacer hover en el elemento
+                }
+              )}
+            >{suffix}</span>}
                 {tooltip && (
                   <Tooltip position={tooltipPosition} color={tooltipColor} className={tooltipClassName} content={tooltipContent}>
                     {tooltipIcon && (<Icon name={tooltipIcon} size={tooltipIconSize} color={tooltipIconColor} />)}
@@ -166,76 +184,99 @@ const Item: React.FC<ItemProps> = ({
             <Switch checked={switchChecked} onChange={switchOnChange} switchClass='bling-light-bg-3 dark:bling-dark-bg-3' sliderClass='dark:bling-dark-bg-4' />
           </div>
         );
-      case 'suffix':
-        return (
-          <div className={classNames('w-full', 'rounded-md', 'h-10', 'gap-1', 'px-4', 'flex', 'flex-row', 'dark:bling-dark', 'bling-light', 'text-bling-light-text', 'dark:text-bling-dark-text', 'clickable', showText ? 'justify-between' : 'justify-center', 'items-center')}>
-            <div className='w-auto h-auto flex flex-row flex-nowrap justify-start items-center gap-1'>
-              {icon && <span className={classNames(showText ? 'justify-start, min-w-[25px]' : 'justify-center min-w-[auto]')}>{icon}</span>}
-              {showText && text && <span>{text}</span>}
+        case 'suffix':
+          return (
+            <div
+              className={classNames(
+                'w-full',
+                'rounded-md',
+                'h-10',
+                'gap-1',
+                'px-4',
+                'flex',
+                'flex-row',
+                'dark:bling-dark',
+                'bling-light',
+                'text-bling-light-text',
+                'dark:text-bling-dark-text',
+                'clickable',
+                showText ? 'justify-between' : 'justify-center',
+                'items-center',
+                
+              )}
+            >
+              <div className='w-auto h-auto flex flex-row flex-nowrap justify-start items-center gap-1'>
+                {icon && (
+                  <span className={classNames(showText ? 'justify-start min-w-[25px]' : 'justify-center min-w-[auto]')}>
+                    {icon}
+                  </span>
+                )}
+                {showText && text && <span>{text}</span>}
+              </div>
+              {suffix && (
+                   <span
+                   className={classNames(
+                     'transition-opacity duration-300',
+                     defaultSuffixClasses,
+                     {
+                       'opacity-0': hideSuffix, // Ocultar por defecto
+                       'opacity-100 group-hover:opacity-100': !hideSuffix, // Mostrar en hover
+                       'group-hover:opacity-100': true // Asegura que el sufijo se muestre al hacer hover en el elemento
+                     }
+                   )}
+                 >
+              
+                  {suffix}
+                </span>
+              )}
+              {tooltip && (
+                <Tooltip position={tooltipPosition} color={tooltipColor} className={tooltipClassName} content={tooltipContent}>
+                  {tooltipIcon && <Icon name={tooltipIcon} size={tooltipIconSize} color={tooltipIconColor} />}
+                  {tooltipChildren}
+                </Tooltip>
+              )}
             </div>
-            {suffix && <span className='z-[1]'>{suffix}</span>}
-            {tooltip && (
-              <Tooltip position={tooltipPosition} color={tooltipColor} className={tooltipClassName} content={tooltipContent}>
-                {tooltipIcon && (<Icon name={tooltipIcon} size={tooltipIconSize} color={tooltipIconColor} />)}
-                {tooltipChildren}
-              </Tooltip>
-            )}
-          </div>
-        );
+          );
       default:
         return null;
     }
   };
 
+
   return (
     <ul className={classNames(`${className} relative act-on-h-dhb-pat act-on-h-dhb-grad `)}>
-      {pattern && (
-        <>
-          <div
-            className={classNames(`${pattern} z-0 absolute rounded-md top-0 z-1 bottom-0 right-0 w-1/4 pointer-events-none`, {
-       
-            })}
-          >
-
-
-          </div>
-        </>
-      )}
-      <li
+    {pattern && (
+      <div className={classNames(`${pattern} z-0 absolute rounded-md top-0 z-1 bottom-0 right-0 w-1/4 pointer-events-none`)}></div>
+    )}
+   <li
+  className={classNames(
+    'w-full select-none cursor-pointer rounded-md bling-btn-secondary group',
+    focusBgColor,
+    focusTextColor,
+    enableActive && activeBgColor,
+    enableActive && activeTextColor,
+    enableFocus && 'focus:bg-none',
+    enableHover && hoverBgColor,
+    enableHover && hoverTextColor
+  )}
+>
+      <div
         className={classNames(
           'w-full',
-          'select-none',
-          'cursor-pointer',
+          'h-full',
+          'items-center',
+          'flex',
+          'text-xs',
           'rounded-md',
-          'bling-btn-secondary',
-          focusBgColor,
-          focusTextColor,
-          enableActive && activeBgColor,
-          enableActive && activeTextColor,
-          enableFocus && 'focus:bg-none',
-          enableHover && hoverBgColor,
-          enableHover && hoverTextColor
+          enableFocus && 'focus:bg-inherit',
+          enableHover && enableDropShadow ? 'shadow-md' : ''
         )}
+        onClick={onClick}
       >
-        <div
-          className={classNames(
-            'w-full',
-            'select-none',
-            'h-full',
-            'items-center',
-            'flex',
-            'text-xs',
-            'rounded-md',
-            enableFocus && 'focus:bg-inherit',
-            enableHover && enableDropShadow && 'hover:drop-shadow-lg',
-            contentClassName
-          )}
-          onClick={onClick}
-        >
-          {renderContent()}
-        </div>
-      </li>
-    </ul>
+        {renderContent()}
+      </div>
+    </li>
+  </ul>
   );
 };
 

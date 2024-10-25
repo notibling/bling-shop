@@ -54,7 +54,7 @@ const font = localFont({
 console.log(font);
 
 export const metadata: Metadata = {
-  title: 'BLING - Tienda Online 24/7',
+  title: 'BLING - Tiendas Online 24/7',
   description: 'Todo a un 🔔 de distancia.'
 };
 
