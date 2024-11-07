@@ -55,7 +55,7 @@ const UserButton: React.FC<UserButtonProps> = ({
     <>
 
       <Dropdown
-        bodyClassName='w-auto h-auto overflow-visible'
+        bodyClassName='w-auto h-auto overflow-visible '
         trigger={
           <Button
             imageHeight={40}
@@ -63,6 +63,7 @@ const UserButton: React.FC<UserButtonProps> = ({
             imageClassName='rounded-md'
             textClassName='!px-5'
             image={image}
+            showText={showName}
             text='Nickolas Machado'
             // text={showName ? `${user?.firstName} ${user?.lastName}` : ''}
             icon={!image && <FaUserCircle />}
@@ -78,8 +79,8 @@ const UserButton: React.FC<UserButtonProps> = ({
          
        
           <div className='flex items-center justify-between gap-2 p-2 rounded-md bling-light dark:bling-dark'>
-            <div className='flex items-center gap-2'>
-              <div className='w-[50px] h-[50px] rounded-full relative flex justify-center items-center'>
+            <div className='flex items-center  gap-2'>
+              <div className='w-[50px] h-[50px] rounded-full  relative flex justify-center items-center'>
                 <Image unoptimized src={image ?? ''} className='object-cover mask mask-squircle bg-contain rounded-md' alt='User Image' width={100} height={100} />
               </div>
               <Title title='name' titleClassName='text-slate-700 dark:text-white font-bold text-sm text-center' level='h6' description='id' descriptionClassName='text-xs text-slate-400' />

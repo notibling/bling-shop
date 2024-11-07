@@ -118,47 +118,16 @@ const TopMenu = forwardRef<any, TopMenuProps>(({ FastLinks = true, InfoBar = tru
             </Section>
           )}
           {/* --------------------------------------------- CABECERA - NAV - LOGO/SEARCH/BUTTONS */}
-          <div className={classNames('w-full', '!overflow-visible', 'lg:flex-nowrap', 'flex-wrap', 'order-2', 'p-5', 'lg:pr-0', 'lg:pl-0', 'lg:w-10/12', 'lg:h-20', 'h-auto', 'flex', 'mx-auto', 'justify-between', 'items-center')}>
+          <div className={classNames('w-full', 'gap-2', '!overflow-visible', 'lg:flex-nowrap', 'flex-wrap', 'order-2', 'p-5', 'lg:pr-0', 'lg:pl-0', 'lg:w-10/12', 'lg:h-20', 'h-auto', 'flex', 'mx-auto', 'justify-between', 'items-center')}>
             {/* --------------------------------------------- CABECERA - NAV - LOGO */}
-            <div className={classNames('lg:w-4/12', 'flex', 'w-1/3', 'order-1', 'flex', 'flex-row', 'justify-start', 'items-center', 'gap-4')}>
+            <div className={classNames('lg:w-4/12', 'flex', 'w-1/3', 'order-1', 'flex', 'flex-row', 'justify-center','align-middle', 'items-center', 'gap-4')}>
               <div className={classNames('flex', 'h-full', 'w-full', 'join-item', ' text-slate-100', 'self-center')}>
-                <Logo darkMode={darkMode} className={classNames('w-20')} />
+                <Logo darkMode={darkMode} className={classNames('w-20 flex flex-col justify-center')} />
               </div>
-            </div>
-            {/* --------------------------------------------- CABECERA - NAV - SEARCHBAR */}
-            <div className={classNames('w-full', 'lg:w-6/12', 'flex', 'gap-1', 'lg:pt-0', 'pt-2', 'lg:block', 'order-6', 'lg:order-2')}>
-              <SearchBar ref={searchRef} onSearch={onSearch} className={classNames('w-full')}></SearchBar>
-              <Button
-                icon={<FaArrowDownWideShort />}
-                className={classNames(
-                  'w-14',
-                  'h-12',
-                  'flex',
-                  '!p-0',
-                  'lg:hidden',
-                  'rounded-md',
-                  'hover:shadow-md',
-                  'hover:text-blue-500',
-                  ' dark:bg-slate-900',
-                  'bling-btn-secondary',
-                  'transition-all',
-                  'cursor-pointer',
-                  'flex',
-                  'justify-center',
-                  'items-center',
-                  'text-lg',
-                  'text-slate-700',
-                  'order-4'
-                )}
-                onClick={() => setModalOpen2(true)}
-              />
-            </div>
-            {/* --------------------------------------------- CABECERA - NAV - LOGIN/REGISTER/MENU */}
-            <div className={classNames('w-auto', '!overflow-visible', 'lg:w-4/12', 'order-3', 'h-14', 'gap-1', 'items-center', 'flex', 'justify-end ')}>
               <a
                 href=''
                 className={classNames(
-                  'w-12',
+                  'aspect-square',
                   'h-12',
                   'hidden',
                   'lg:flex',
@@ -179,20 +148,55 @@ const TopMenu = forwardRef<any, TopMenuProps>(({ FastLinks = true, InfoBar = tru
               >
                 <FaRepeat className={classNames('self-center', 'text-lg')} />
               </a>
-              <a
-                href=''
+            </div>
+            
+            {/* --------------------------------------------- CABECERA - NAV - SEARCHBAR */}
+            <div className={classNames('w-full', 'lg:w-6/12', 'flex', 'gap-1', 'lg:pt-0', 'pt-2', 'lg:block', 'order-6', 'lg:order-2')}>
+              <SearchBar ref={searchRef} onSearch={onSearch} className={classNames('w-full')}></SearchBar>
+              <Button
+                icon={<FaArrowDownWideShort />}
                 className={classNames(
                   'w-12',
                   'h-12',
+                  'flex',
+                  '!p-0',
+                  'lg:hidden',
+                  'rounded-md',
+                  'hover:shadow-md',
+                  'hover:text-blue-500',
+                  'dark:bg-slate-900',
+                  'bling-btn-secondary',
+                  'transition-all',
+                  'cursor-pointer',
+                  'flex',
+                  'justify-center',
+                  
+                  'items-center',
+                  'text-lg',
+                  'text-slate-700',
+                  'order-4'
+                )}
+                onClick={() => setModalOpen2(true)}
+              />
+            </div>
+            {/* --------------------------------------------- CABECERA - NAV - LOGIN/REGISTER/MENU */}
+            <div className={classNames('w-auto', '!overflow-visible', 'lg:w-4/12', 'order-3', 'h-14', 'gap-1', 'items-center', 'flex', 'justify-end ')}>
+              
+              <a
+                href=''
+                className={classNames(
+                  'aspect-square',
+                  'h-12',
+                  'p-a',
                   'hidden',
                   'lg:flex',
+                  'bg-transparent',
                   'rounded-md',
                   'hover:shadow-md',
                   'hover:text-red-500',
                   'dark:hover:text-red-500',
                   'transition-all',
                   'cursor-pointer',
-                  'flex',
                   'justify-center',
                   'dark:hover:bg-slate-800',
                   'items-center',
@@ -211,11 +215,11 @@ const TopMenu = forwardRef<any, TopMenuProps>(({ FastLinks = true, InfoBar = tru
                   <Button
                     icon={<FaBell />}
                     className={classNames(
-                      'w-12',
-                      'bg-transparent',
+                      'aspect-square',
                       'h-12',
                       'hidden',
                       'lg:flex',
+                      'bg-transparent',
                       'rounded-md',
                       'hover:shadow-md',
                       'hover:bg-transparent',
@@ -247,6 +251,7 @@ const TopMenu = forwardRef<any, TopMenuProps>(({ FastLinks = true, InfoBar = tru
               <UserButton    
                 image='/images/webp/user/woman.webp'
                 showLightBar={showLightBar}
+                showName={false}
                 lightBarPosition={lightBarPosition}
                 onToggleLightBar={toggleLightBar}
                 onChangePosition={setPosition}

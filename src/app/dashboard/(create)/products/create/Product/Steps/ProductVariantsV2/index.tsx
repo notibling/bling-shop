@@ -127,7 +127,7 @@ function ProductVariantsV2() {
           {/* ---- IMAGEN - VARIANTE 1 ----------------------------------------- */}
           <div className='col-span-1 grid-cols-1 grid bling-light dark:bling-dark rounded-md p-1 '>
             <div className='w-auto h-auto flex flex-col gap-2 lg:flex-row justify-stretch items-center overflow-hidden '>
-              <Image unoptimized src='https://via.placeholder.com/100' width={100} height={100} className='aspect-square lg:order-1 order-2  rounded-md ' alt='image' />
+              <Image unoptimized src='https://via.placeholder.com/100' width={100} height={100} className='aspect-auto lg:order-1 order-2  rounded-md ' alt='image' />
               <div className='w-full  h-full bg-blue-500 rounded-md p-0 m-0 lg:order-2 order-1 justify-center items-center flex-row  flex  '>
                 <span className=' lg:rotate-90 text-white text-sm lg:absolute  lg:-translate-x-0 lg:-translate-y-0  '>Principal</span>
               </div>
