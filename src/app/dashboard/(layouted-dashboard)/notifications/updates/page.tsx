@@ -8,7 +8,7 @@ import { Post } from '@/components/molecules';
 import { TitleSection } from '@/components/organisms';
 
 
-const VersionNotes: React.FC = () => {
+const Updates: React.FC = () => {
   const { conditionalValue } = useBreakpoint();
   const [open, setOpen] = useState(false);
   return (
@@ -91,4 +91,4 @@ const VersionNotes: React.FC = () => {
   );
 };
 
-export default VersionNotes;
+export default Updates;

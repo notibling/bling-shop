@@ -4,14 +4,15 @@ import { useBreakpoint } from '@/hooks/useBreakpoint';
 import { Section} from '@/components/atoms';
 import { SmartHome } from '@/icons/tsx';
 import { TitleSection } from '@/components/organisms';
+import { Button } from '@mui/base';
 
 
-interface AnnouncementsProps {
+interface CampaignsProps {
 
   
 }
 
-const Announcements: React.FC<AnnouncementsProps> = ({
+const Campaigns: React.FC<CampaignsProps> = ({
 
 }) => {
   const { conditionalValue } = useBreakpoint();
@@ -21,15 +22,29 @@ const Announcements: React.FC<AnnouncementsProps> = ({
        
         <TitleSection icon={SmartHome}
           iconSize={30}
-          title='Anuncios' 
-          description='Promociones exclusivas'
-          level='h5'
+          title='Campañas' 
+          description='Resumen de campañas'
+          level='h6'
           pattern={'dhb-pat-sales'} />
      
-      
+     <TitleSection 
+    
+          title='Publicidades activas' 
+          level='h6'
+          />
+     <TitleSection 
+    
+    title='Publicidades pausadas' 
+    level='h6'
+    />
+    <TitleSection 
+    
+    title='Publicidades en revisión' 
+    level='h6'
+    />
       </Section>
     </>
   );
 };
 
-export default Announcements;
+export default Campaigns;
