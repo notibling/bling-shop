@@ -1,3 +1,4 @@
+
 'use client';
 import React from 'react';
 import { useRouter } from 'next/navigation';
@@ -11,20 +12,13 @@ import * as userOperations from '@/contexts/GlobalState/user/operations';
 import { CheckCircle } from '@/icons/tsx';
 import { ShapeBRT } from '@/components/shapes/ShapeBRT';
 
-function InitialStepsPage(): React.JSX.Element {
-  const { auth } = useGlobalState();
-  const router = useRouter();
-  const handleSelect = async(type: IUser['type']) => {
-    auth.setUser((prev) => ({
-      ...prev,
-      type
-    }));
-    await userOperations.updateUser({
-      user: { type }
-    });
-    router.push('/dashboard/initial-steps/personal-information');
-  };
-  
+
+interface IAccountTypeProps {
+  onSelect: (type: 'business' | 'client') => void;
+}
+
+
+function AccountType({ onSelect }: IAccountTypeProps): React.JSX.Element {
   return (
     <>
       <main className={classNames('overflow-x-hidden', 'h-auto', 'bg-cover', 'min-h-screen', 'w-full', 'flex', 'justify-center', 'items-center', 'flex-col', 'relative', 'dark:bling-dark-bg-1', 'bling-light-bg-5')}>
@@ -80,7 +74,7 @@ function InitialStepsPage(): React.JSX.Element {
               <div className={classNames('flex', 'w-full', 'h-auto', 'flex-col', 'items-center', 'justify-center')}>
                 <span className={classNames('w-auto', 'h-auto', 'text-sm', 'text-slate-900', 'font-bold')}>¡Compra fácil, rápido y seguro!</span>
               </div>
-              <Button onClick={() => handleSelect('client')} className={classNames('btn', 'w-10/12', 'self-center', 'h-12', 'bg-slate-900', 'text-md', 'text-white')}>
+              <Button onClick={() => onSelect('client')}  className={classNames('btn', 'w-10/12', 'self-center', 'h-12', 'bg-slate-900', 'text-md', 'text-white')}>
                 Crear cuenta Personal
               </Button>
             </div>
@@ -135,7 +129,7 @@ function InitialStepsPage(): React.JSX.Element {
               <div className={classNames('flex', 'w-full', 'h-auto', 'flex-col', 'items-center', 'justify-center')}>
                 <span className={classNames('w-auto', 'h-auto', 'text-sm', 'text-slate-100', 'font-bold')}>¿Qué esperás para vender?</span>
               </div>
-              <Button onClick={() => handleSelect('business')} className={classNames('btn', 'w-10/12', 'self-center', 'h-12', 'text-slate-900', 'text-md', 'bg-white')}>
+              <Button onClick={() => onSelect('business')} className={classNames('btn', 'w-10/12', 'self-center', 'h-12', 'text-slate-900', 'text-md', 'bg-white')}>
                 Crear cuenta Empresarial
               </Button>
             </div> </div>
@@ -154,4 +148,6 @@ function InitialStepsPage(): React.JSX.Element {
   );
 }
 
-export {InitialStepsPage};
+export default  AccountType ;
+
+

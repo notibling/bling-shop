@@ -35,6 +35,12 @@ const BusinessInformation: React.FC<IBusinessInformationProps> = ({ controller }
     }
   };
 
+  const handleBack = async () => {
+    if (controller.current) {
+      controller.current.slidePrev();  // Retrocede una diapositiva
+    }
+  };
+
   const handleSetResidenceCountry = (country: string) => {
     setUserShippings((shippings) => {
       let _shippings = _.cloneDeep(shippings);
@@ -178,10 +184,15 @@ const BusinessInformation: React.FC<IBusinessInformationProps> = ({ controller }
                 </div>
               </div>
             </div>
-            <div className={classNames('flex', 'w-full', 'py-4', 'text-md', 'gap-2', 'flex-col', 'flex-nowrap', 'justify-center items-end')}>
-              <Separator noText={true} size='mt-0 mb-4' />
-              <Button onClick={handleNext} text='Siguiente' className={classNames('bling-btn-primary border bling-light-border dark:bling-dark-border dark:bling-btn-primary-dark max-w-[200px] w-1/3 py-6')} />
-            </div>
+            <div className='w-full h-auto flex flex-row items-center justify-between'>
+                <Button
+                  onClick={handleBack}
+                  text='Anterior'
+                  className={classNames('bling-btn-primary border bling-light-border dark:bling-dark-border dark:bling-btn-primary-dark max-w-[200px] w-1/3 py-6')}
+                />
+
+                <Button onClick={handleNext} text='Siguiente' className={classNames('bling-btn-primary border bling-light-border dark:bling-dark-border dark:bling-btn-primary-dark max-w-[200px] w-1/3 py-6')} />
+              </div>
           </div>
 
           <div className='col-span-1 lg:col-span-3 py-4 overflow-hidden !px-14 bling-light-bg-1 shadow-sm dark:bling-dark-bg-3 rounded-md items-center relative justify-center flex flex-col'>

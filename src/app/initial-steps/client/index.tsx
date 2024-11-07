@@ -1,3 +1,4 @@
+'use client';
 import React, { ChangeEvent, MutableRefObject, useEffect, useRef } from 'react';
 import classNames from 'classnames';
 import { format } from 'date-fns';
@@ -11,12 +12,12 @@ import { DEFAULT_SEX_OPTIONS } from '@/constants/forms';
 import Image from 'next/image';
 import { BellBing } from '@/icons/tsx';
 
-interface IPersonalInformationProps {
+interface IClientInformationProps {
   controller: MutableRefObject<Swiper | null>;
 }
 
 
-const PersonalInformation: React.FC<IPersonalInformationProps> = ({ controller }) => {
+const ClientInformation: React.FC<IClientInformationProps> = ({ controller }) => {
   const { user, setUser, setUserShippings, countries } = useInitialStepsState();
   const countryRef = useRef<ISimpleAutocompleteRef<string>>(null);
   const residenceCountryRef = useRef<ISimpleAutocompleteRef<string>>(null);
@@ -32,6 +33,11 @@ const PersonalInformation: React.FC<IPersonalInformationProps> = ({ controller }
   const handleNext = async() => {
     if (controller.current) {
       controller.current.slideNext();
+    }
+  };
+  const handleBack = async () => {
+    if (controller.current) {
+      controller.current.slidePrev();  // Retrocede una diapositiva
     }
   };
 
@@ -172,7 +178,15 @@ const PersonalInformation: React.FC<IPersonalInformationProps> = ({ controller }
             </div>
             <div className={classNames('flex', 'w-full', 'py-4', 'text-md', 'gap-2', 'flex-col', 'flex-nowrap', 'justify-center items-end')}>
               <Separator noText={true} size='mt-0 mb-4' />
-              <Button onClick={handleNext} text='Siguiente' className={classNames('bling-btn-primary border bling-light-border dark:bling-dark-border dark:bling-btn-primary-dark max-w-[200px] w-1/3 py-6')} />
+              <div className='w-full h-auto flex flex-row items-center justify-between'>
+                <Button
+                  onClick={handleBack}
+                  text='Anterior'
+                  className={classNames('bling-btn-primary border bling-light-border dark:bling-dark-border dark:bling-btn-primary-dark max-w-[200px] w-1/3 py-6')}
+                />
+
+                <Button onClick={handleNext} text='Siguiente' className={classNames('bling-btn-primary border bling-light-border dark:bling-dark-border dark:bling-btn-primary-dark max-w-[200px] w-1/3 py-6')} />
+              </div>
             </div>
           </div>
         </div>
@@ -182,5 +196,5 @@ const PersonalInformation: React.FC<IPersonalInformationProps> = ({ controller }
     </>
   );
 };
+export { ClientInformation };
 
-export { PersonalInformation };
