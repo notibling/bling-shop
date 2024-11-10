@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import classNames from 'classnames';
 import { FaBasketShopping, FaShop } from 'react-icons/fa6';
 import { DarkModeBtn, FooterComponent } from '@/components/molecules';
-import { Button, Icon, Item } from '@/components/atoms';
+import { Button, Icon, Item, Section } from '@/components/atoms';
 import { IUser } from '@/entities/User';
 import { useGlobalState } from '@/contexts/GlobalState';
 import * as userOperations from '@/contexts/GlobalState/user/operations';
@@ -21,8 +21,8 @@ interface IAccountTypeProps {
 function AccountType({ onSelect }: IAccountTypeProps): React.JSX.Element {
   return (
     <>
-      <main className={classNames('overflow-x-hidden', 'h-auto', 'bg-cover', 'min-h-screen', 'w-full', 'flex', 'justify-center', 'items-center', 'flex-col', 'relative', 'dark:bling-dark-bg-1', 'bling-light-bg-5')}>
-        <DarkModeBtn />
+        <Section Empty={true} className='!bg-transparent'>
+
         <div className={classNames('flex', 'w-full', 'flex-grow', 'h-auto', 'relative', 'z-[10]', 'overflow-x-hidden', 'justify-center')}>
           <div className={classNames('flex', 'gap-5', 'w-full', 'items-center', 'z-[90]', 'lg:flex-row', 'flex-col', 'h-auto', 'overflow-x-hidden', 'p-5', 'justify-center')}>
             {/*
@@ -133,17 +133,12 @@ function AccountType({ onSelect }: IAccountTypeProps): React.JSX.Element {
                 Crear cuenta Empresarial
               </Button>
             </div> </div>
-          <div className='w-full h-auto absolute left-0 bottom-0 right-0 margin-auto flex flex-col items-center justify-end '>
-            <ShapeBRT className='fill-bling-light-bg-1 dark:fill-bling-dark-bg-4' fillColor='' />
-            <div className='w-full h-[300px] lg:h-[0px] bling-light-bg-1 dark:bling-dark-bg-4'></div>
-       
-          </div>
-         
+          
         </div>
      
-        <FooterComponent className={classNames('z-10')} brandFooter />
+ 
         
-      </main>
+        </Section>
     </>
   );
 }

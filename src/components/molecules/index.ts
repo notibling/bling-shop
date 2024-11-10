@@ -16,6 +16,7 @@ export * from './Modal';
 export * from './Masonry';
 export * from './CartFooter/CartVariantQuantity';
 export * from './Frozen';
+export * from './Cookies';
 export * from './ChipList';
 export * from './PreviewerComponent';
 export * from './Container';

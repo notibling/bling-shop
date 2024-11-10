@@ -4,10 +4,11 @@ import classNames from 'classnames';
 import { Button, Logo, Section, Marquee, LightBar } from '@/components/atoms';
 import { SearchBar, Modal, Notify, CardHorizontal } from '@/components/molecules';
 import { Dropdown, DropdownItem, ResultFilter, UserButton } from '@/components/organisms';
-import { FaBars, FaBell, FaFileInvoice, FaHeart, FaTimes } from 'react-icons/fa';
-import { FaArrowDownWideShort, FaRepeat, FaTicket } from 'react-icons/fa6';
-import { useDarkMode, useLightBar } from '@/hooks';
+import { FaBars, FaBell, FaFileInvoice, FaHeart, FaTimes, FaUserCircle } from 'react-icons/fa';
+import { FaArrowDownWideShort, FaArrowRightFromBracket, FaRepeat, FaTicket } from 'react-icons/fa6';
+import { useAuth, useDarkMode, useLightBar } from '@/hooks';
 import { useCart } from '@/contexts/Cart';
+
 import { CartCTA } from './CartCTA';
 
 interface TopMenuProps {
@@ -18,8 +19,10 @@ interface TopMenuProps {
   // eslint-disable-next-line
   onSearch?: (value: string) => void;
 }
+
 const TopMenu = forwardRef<any, TopMenuProps>(({ FastLinks = true, InfoBar = true, className = '', onSearch }, searchRef: any) => {
   const { darkMode } = useDarkMode();
+  const { user } = useAuth();  // Obtenemos el estado de autenticación
   const { cartItems } = useCart();
 
 
@@ -180,9 +183,9 @@ const TopMenu = forwardRef<any, TopMenuProps>(({ FastLinks = true, InfoBar = tru
               />
             </div>
             {/* --------------------------------------------- CABECERA - NAV - LOGIN/REGISTER/MENU */}
-            <div className={classNames('w-auto', '!overflow-visible', 'lg:w-4/12', 'order-3', 'h-14', 'gap-1', 'items-center', 'flex', 'justify-end ')}>
-              
-              <a
+            <div className={classNames('w-1/2', '!overflow-visible', 'lg:w-4/12', 'order-3', 'h-14', 'gap-1', 'items-center', 'flex', 'justify-end ')}>
+             
+            {user ? (  <>   <a
                 href=''
                 className={classNames(
                   'aspect-square',
@@ -262,7 +265,30 @@ const TopMenu = forwardRef<any, TopMenuProps>(({ FastLinks = true, InfoBar = tru
                     
               <a href='' className={classNames('w-12', 'h-12', 'flex', 'lg:hidden', 'rounded-md', 'hover:shadow-md', 'transition-all', 'cursor-pointer', 'flex', 'justify-center', 'items-center', 'text-lg', 'text-slate-700', 'order-4')}>
                 <FaBars className={classNames('self-center', 'text-lg')} />
-              </a>
+              </a> </> ) : ( <>
+                <div className='w-full flex gap-2 p-2 flex-row'>
+                  <div className='w-1/2 flex flex-row justify-center items-center text-slate-200'>
+                    <Button
+                      icon={<FaUserCircle />}
+                      text='Registrarme'
+                      id='Register'
+                      className='w-full text-white bling-btn-primary dark:bling-btn-primary-dark hover:bling-bright flex-nowrap rounded-md text-nowrap flex items-center justify-center text-xs gap-2 py-5 px-5'
+                      onClick={() => {/* Lógica para Registrarse */}}
+                    />
+                  </div>
+                  <div className='w-1/2 flex flex-row justify-center items-center text-slate-200'>
+                    <Button
+                      icon={<FaArrowRightFromBracket />}
+                      text='Ingresar'
+                      id='Login'
+                      className='w-full text-white bling-btn-primary dark:bling-btn-primary-dark  hover:bling-bright flex-nowrap rounded-md text-nowrap flex items-center justify-center text-xs gap-2 py-5'
+                      onClick={() => {/* Lógica para iniciar sesión */}}
+                    />
+                  </div>
+                </div>
+
+</>
+)}
             </div>
           </div>
 

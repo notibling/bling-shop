@@ -19,6 +19,7 @@ export * from './Quantity';
 export * from './Tooltip';
 export * from './Icon';
 export * from './Chip';
+export * from './Text';
 export * from './InputRange';
 export * from './InputFile';
 export * from './AddToCartButton';

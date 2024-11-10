@@ -8,3 +8,4 @@ export * from './usePromiseState';
 export * from './useDarkMode';
 export * from './useScroll';
 export * from './useLightBar';
+export * from './useAuthContext';
