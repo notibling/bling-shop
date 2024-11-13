@@ -49,7 +49,7 @@ function Home() {
         titleThree='DATE UN GUSTO SUPER ESPECIAL'
         descriptionThree='Sin perder la Calidad'
       />
-n
+
       <BeautyProducts />
       <CategorySlides/>
 

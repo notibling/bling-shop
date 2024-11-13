@@ -127,7 +127,7 @@ export function Auth() {
 
                 {showLogin ? <Login /> : <Register />}
 
-                <div className='w-full flex gap-2 p-2 flex-row'>
+             <div className='w-full flex gap-2 p-2 flex-row'>
                   <div className='w-1/2 flex flex-row justify-center items-center text-slate-200'>
                     <Button
                       icon={<FaUserCircle />}
