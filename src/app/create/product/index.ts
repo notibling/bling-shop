@@ -6,5 +6,4 @@ export * from './ProductPayment';
 export * from './ProductSuccess';
 export * from './ProductAttributes';
 export * from './ProductVariants';
-export * from './SelectElement';
 export * from './ProductVariantsV2';

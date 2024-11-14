@@ -1,11 +1,11 @@
+'use client';
 import React, { useMemo } from 'react';
 import classNames from 'classnames';
 import { FaHandsHoldingCircle } from 'react-icons/fa6';
-
 import { useStepper } from '@/components/organisms';
 import { Button, Icon, Title} from '@/components/atoms';
 
-interface SelectElementProps {}
+interface CreateProps {}
 type ProductType = 'product' | 'service' | 'vehicle' | 'property';
 
 interface ProductTypeOption {
@@ -47,7 +47,7 @@ const options: ProductTypeOption[] = [
   }
 ];
 
-const SelectElement: React.FC<SelectElementProps> = ({}) => {
+const Create: React.FC<CreateProps> = ({}) => {
   const stepper = useStepper<{ type?: ProductType }>();
 
   const handleButtonClick = (type: ProductType) => {
@@ -104,4 +104,4 @@ const SelectElement: React.FC<SelectElementProps> = ({}) => {
   );
 };
 
-export { SelectElement };
+export default  Create ;

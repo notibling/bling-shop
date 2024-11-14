@@ -3,13 +3,18 @@ import React from 'react';
 import classNames from 'classnames';
 import { FaBoxesStacked, FaMoneyBillTrendUp } from 'react-icons/fa6';
 import { FaBox, FaInfoCircle } from 'react-icons/fa';
-import { Button, Icon, Title } from '@/components/atoms';
-import { ProductAttribute, ProductCategory, ProductIdentity, ProductPayment, ProductShipping, ProductSuccess, ProductVariantsV2 } from './Product/Steps';
-import { Step, StepperHOC, UserButton, useStepper } from '@/components/organisms';
-import { SelectElement } from './Product/Steps/SelectElement';
-import { FloatingMultipleButtons } from '@/app/dashboard/(layouted-dashboard)/FloatingMultipleButtons';
-import { ArrowLeft, ArrowRight } from '@/icons/tsx';
 import { ICreateProductStepperState } from './types';
+import { Button, Icon, Title } from '@/components/atoms';
+import { ProductCategory } from './ProductCategory';
+import { Step, StepperHOC, UserButton, useStepper } from '@/components/organisms';
+import { ProductIdentity } from './ProductIdentity';
+import { ProductAttribute } from './ProductAttributes';
+import { ProductVariantsV2 } from './ProductVariantsV2';
+import { ProductShipping } from './ProductShipping';
+import { ProductPayment } from './ProductPayment';
+import { ProductSuccess } from './ProductSuccess';
+import { ArrowLeft, ArrowRight } from '@/icons/tsx';
+
 
 const defaultStepperValue: ICreateProductStepperState = {
   type: undefined,
@@ -29,7 +34,7 @@ const defaultStepperValue: ICreateProductStepperState = {
   attributes: []
 };
 
-const Create: React.FC<React.PropsWithChildren<ICreateProductStepperState>> = StepperHOC<ICreateProductStepperState>({
+const CreateProduct: React.FC<React.PropsWithChildren<ICreateProductStepperState>> = StepperHOC<ICreateProductStepperState>({
   defaultValue: defaultStepperValue,
   id: 'create-product',
   persistState: true
@@ -37,7 +42,6 @@ const Create: React.FC<React.PropsWithChildren<ICreateProductStepperState>> = St
   const stepper = useStepper();
   return (
     <>
-      <FloatingMultipleButtons />
       {children}
       <div className={classNames('w-full', 'min-h-[100dvh]', 'h-auto', 'rounded-sm', 'flex', 'p-4', 'flex-col', 'justify-between', 'items-center', 'bling-bg-dots-light', 'dark:bling-bg-dots-dark')}>
         <div className={classNames('w-full', 'h-auto', 'p-2', 'min-h-full', 'grow', 'justify-between', 'flex', 'flex-col')}>
@@ -66,29 +70,26 @@ const Create: React.FC<React.PropsWithChildren<ICreateProductStepperState>> = St
           {/* //* INICIO > VIEWS FORMS ELEMENTOS > PRODUCTOS | SERVICIOS | VEHICULOS | INMUEBLES  */}
           <div className='w-full  h-auto  !bg-transparent px-4 overflow-x-auto  flex-grow flex-wrap flex rounded-brand flex-col   '>
             <Step as='div' value={0} className='w-full h-auto flex justify-center items-center flex-col py-5 '>
-              <SelectElement />
-            </Step>
-            <Step as='div' value={1} className='w-full h-auto flex justify-center items-center flex-col py-5 '>
               <ProductCategory />
             </Step>
-            <Step as='div' value={2} className='w-full h-auto flex justify-center items-center flex-col py-5 '>
+            <Step as='div' value={1} className='w-full h-auto flex justify-center items-center flex-col py-5 '>
               <ProductIdentity />
             </Step>
-            <Step as='div' value={3} className='w-full h-auto flex justify-center items-center flex-col py-5 '>
+            <Step as='div' value={2} className='w-full h-auto flex justify-center items-center flex-col py-5 '>
               <ProductVariantsV2 />
             </Step>
-            <Step as='div' value={4} className='w-full h-auto flex justify-center items-center flex-col py-5 '>
+            <Step as='div' value={3} className='w-full h-auto flex justify-center items-center flex-col py-5 '>
               <ProductAttribute />
             </Step>
-            <Step as='div' value={5} className='w-full h-auto flex justify-center items-center flex-col py-5 '>
+            <Step as='div' value={4} className='w-full h-auto flex justify-center items-center flex-col py-5 '>
               
               <ProductShipping />
             </Step>
-            <Step as='div' value={6} className='w-full h-auto flex justify-center items-center flex-col py-5 '>
+            <Step as='div' value={5} className='w-full h-auto flex justify-center items-center flex-col py-5 '>
               
               <ProductPayment />
             </Step>
-            <Step as='div' value={7} className='w-full h-auto flex justify-center items-center flex-col py-5 '>
+            <Step as='div' value={6} className='w-full h-auto flex justify-center items-center flex-col py-5 '>
               
               <ProductSuccess />
             </Step>
@@ -130,4 +131,4 @@ const Create: React.FC<React.PropsWithChildren<ICreateProductStepperState>> = St
   );
 });
 
-export { Create };
+export default  CreateProduct ;
