@@ -144,7 +144,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(({
             'w-full',
             'bling-light-text',
             'dark:bling-dark-text',
-            'bling-light-bg-3', 'dark:bling-dark-bg-1', 'dark:border-bling-dark-bg-3',
+            'bling-light-bg-3', 'dark:bling-dark-bg-4', 'dark:border-bling-dark-bg-4',
             '!shadow-none',
             '!outline-none',
             'px-2',

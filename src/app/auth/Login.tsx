@@ -12,6 +12,7 @@ import { useAnimation } from '@/hooks/useAnimation';
 import { Form, useForm } from '@/components/organisms';
 import { useGlobalState } from '@/contexts/GlobalState';
 import { FaInfoCircle } from 'react-icons/fa';
+import Link from 'next/link';
 
 const LoginScreen: React.FC = ({}) => {
   const router = useRouter();
@@ -94,6 +95,15 @@ const LoginScreen: React.FC = ({}) => {
           {' '}
           Conectarme{' '}
         </Button>
+      </div>
+      <div className={classNames('w-full', 'flex', 'justify-center')}>
+      <Link href='auth/recovery'>
+        <p className='w-full h-auto p-2 text-xs bling-light-link'>¿Necesitas Ayuda?</p>
+        </Link>
+       <Link href='auth/recovery/password'>
+        <p className='w-full h-auto p-2 text-xs bling-light-link'>Recuperar Contraseña</p>
+        </Link>
+       
       </div>
     </LoginAndRegisterCard>
   );

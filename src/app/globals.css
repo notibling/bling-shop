@@ -273,6 +273,18 @@ body {
 }
 
 
+.bling-light-link{
+  color: #2563EB;
+}
+.bling-light-link:hover{
+  color: #ffcc00;
+  cursor: pointer;
+}
+.bling-light-link:focus{
+  color: #2563EB;
+  cursor: pointer;
+}
+
 /* Variables de colores personalizadas */
 
 @layer utilities {
@@ -761,6 +773,29 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
     @apply text-white bg-bling-yellow cursor-pointer !important;
   }
 
+
+  /* ---------------------------- */
+  .bling-btn-default {
+    @apply text-bling-light-text bg-bling-light border border-slate-300 cursor-pointer !important;
+  }
+  
+
+  .bling-btn-default:hover{
+    @apply  bg-bling-yellow text-white cursor-pointer shadow-md !important;
+  }
+  .bling-btn-default:focus{
+    @apply  bg-bling-blue text-white cursor-pointer !important;
+  }
+
+  .dark .bling-btn-default-dark{
+    @apply text-slate-300 bg-bling-dark-bg-3 border border-slate-700  cursor-pointer !important;
+  }
+  .bling-btn-default-dark:hover{
+    @apply  bg-bling-yellow text-white cursor-pointer shadow-md !important;
+  }
+  .bling-btn-default-dark:focus{
+    @apply  bg-bling-blue text-white cursor-pointer !important;
+  }
   /*-------------------*/
   .bling-bg-blue-on-focus:focus {
     @apply bg-bling-blue cursor-pointer !important;

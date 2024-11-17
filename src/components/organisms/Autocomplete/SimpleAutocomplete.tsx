@@ -150,8 +150,7 @@ const SimpleAutocomplete: Type = forwardRef<ISimpleAutocompleteRef<any>, IAutoco
             'bling-light-text', 'dark:bling-dark-text',
             '!shadow-none',
             '!outline-none',
-            'dark:bling-dark-bg-1', 'dark:border-bling-dark-bg-3 ',
-            { 'ring-bling-yellow ring-2': open },
+            'dark:bling-dark-bg-3', 'dark:border-bling-dark-bg-3 outline-none',
             { 'opacity-50 cursor-not-allowed': disabled }
           )}>
           <Input
@@ -163,7 +162,7 @@ const SimpleAutocomplete: Type = forwardRef<ISimpleAutocompleteRef<any>, IAutoco
             {...inputProps}
           />
           <div
-            className={classNames('px-3', 'bling-light-text', 'dark:bling-dark-text', 'flex', 'm-1', 'rounded-md', 'items-center', 'dark:bling-dark-bg-2', 'bling-light', 'justify-center', buttonClassName)}>
+            className={classNames('px-3', 'bling-light-text', 'dark:bling-dark-text', 'flex', 'm-1', 'rounded-md', 'items-center', 'dark:bg-bling-dark-bg-5', 'bling-light', 'justify-center', buttonClassName)}>
             <IoMdArrowDropdown
               className={classNames({ 'rotate-180': open })}
             />
@@ -178,7 +177,7 @@ const SimpleAutocomplete: Type = forwardRef<ISimpleAutocompleteRef<any>, IAutoco
               'border', 'border-red-400',
               'w-full', 'max-h-[300px]', 'overflow-y-auto',
               'options-body', 'bling-light-text', 'dark:bling-dark-text', 'rounded-md',
-              'border', ' bling-light-border', ' dark:bling-dark-border', ' !bg-opacity-90', 'bling-light', 'dark:bling-dark-bg-1',
+              'border', ' bling-light-border', ' dark:bling-dark-border', ' !bg-opacity-90', 'bling-light', 'dark:bling-dark-bg-3',
               'shadow-md', 'list-none'
             )}>
             {filteredOptions.map((option, index) => (

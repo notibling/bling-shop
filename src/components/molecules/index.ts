@@ -13,6 +13,7 @@ export * from './Reviews';
 export * from './Reviews';
 export * from './Notify';
 export * from './Modal';
+export * from './RecoveryCard';
 export * from './Masonry';
 export * from './CartFooter/CartVariantQuantity';
 export * from './Frozen';

@@ -184,7 +184,7 @@ const TopMenu = forwardRef<any, TopMenuProps>(({ FastLinks = true, InfoBar = tru
             </div>
             {/* --------------------------------------------- CABECERA - NAV - LOGIN/REGISTER/MENU */}
             <div className={classNames('w-1/2', '!overflow-visible', 'lg:w-4/12', 'order-3', 'h-14', 'gap-1', 'items-center', 'flex', 'justify-end ')}>
-             
+             {/* --------------------------- FAVORITE BUTTON */}
             <a
                 href=''
                 className={classNames(
@@ -211,7 +211,9 @@ const TopMenu = forwardRef<any, TopMenuProps>(({ FastLinks = true, InfoBar = tru
                 <FaHeart className={classNames('self-center', 'text-lg')} />
               </a>
 
+ {/* --------------------------- CART BUTTON */}
               <CartCTA />
+              {/* ---------------------------  NOTIFICATIONS BUTTON */}
               <Dropdown
                 bodyClassName='w-auto h-auto overflow-visible'
                 trigger={
@@ -250,7 +252,7 @@ const TopMenu = forwardRef<any, TopMenuProps>(({ FastLinks = true, InfoBar = tru
 
                 </DropdownItem>
               </Dropdown>
-       
+         {/* ---------------------------  USER BUTTON */}
               <UserButton    
                 image='/images/webp/user/woman.webp'
                 showLightBar={showLightBar}

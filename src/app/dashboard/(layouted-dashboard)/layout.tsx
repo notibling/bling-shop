@@ -118,7 +118,6 @@ function Dashboard({ children }: { children: React.ReactNode }) {
         </div>
       </Section>
       <FooterComponent className='lg:mb-0 mb-14' brandFooter />
-      <FloatingMultipleButtons />
       <MobileMenu />
     </>
   );
