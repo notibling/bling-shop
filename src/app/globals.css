@@ -773,6 +773,13 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
     @apply text-white bg-bling-yellow cursor-pointer !important;
   }
 
+code{
+  @apply bling-light-bg-3 px-1  rounded-md !important;
+
+}
+.dark code {
+  @apply bling-dark-bg-4 px-1 rounded-md !important;
+}
 
   /* ---------------------------- */
   .bling-btn-default {

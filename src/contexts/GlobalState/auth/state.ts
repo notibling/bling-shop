@@ -17,15 +17,16 @@ const authDefaultValue: AuthState = {
 };
 
 function useAuth(): AuthState {
-  const [user, setUser] = usePersistState<AuthState['user']>('@auth.user');
-  const [accessToken, setAccessToken] = usePersistState<string>('@auth.accessToken');
+  const [user, setUser] = usePersistState<IUser>('@auth.user', {} as IUser); // Default user value
+  const [accessToken, setAccessToken] = usePersistState<string>('@auth.accessToken', '');
 
   return {
-    user: user as any,
+    user,
     setUser,
-    accessToken: accessToken as any,
+    accessToken,
     setAccessToken
   };
 }
 
 export { useAuth, authDefaultValue, type AuthState };
+

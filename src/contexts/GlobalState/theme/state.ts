@@ -11,15 +11,15 @@ const themeDefaultValue = {
 };
 
 function useTheme(): ThemeState {
-  const [darkMode, setDarkMode] = useState<boolean>(false);
-
-  useEffect(() => {
+  // Inicializa darkMode con el valor guardado en localStorage, si existe.
+  const [darkMode, setDarkMode] = useState<boolean>(() => {
     if (typeof window !== 'undefined') {
-      const savedMode = localStorage.getItem('dark-mode');
-      setDarkMode(savedMode === 'true');
+      return localStorage.getItem('dark-mode') === 'true';
     }
-  }, []);
+    return false; // Valor predeterminado
+  });
 
+  // Efecto para aplicar la clase "dark" al documento y actualizar localStorage
   useEffect(() => {
     if (typeof window !== 'undefined') {
       if (darkMode) {
@@ -27,16 +27,14 @@ function useTheme(): ThemeState {
       } else {
         document.documentElement.classList.remove('dark');
       }
-    }
-  }, [darkMode]);
 
-  const toggleDarkMode = () => {
-    const newMode = !darkMode;
-    setDarkMode(newMode);
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('dark-mode', newMode.toString());
+      // Guarda el estado de darkMode en localStorage
+      localStorage.setItem('dark-mode', darkMode.toString());
     }
-  };
+  }, [darkMode]); // Solo se ejecuta cuando darkMode cambia
+
+  // Función para alternar el estado de darkMode
+  const toggleDarkMode = () => setDarkMode(prev => !prev);
 
   return { darkMode, toggleDarkMode };
 }
